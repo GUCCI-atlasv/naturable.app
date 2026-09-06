@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Naturable · Admin</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  :root{
+    --bg:#F0EEE6;--panel:#FAF9F5;--ink:#1F1E1C;--gray:#6B6760;--faint:#9B968B;--line:#E4E0D4;
+    --clay:#D97757;--clay-d:#BE5D3E;--sage:#5B8C5A;--ochre:#C2872E;--terra:#BF4D33;--slate:#7C9BB0;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:'Inter',-apple-system,sans-serif;font-weight:400;-webkit-font-smoothing:antialiased}
+  .layout{display:flex;min-height:100vh}
+  .side{width:218px;background:var(--panel);border-right:1px solid var(--line);padding:22px 14px;flex-shrink:0}
+  .logo{font-family:'Fraunces',serif;font-weight:600;font-size:20px;margin:4px 8px 24px;display:flex;align-items:center;gap:8px}
+  .logo b{color:var(--clay);font-weight:600} .logo .o{font-size:18px}
+  .nav a{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;color:var(--gray);
+    text-decoration:none;font-weight:500;font-size:14px;margin-bottom:3px;cursor:pointer}
+  .nav a.on{background:#F4E7DF;color:var(--clay-d);font-weight:600}
+  .nav a:hover{background:var(--bg)}
+  .main{flex:1;padding:24px 28px;overflow:auto}
+  .head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:20px;flex-wrap:wrap;gap:10px}
+  .head h1{margin:0;font-family:'Fraunces',serif;font-size:26px;font-weight:600}
+  .head .sub{color:var(--gray);font-size:13px;margin-top:4px}
+  .range{display:flex;gap:6px}
+  .range button{border:1px solid var(--line);background:var(--panel);border-radius:9px;padding:7px 13px;font-family:inherit;
+    font-weight:600;font-size:12px;color:var(--gray);cursor:pointer}
+  .range button.on{background:var(--clay);color:#fff;border-color:var(--clay)}
+  .kpis{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-bottom:18px}
+  .kpi{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 15px}
+  .kpi .l{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--gray)}
+  .kpi .v{font-family:'Fraunces',serif;font-size:26px;font-weight:600;line-height:1.1;margin-top:4px}
+  .kpi .d{font-size:11px;font-weight:600;margin-top:3px}
+  .up{color:var(--sage)} .down{color:var(--terra)}
+  .grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:14px;margin-bottom:18px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+  .card h3{margin:0 0 14px;font-family:'Fraunces',serif;font-size:15px;font-weight:600;color:var(--ink)}
+  .chartbox{position:relative;height:200px}
+  .tablecard{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th{text-align:left;color:var(--gray);font-size:11px;text-transform:uppercase;letter-spacing:.5px;padding:8px 10px;border-bottom:1px solid var(--line)}
+  td{padding:9px 10px;border-bottom:1px solid var(--bg);font-weight:500}
+  tr:hover td{background:var(--bg)}
+  .badge{font-size:11px;font-weight:600;padding:3px 10px;border-radius:20px}
+  .b-check{background:#EAF1E6;color:#4a7349}
+  .b-quickfix{background:#F4EAD3;color:#946716}
+  .b-rewrite{background:#F8E8DF;color:var(--clay-d)}
+  .b-accept{background:#E6EEF3;color:#557892}
+  .mono{font-family:ui-monospace,Menlo,monospace;font-weight:500;font-size:12px;color:var(--gray)}
+  .score{font-family:'Fraunces',serif;font-weight:600}
+  .fwbar{flex:1;height:9px;border-radius:6px;background:var(--line);overflow:hidden}
+  .fwbar>i{display:block;height:100%}
+  @media(max-width:1000px){.kpis{grid-template-columns:repeat(3,1fr)}.grid{grid-template-columns:1fr}.side{display:none}}
+</style>
+</head>
+<body>
+<div class="layout">
+  <aside class="side">
+    <div class="logo"><span class="o">🌿</span> Natur<b>able</b></div>
+    <nav class="nav">
+      <a class="on">Overview</a>
+      <a>Users</a>
+      <a>Usage events</a>
+      <a>Geography</a>
+      <a>Flywheel data</a>
+      <a>Billing</a>
+      <a>Settings</a>
+    </nav>
+  </aside>
+  <main class="main">
+    <div class="head">
+      <div><h1>Overview</h1><div class="sub">Live data from Cloudflare Workers · edge-captured IP &amp; usage · <span id="now"></span></div></div>
+      <div class="range"><button>24h</button><button class="on">7d</button><button>30d</button><button>All</button></div>
+    </div>
+
+    <div class="kpis" id="kpis"></div>
+
+    <div class="grid">
+      <div class="card"><h3>Checks per day (7d)</h3><div class="chartbox"><canvas id="cLine"></canvas></div></div>
+      <div class="card"><h3>Top AI patterns triggered</h3><div class="chartbox"><canvas id="cBar"></canvas></div></div>
+      <div class="card"><h3>Traffic by country</h3><div class="chartbox"><canvas id="cGeo"></canvas></div></div>
+    </div>
+
+    <div class="grid" style="grid-template-columns:1fr 1fr">
+      <div class="card"><h3>Flywheel — suggestion accept rate by pattern</h3><div id="flywheel"></div></div>
+      <div class="card"><h3>Free vs Pro events</h3><div class="chartbox"><canvas id="cPlan"></canvas></div></div>
+    </div>
+
+    <div class="tablecard">
+      <h3 style="margin:0 0 14px;font-family:'Fraunces',serif;font-size:15px;font-weight:600">Recent usage events (edge-captured)</h3>
+      <table>
+        <thead><tr><th>Time</th><th>IP (hashed)</th><th>Country</th><th>Device</th><th>Event</th><th>Words</th><th>Human score</th><th>Top pattern</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+    <p style="color:var(--faint);font-size:12px;margin-top:16px">Demo with mock data. In production these fields come from <span class="mono">request.cf</span> + <span class="mono">CF-Connecting-IP</span> in a Cloudflare Worker, written to D1 / Analytics Engine. IPs shown hashed per privacy policy.</p>
+  </main>
+</div>
+
+<script>
+document.getElementById('now').textContent=new Date().toLocaleString('en-US',{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'});
+const CLAY='#D97757',SAGE='#5B8C5A',OCHRE='#C2872E',TERRA='#BF4D33',SLATE='#7C9BB0',LINE='#E4E0D4';
+Chart.defaults.font.family='Inter';Chart.defaults.font.weight='500';Chart.defaults.color='#6B6760';
+
+const kpis=[
+ ["Checks (7d)","48,210","▲ 12.4%","up"],
+ ["Unique visitors","9,734","▲ 8.1%","up"],
+ ["Countries","112","▲ 4","up"],
+ ["Quick-fix uses","21,880","▲ 15.7%","up"],
+ ["Pro rewrites","1,302","▲ 22.0%","up"],
+ ["Suggestion accept","63%","▼ 1.2%","down"],
+];
+document.getElementById('kpis').innerHTML=kpis.map(k=>`<div class="kpi"><div class="l">${k[0]}</div><div class="v">${k[1]}</div><div class="d ${k[3]}">${k[2]}</div></div>`).join('');
+
+new Chart(cLine,{type:'line',data:{labels:['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],
+  datasets:[{data:[5200,6100,5800,7400,8900,7100,7710],borderColor:CLAY,backgroundColor:'rgba(217,119,87,.12)',fill:true,tension:.4,borderWidth:3,pointRadius:0}]},
+  options:{plugins:{legend:{display:false}},scales:{y:{grid:{color:'#EFEBDF'},beginAtZero:true},x:{grid:{display:false}}}}});
+
+new Chart(cBar,{type:'bar',data:{labels:['Em dash','AI vocab','Filler','Chatbot','Rule of 3','Hedging','Signpost'],
+  datasets:[{data:[8400,7600,5100,4300,3900,2800,2100],backgroundColor:[TERRA,TERRA,OCHRE,TERRA,OCHRE,OCHRE,OCHRE],borderRadius:6}]},
+  options:{indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{grid:{color:'#EFEBDF'},beginAtZero:true},y:{grid:{display:false}}}}});
+
+new Chart(cGeo,{type:'doughnut',data:{labels:['US','India','UK','Philippines','Germany','Other'],
+  datasets:[{data:[31,18,9,8,6,28],backgroundColor:[CLAY,SAGE,OCHRE,SLATE,TERRA,LINE],borderWidth:2,borderColor:'#FAF9F5'}]},
+  options:{cutout:'62%',plugins:{legend:{position:'right',labels:{boxWidth:12,padding:8,font:{size:11}}}}}});
+
+new Chart(cPlan,{type:'bar',data:{labels:['Check','Quick-fix','AI rewrite'],
+  datasets:[{label:'Free',data:[46900,21880,0],backgroundColor:SAGE,borderRadius:6},
+            {label:'Pro',data:[1310,980,1302],backgroundColor:CLAY,borderRadius:6}]},
+  options:{plugins:{legend:{position:'top',labels:{boxWidth:12,font:{size:11}}}},scales:{y:{grid:{color:'#EFEBDF'},beginAtZero:true},x:{grid:{display:false}}}}});
+
+const fw=[["AI vocabulary",71],["Em / en dash",88],["Filler phrase",64],["Negative parallelism",52],["Rule of three",43],["Hedging",58]];
+document.getElementById('flywheel').innerHTML=fw.map(f=>{const c=f[1]>=65?SAGE:f[1]>=50?OCHRE:TERRA;return `
+  <div style="margin-bottom:12px"><div style="display:flex;justify-content:space-between;font-size:13px;font-weight:500">
+  <span>${f[0]}</span><span style="font-family:'Fraunces',serif;font-weight:600;color:${c}">${f[1]}%</span></div>
+  <div class="fwbar" style="margin-top:5px"><i style="width:${f[1]}%;background:${c}"></i></div></div>`;}).join('');
+
+const flags={US:'🇺🇸',IN:'🇮🇳',UK:'🇬🇧',PH:'🇵🇭',DE:'🇩🇪',BR:'🇧🇷',CA:'🇨🇦',FR:'🇫🇷',NG:'🇳🇬',JP:'🇯🇵'};
+const cty=Object.keys(flags);
+const devs=['Chrome / Mac','Chrome / Win','Safari / iPhone','Edge / Win','Firefox / Linux','Chrome / Android'];
+const evs=[['check','b-check'],['quickfix','b-quickfix'],['rewrite','b-rewrite'],['accept_suggestion','b-accept']];
+const pats=['Em dash','AI vocabulary','Filler phrase','Chatbot artifact','Rule of three','Generic conclusion','—'];
+function h(){return 'a'+Math.random().toString(16).slice(2,8)+'…'+Math.random().toString(16).slice(2,6)}
+function pad(n){return n<10?'0'+n:n}
+let rows='';
+for(let i=0;i<14;i++){
+  const c=cty[Math.floor(Math.random()*cty.length)];
+  const e=evs[Math.floor(Math.random()*evs.length)];
+  const sc=Math.floor(20+Math.random()*78);
+  const w=Math.floor(80+Math.random()*1100);
+  const m=pad(Math.floor(Math.random()*59)),s=pad(Math.floor(Math.random()*59));
+  const scol=sc>70?SAGE:sc>40?OCHRE:TERRA;
+  rows+=`<tr><td class="mono">12:${m}:${s}</td><td class="mono">${h()}</td><td>${flags[c]} ${c}</td>
+    <td>${devs[Math.floor(Math.random()*devs.length)]}</td><td><span class="badge ${e[1]}">${e[0]}</span></td>
+    <td>${w.toLocaleString()}</td><td class="score" style="color:${scol}">${sc}</td><td>${pats[Math.floor(Math.random()*pats.length)]}</td></tr>`;
+}
+document.getElementById('rows').innerHTML=rows;
+</script>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<base href="/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Naturable — Free AI Writing Checker | Make Your Writing Sound Human</title>
+<meta name="description" content="Naturable is a free AI writing checker. Paste your text and instantly see the AI tells — robotic phrasing, filler, and clichés — with clear fixes. Runs in your browser. No sign-up.">
+<link rel="canonical" href="https://naturable.app/zh-cn/">
+<link rel="alternate" hreflang="en" href="https://naturable.app/en/">
+<link rel="alternate" hreflang="zh-CN" href="https://naturable.app/zh-cn/">
+<link rel="alternate" hreflang="x-default" href="https://naturable.app/en/">
+<meta name="robots" content="index, follow">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Naturable">
+<meta property="og:title" content="Naturable — Free AI Writing Checker">
+<meta property="og:description" content="Paste your text and instantly see the AI tells, with clear fixes. Free, private, runs in your browser.">
+<meta property="og:url" content="https://naturable.app/">
+<meta property="og:image" content="https://naturable.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Naturable — Free AI Writing Checker">
+<meta name="twitter:description" content="See the AI tells in your writing and how to fix them. Free & private.">
+<meta name="theme-color" content="#F0EEE6">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v=20260712-v2">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"SoftwareApplication",
+  "name":"Naturable",
+  "applicationCategory":"BusinessApplication",
+  "operatingSystem":"Web",
+  "url":"https://naturable.app/",
+  "description":"A free AI writing checker that highlights AI tells in text and suggests fixes. Runs in the browser.",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+  "aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","ratingCount":"312"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"Is Naturable free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Checking, highlighting, and rule-based quick fixes are free and unlimited. Pro pricing is being tested and is not yet open."}},
+    {"@type":"Question","name":"Does my text get uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. The current free checker runs entirely in your browser. Planned Pro processing is not yet open."}},
+    {"@type":"Question","name":"Does Naturable help bypass AI detectors?","acceptedAnswer":{"@type":"Answer","text":"Naturable is a writing-quality tool. It removes robotic phrasing so your writing reads naturally. It is not sold as a way to beat any specific detector."}},
+    {"@type":"Question","name":"What are AI tells?","acceptedAnswer":{"@type":"Answer","text":"Recurring patterns typical of AI writing — em-dash overuse, filler phrases, clichés like 'a testament to', the 'rule of three', chatbot leftovers, and uniform sentence rhythm."}}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap nav">
+    <a class="brand" href="index.html"><span class="n">Naturable</span><span class="d">.app</span></a>
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="Menu">☰</button>
+    <nav class="links">
+      <a href="app.html">Checker</a>
+      <a href="how-it-works.html">How it works</a>
+      <a href="learn/index.html">Learn</a>
+      <a href="pricing.html">Pricing</a>
+      <a class="btn-sm" href="app.html">Try free</a>
+      <select id="ui-language" class="nav-select" aria-label="Interface language"><option value="en">EN</option><option value="zh-CN">简中</option></select>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero wrap">
+    <span class="tag-note">Free · runs in your browser · no sign-up</span>
+    <h1>Make every draft sound naturally <em>yours.</em></h1>
+    <p class="lead">Check mechanical writing patterns, edit each suggestion, compare the change, and recheck — in English or 简体中文.</p>
+    <div class="cta">
+      <a class="btn" href="#checker">Check your text</a>
+      <a class="btn sec" href="how-it-works.html">How it works</a>
+    </div>
+    <div class="trust">Trusted by writers, marketers, and non-native English speakers.</div>
+  </section>
+
+  <!-- CHECKER -->
+  <section id="checker" class="wrap" style="padding-top:20px">
+    <div class="checker">
+      <div class="doc-toolbar" aria-label="Document settings">
+        <label>Input language <select id="input-language"><option value="auto">Auto</option><option value="en">English</option><option value="zh">简体中文 · Beta</option></select></label>
+        <label>Writing purpose <select id="purpose"><option value="general">General</option><option value="email">Email</option><option value="blog">Blog</option><option value="academic">Academic</option><option value="marketing">Marketing</option><option value="social">Social</option><option value="technical">Technical</option></select></label>
+        <span id="detected-language" class="meta-pill">English</span><span id="text-count" class="meta-pill">0 words</span><span id="save-status" class="save-status">Saved locally</span>
+      </div>
+      <div class="stats" id="scores">
+        <div class="stat"><div class="lab">Naturalness score</div><div class="big">—</div><div class="bar"><i></i></div></div>
+        <div class="stat"><div class="lab">Strong issues</div><div class="big">—</div></div>
+        <div class="stat"><div class="lab">Sentence rhythm</div><div class="big">—</div><div class="bar"><i></i></div></div>
+      </div>
+      <div id="recheck-summary" class="recheck-summary" hidden></div>
+      <div class="mobile-tabs" role="tablist"><button data-tab="edit" class="active">Edit</button><button data-tab="issues">Issues</button><button data-tab="compare">Compare</button></div>
+      <div class="editor">
+        <div class="pane">
+          <div class="pane-title"><h3>Your text <span class="demo-label">Example analysis</span></h3><span id="dirty-state" class="dirty-state" hidden>Content changed</span></div>
+          <textarea id="input" data-demo="true" placeholder="Paste or write your draft here..." aria-label="Editable draft"></textarea>
+          <div class="tool-btns">
+            <button id="check-btn" class="btn" onclick="naturable.analyze()">Check</button>
+            <button class="btn sec" onclick="naturable.autofix()">Fix safe issues</button>
+            <button class="btn sec" onclick="naturable.loadSample()">Sample</button>
+            <button class="btn sec" onclick="naturable.undo()">Undo</button>
+            <button class="btn sec" onclick="naturable.redo()">Redo</button>
+            <button class="btn sec" onclick="naturable.restoreBaseline()">Restore baseline</button>
+            <button class="btn sec" onclick="naturable.copyResult()">Copy</button>
+            <button class="btn sec" onclick="naturable.clearText()">Clear</button>
+          </div>
+        </div>
+        <div class="pane">
+          <h3>Highlighted</h3>
+          <div class="legend"><b class="r">!</b> strong issue · <b class="y">i</b> suggestion</div>
+          <div id="render"><span class="empty">Highlighted output appears here.</span></div>
+        </div>
+      </div>
+      <p id="checker-notice" class="checker-notice" hidden></p>
+      <div class="issuesbox" id="issues-panel">
+        <div class="section-title"><h3>Writing patterns</h3><button class="text-button" onclick="naturable.restoreIgnored()">Restore ignored</button></div>
+        <div id="issues"><div class="empty">Run Check to see flagged patterns and suggestions.</div></div>
+      </div>
+      <div class="issuesbox comparebox" id="compare-panel">
+        <div class="section-title"><h3>Before / After</h3><button class="text-button" onclick="naturable.copySummary()">Copy changes summary</button></div>
+        <div id="diff-summary" class="diff-summary"></div><div id="diff-render" class="diff-render"><span class="empty">Make an edit after checking to compare changes.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW -->
+  <section class="wrap center">
+    <div class="eyebrow">How it works</div>
+    <h2 class="sec-title">Four steps, zero friction</h2>
+    <div class="steps" style="margin-top:30px;text-align:left">
+      <div class="step"><div class="num">1</div><h3>Paste</h3><p>Drop in AI-generated or rough draft text. Nothing leaves your browser.</p></div>
+      <div class="step"><div class="num">2</div><h3>Check</h3><p>22 rule-compatible patterns plus structural checks run instantly — no AI, no wait.</p></div>
+      <div class="step"><div class="num">3</div><h3>See the tells</h3><p>Every AI tell is highlighted and explained, with a concrete fix.</p></div>
+      <div class="step"><div class="num">4</div><h3>Fix</h3><p>Apply or ignore individual suggestions, use safe quick fixes, and undo any change.</p></div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="wrap center">
+    <div class="eyebrow">Why Naturable</div>
+    <h2 class="sec-title">Clarity you can trust</h2>
+    <div class="cards" style="margin-top:30px;text-align:left">
+      <div class="feat"><div class="ic">⚡</div><h3>Instant &amp; free</h3><p>Rule-based checking runs locally in milliseconds. Unlimited, no account needed.</p></div>
+      <div class="feat"><div class="ic">🔒</div><h3>Private by default</h3><p>Your text stays in your browser. We can't read what we never receive.</p></div>
+      <div class="feat"><div class="ic">🔎</div><h3>Transparent</h3><p>Not a black box. Every flag tells you the pattern, why it matters, and the fix.</p></div>
+      <div class="feat"><div class="ic">📏</div><h3>Measured</h3><p>An explainable naturalness score across clarity, specificity, rhythm, structure, and artifacts.</p></div>
+      <div class="feat"><div class="ic">✍️</div><h3>For everyone</h3><p>Blogs, emails, essays, marketing copy — general-purpose, not niche.</p></div>
+      <div class="feat"><div class="ic">✨</div><h3>AI when you want it</h3><p>Pro AI rewrites and voice matching are currently being tested and are not yet open.</p></div>
+    </div>
+  </section>
+
+  <!-- PRICING TEASER -->
+  <section class="wrap center">
+    <div class="eyebrow">Pricing</div>
+    <h2 class="sec-title">Free to start. Pro when you need the rewrite.</h2>
+    <p class="sec-lead mx">The checker and rule fixes are free forever. Pro pricing is being tested and is not yet open.</p>
+    <div style="margin-top:24px"><a class="btn" href="pricing.html">See pricing</a></div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="wrap">
+    <div class="center"><div class="eyebrow">FAQ</div><h2 class="sec-title">Common questions</h2></div>
+    <div class="faq" style="margin-top:26px">
+      <details open><summary>Is Naturable free?</summary><p>Yes. Checking, highlighting, and rule-based quick fixes are completely free and unlimited, with no sign-up. Pro pricing is being tested and is not yet open.</p></details>
+      <details><summary>Does my text get uploaded?</summary><p>No. The current free checker runs entirely in your browser. Planned Pro processing is still being tested and is not yet open.</p></details>
+      <details><summary>Does this help me bypass AI detectors?</summary><p>Naturable is a writing-quality tool that removes robotic phrasing so your writing reads naturally. It is not sold as a way to beat any specific detector, and no tool can reliably guarantee that.</p></details>
+      <details><summary>What exactly is an "AI tell"?</summary><p>A recurring pattern typical of AI writing: em-dash overuse, filler phrases, clichés like "a testament to", the "rule of three", chatbot leftovers, and uniform sentence rhythm. See <a href="learn/how-to-remove-ai-tells.html">the full list</a>.</p></details>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap foot-grid">
+    <div>
+      <div class="brand"><span class="n">Naturable</span><span class="d">.app</span></div>
+      <p class="muted" style="margin-top:8px;font-size:14px">Make your writing naturally human.</p>
+    </div>
+    <div><h4>Product</h4><a href="app.html">Checker</a><a href="how-it-works.html">How it works</a><a href="pricing.html">Pricing</a></div>
+    <div><h4>Learn</h4><a href="learn/index.html">All articles</a><a href="learn/do-ai-humanizers-work.html">Do AI humanizers work?</a><a href="learn/what-is-perplexity-and-burstiness.html">Perplexity &amp; burstiness</a></div>
+    <div><h4>Company</h4><a href="about.html">About</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© 2026 Naturable</span>
+    <span>Runs on Cloudflare · Free tier processes text in your browser</span>
+  </div>
+</footer>
+<script src="assets/engine.js?v=20260712-v2"></script>
+<script src="/assets/locale-pages.js?v=20260712-l1"></script>
+</body>
+</html>

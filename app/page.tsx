@@ -1,0 +1,1 @@
+export default function Root(){return <main className="center landing"><h1>Naturable</h1><p>Choosing the best language for you…</p><p><a href="/en/">English</a> · <a href="/zh-cn/">简体中文</a></p></main>}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<base href="/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What Are Perplexity and Burstiness in AI Detection? — Naturable</title>
+<meta name="description" content="Perplexity and burstiness are the two metrics behind most AI text detectors. Here's what each means in plain English, and how they relate to human vs AI writing.">
+<link rel="canonical" href="https://naturable.app/zh-cn/learn/what-is-perplexity-and-burstiness">
+<link rel="alternate" hreflang="en" href="https://naturable.app/en/learn/what-is-perplexity-and-burstiness">
+<link rel="alternate" hreflang="zh-CN" href="https://naturable.app/zh-cn/learn/what-is-perplexity-and-burstiness">
+<link rel="alternate" hreflang="x-default" href="https://naturable.app/en/learn/what-is-perplexity-and-burstiness">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="What Are Perplexity and Burstiness in AI Detection?">
+<meta property="og:description" content="The two metrics behind AI detection, explained in plain English.">
+<meta property="og:url" content="https://naturable.app/learn/what-is-perplexity-and-burstiness.html">
+<meta property="og:type" content="article">
+<meta name="theme-color" content="#F0EEE6">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css?v=20260712-p1">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"What Are Perplexity and Burstiness in AI Detection?","description":"The two metrics behind AI text detection, explained in plain English.","author":{"@type":"Organization","name":"Naturable"},"publisher":{"@type":"Organization","name":"Naturable"},"datePublished":"2026-05-18","dateModified":"2026-07-01","mainEntityOfPage":"https://naturable.app/learn/what-is-perplexity-and-burstiness.html"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Learn","item":"https://naturable.app/learn/"},{"@type":"ListItem","position":2,"name":"Perplexity and burstiness","item":"https://naturable.app/learn/what-is-perplexity-and-burstiness.html"}]}
+</script>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap nav">
+    <a class="brand" href="../index.html"><span class="n">Naturable</span><span class="d">.app</span></a>
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="Menu">☰</button>
+    <nav class="links">
+      <a href="../app.html">Checker</a><a href="../how-it-works.html">How it works</a><a href="index.html">Learn</a><a href="../pricing.html">Pricing</a><a class="btn-sm" href="../app.html">Try free</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <article class="wrap prose" style="padding:50px 24px">
+    <div class="meta"><a href="index.html">Learn</a> · 5 min read</div>
+    <h1>What are perplexity and burstiness?</h1>
+    <p>Most AI-text detectors lean on two ideas: <strong>perplexity</strong> and <strong>burstiness</strong>. Understanding them tells you a lot about why some writing reads as "AI" and some doesn't.</p>
+
+    <h2>Perplexity: how predictable the words are</h2>
+    <p>Perplexity measures how "surprised" a language model is by a piece of text — essentially, how predictable the word choices are. Because a language model generates text by choosing likely words, its own output tends to have <strong>low perplexity</strong>: everything is what the model expected.</p>
+    <p>Human writing is messier. People pick words for reasons a model doesn't optimise for — memory, rhythm, humour, a very specific fact — so human text usually scores <strong>higher perplexity</strong>. As a rough rule of thumb, detectors treat higher perplexity as more likely to be human.</p>
+
+    <h2>Burstiness: how much sentences vary</h2>
+    <p>Burstiness measures variation in sentence structure across a passage. The classic version is the standard deviation of sentence length (often combined with variation in complexity):</p>
+    <blockquote>burstiness = standard deviation of sentence length ÷ mean sentence length</blockquote>
+    <p><strong>High burstiness</strong> = aggressive alternation between short, punchy sentences and long, complex ones — very human. <strong>Low burstiness</strong> = uniform length and structure — very AI.</p>
+
+    <h2>How detectors combine them</h2>
+    <p>If a document is consistently <em>low perplexity</em> (predictable words) and consistently <em>low burstiness</em> (uniform sentences), a detector flags it as likely AI. Neither signal alone is decisive; it's the combination and consistency that matter.</p>
+
+    <h2>What this means for your writing</h2>
+    <p>You can't (and shouldn't) chase a detector, but you <em>can</em> write better, which naturally moves both metrics:</p>
+    <ul>
+      <li><strong>Raise perplexity honestly</strong> — use specific, concrete words instead of generic ones; add a real detail only you would know.</li>
+      <li><strong>Raise burstiness</strong> — follow a short sentence with a long one. Let some thoughts land in three words. Let others unfold across a full line when the idea genuinely needs the room.</li>
+    </ul>
+    <p>Naturable reports a <strong>Sentence rhythm</strong> score based on burstiness — pure arithmetic, no model required — so you can see your variation at a glance. <a href="../how-it-works.html">See how it works.</a></p>
+
+    <h2>An honest caveat</h2>
+    <p>Detectors are imperfect and change often. Perplexity and burstiness are useful lenses, not a verdict, and no tool can guarantee how any specific detector will score a given text.</p>
+
+    <div class="article-cta">
+      <h3 style="margin-bottom:8px">See your sentence rhythm</h3>
+      <p class="muted" style="margin-bottom:14px">Free, private, no sign-up.</p>
+      <a class="btn" href="../app.html">Open the checker</a>
+    </div>
+    <p class="muted">Related: <a href="how-to-remove-ai-tells.html">How to remove AI tells</a> · <a href="do-ai-humanizers-work.html">Do AI humanizers actually work?</a></p>
+  </article>
+</main>
+<footer class="site-foot">
+  <div class="wrap foot-grid">
+    <div><div class="brand"><span class="n">Naturable</span><span class="d">.app</span></div><p class="muted" style="margin-top:8px;font-size:14px">Make your writing naturally human.</p></div>
+    <div><h4>Product</h4><a href="../app.html">Checker</a><a href="../how-it-works.html">How it works</a><a href="../pricing.html">Pricing</a></div>
+    <div><h4>Learn</h4><a href="index.html">All articles</a><a href="do-ai-humanizers-work.html">Do AI humanizers work?</a><a href="what-is-perplexity-and-burstiness.html">Perplexity &amp; burstiness</a></div>
+    <div><h4>Company</h4><a href="../about.html">About</a><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a></div>
+  </div>
+  <div class="wrap foot-bottom"><span>© 2026 Naturable</span><span>Runs on Cloudflare · Free tier processes text in your browser</span></div>
+</footer>
+<script src="../assets/engine.js?v=20260712-p1"></script>
+<script src="/assets/locale-pages.js?v=20260712-l1"></script>
+</body>
+</html>

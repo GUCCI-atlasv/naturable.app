@@ -1,0 +1,7 @@
+{
+  "name":"naturable-next",
+  "private":true,
+  "scripts":{"dev":"next dev","build":"next build && node scripts/postbuild.mjs && node scripts/check-seo.mjs","check:seo":"node scripts/check-seo.mjs","start":"next start","deploy":"npm run build && wrangler pages deploy out --project-name naturable --branch main"},
+  "dependencies":{"next":"15.5.9","react":"19.1.1","react-dom":"19.1.1"},
+  "devDependencies":{"@types/node":"22.18.0","@types/react":"19.1.12","@types/react-dom":"19.1.9","typescript":"5.9.2","wrangler":"4.103.0"}
+}

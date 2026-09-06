@@ -1,0 +1,12 @@
+{
+  "name": "Naturable — AI Writing Checker",
+  "short_name": "Naturable",
+  "description": "Free AI writing checker. See the AI tells in your text and how to fix them.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F0EEE6",
+  "theme_color": "#F0EEE6",
+  "icons": [
+    { "src": "/assets/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<base href="/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How Naturable Works — Rule-Based AI Writing Detection</title>
+<meta name="description" content="How Naturable checks writing against a 33-pattern catalogue using deterministic rules, structural checks, and sentence-rhythm analysis.">
+<link rel="canonical" href="https://naturable.app/en/how-it-works">
+<link rel="alternate" hreflang="en" href="https://naturable.app/en/how-it-works">
+<link rel="alternate" hreflang="zh-CN" href="https://naturable.app/zh-cn/how-it-works">
+<link rel="alternate" hreflang="x-default" href="https://naturable.app/en/how-it-works">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="How Naturable Works">
+<meta property="og:description" content="A transparent 33-pattern catalogue, deterministic checks, and burstiness analysis.">
+<meta property="og:url" content="https://naturable.app/how-it-works.html">
+<meta property="og:type" content="article">
+<meta name="theme-color" content="#F0EEE6">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v=20260712-p1">
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap nav">
+    <a class="brand" href="index.html"><span class="n">Naturable</span><span class="d">.app</span></a>
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="Menu">☰</button>
+    <nav class="links">
+      <a href="app.html">Checker</a>
+      <a href="how-it-works.html">How it works</a>
+      <a href="learn/index.html">Learn</a>
+      <a href="pricing.html">Pricing</a>
+      <a class="btn-sm" href="app.html">Try free</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <article class="wrap prose" style="padding:50px 24px">
+    <div class="meta">How it works</div>
+    <h1>How Naturable finds AI writing</h1>
+    <p>Naturable's free checker uses no AI at all. It relies on <strong>deterministic rules</strong> — the same kind of pattern-matching a spell-checker uses — so it's instant, private, and costs nothing to run. Here's exactly what happens when you hit <em>Check</em>.</p>
+
+    <h2>1. Pattern catalogue (33 tells)</h2>
+    <p>Naturable uses a catalogue of 33 patterns drawn from Wikipedia's <a href="https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing" rel="nofollow">Signs of AI writing</a> guide. The current free engine checks the deterministic and structural subset; semantic patterns are labelled for review instead of pretending a regular expression can understand meaning. Each implemented match is highlighted, explained, and paired with guidance.</p>
+    <ul>
+      <li><strong>Vocabulary tells</strong> — over-used LLM words like <em>delve, testament, landscape, leverage, robust, seamless</em>.</li>
+      <li><strong>Cadence tells</strong> — "It's not just X, it's Y", the rule of three, manufactured punchlines.</li>
+      <li><strong>Filler &amp; hedging</strong> — "in order to", "due to the fact that", stacked hedges.</li>
+      <li><strong>Structure tells</strong> — em-dash overuse, emoji, bold overuse, Title Case headings.</li>
+      <li><strong>Chatbot leftovers</strong> — "Great question!", "I hope this helps", cutoff disclaimers.</li>
+    </ul>
+    <p><strong>Current implementation:</strong> 22 deterministic phrase and style rules, plus structural checks for heading and boldface patterns. Semantic-only patterns remain manual review items while Pro is being tested.</p>
+
+    <h2>2. Sentence-rhythm analysis (burstiness)</h2>
+    <p>AI writing tends to be <em>uniform</em>: sentences hover around the same length with the same structure. Human writing has <strong>burstiness</strong> — it alternates short, punchy sentences with longer, winding ones. Naturable measures this as the coefficient of variation of your sentence lengths:</p>
+    <blockquote>burstiness = standard deviation of sentence length ÷ mean sentence length</blockquote>
+    <p>This is pure arithmetic — no model required. Higher variation reads more human, and we surface it as your <strong>Sentence rhythm</strong> score.</p>
+
+    <h2>3. The scores</h2>
+    <p>Two headline numbers, both heuristic:</p>
+    <ul>
+      <li><strong>Human score (0–100)</strong> — the inverse of an "AI-tell index" built from tell density, the count of strong tells, and a penalty for low burstiness. Higher is cleaner.</li>
+      <li><strong>Sentence rhythm</strong> — your burstiness, scaled to 0–100.</li>
+    </ul>
+    <p>These are guidance, not a verdict. Naturable is a writing-quality tool, not a detector, and no tool can promise a specific outcome against any third-party checker.</p>
+
+    <h2>4. Fixing: rules first, AI when needed</h2>
+    <p>Fixes come in two tiers:</p>
+    <ul>
+      <li><strong>Quick fix (free)</strong> — deterministic replacements the rules can make safely: cutting em-dashes, removing emoji and chatbot chatter, "in order to" → "to", straight quotes, and so on.</li>
+      <li><strong>AI rewrite (Pro, testing)</strong> — planned for semantic tells rules cannot safely rewrite. Pricing is being tested and the product is not yet open.</li>
+    </ul>
+
+    <h2>Privacy</h2>
+    <p>The current free checker runs <strong>entirely in your browser</strong>. Your text is never uploaded. Planned Pro processing is still being tested and is not yet open. See our <a href="privacy.html">Privacy Policy</a>.</p>
+
+    <div class="article-cta">
+      <h3 style="margin-bottom:8px">Try it on your own text</h3>
+      <p class="muted" style="margin-bottom:14px">Free, private, no sign-up.</p>
+      <a class="btn" href="app.html">Open the checker</a>
+    </div>
+  </article>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap foot-grid">
+    <div><div class="brand"><span class="n">Naturable</span><span class="d">.app</span></div><p class="muted" style="margin-top:8px;font-size:14px">Make your writing naturally human.</p></div>
+    <div><h4>Product</h4><a href="app.html">Checker</a><a href="how-it-works.html">How it works</a><a href="pricing.html">Pricing</a></div>
+    <div><h4>Learn</h4><a href="learn/index.html">All articles</a><a href="learn/do-ai-humanizers-work.html">Do AI humanizers work?</a><a href="learn/what-is-perplexity-and-burstiness.html">Perplexity &amp; burstiness</a></div>
+    <div><h4>Company</h4><a href="about.html">About</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
+  </div>
+  <div class="wrap foot-bottom"><span>© 2026 Naturable</span><span>Runs on Cloudflare · Free tier processes text in your browser</span></div>
+</footer>
+<script src="assets/engine.js?v=20260712-p1"></script>
+<script src="/assets/locale-pages.js?v=20260712-l1"></script>
+</body>
+</html>

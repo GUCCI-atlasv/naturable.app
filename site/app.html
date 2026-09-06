@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Writing Checker — Naturable</title>
+<meta name="description" content="Paste your text and instantly see AI tells with fixes. Free, private, runs entirely in your browser.">
+<link rel="canonical" href="https://naturable.app/app.html">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="AI Writing Checker — Naturable">
+<meta property="og:description" content="See AI tells in your writing and how to fix them. Free & private.">
+<meta property="og:url" content="https://naturable.app/app.html">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#F0EEE6">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v=20260712-v2">
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap nav">
+    <a class="brand" href="index.html"><span class="n">Naturable</span><span class="d">.app</span></a>
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="Menu">☰</button>
+    <nav class="links">
+      <a href="app.html">Checker</a>
+      <a href="how-it-works.html">How it works</a>
+      <a href="learn/index.html">Learn</a>
+      <a href="pricing.html">Pricing</a>
+      <a class="btn-sm" href="app.html">Try free</a>
+      <select id="ui-language" class="nav-select" aria-label="Interface language"><option value="en">EN</option><option value="zh-CN">简中</option></select>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" style="padding-top:28px">
+  <h1 style="font-size:30px;margin-bottom:6px" data-i18n="editorTitle">Natural writing editor</h1>
+  <p class="muted" style="margin-bottom:22px">Check → edit → compare → recheck. Free, private, and entirely in your browser.</p>
+
+  <div class="checker">
+    <div class="doc-toolbar" aria-label="Document settings">
+      <label>Input language <select id="input-language"><option value="auto">Auto</option><option value="en">English</option><option value="zh">简体中文 · Beta</option></select></label>
+      <label>Writing purpose <select id="purpose"><option value="general">General</option><option value="email">Email</option><option value="blog">Blog</option><option value="academic">Academic</option><option value="marketing">Marketing</option><option value="social">Social</option><option value="technical">Technical</option></select></label>
+      <span id="detected-language" class="meta-pill">English</span><span id="text-count" class="meta-pill">0 words</span>
+      <span id="save-status" class="save-status">Saved locally</span>
+    </div>
+    <div class="stats" id="scores">
+      <div class="stat"><div class="lab">Naturalness score</div><div class="big">—</div><div class="bar"><i></i></div></div>
+      <div class="stat"><div class="lab">Strong issues</div><div class="big">—</div></div>
+      <div class="stat"><div class="lab">Sentence rhythm</div><div class="big">—</div><div class="bar"><i></i></div></div>
+    </div>
+    <div id="recheck-summary" class="recheck-summary" hidden></div>
+    <div class="mobile-tabs" role="tablist"><button data-tab="edit" class="active">Edit</button><button data-tab="issues">Issues</button><button data-tab="compare">Compare</button></div>
+    <div class="editor">
+      <div class="pane">
+        <div class="pane-title"><h3>Your text</h3><span id="dirty-state" class="dirty-state" hidden>Content changed</span></div>
+        <textarea id="input" placeholder="Paste or write your draft here..." aria-label="Editable draft"></textarea>
+        <div class="tool-btns">
+          <button id="check-btn" class="btn" onclick="naturable.analyze()">Check</button>
+          <button class="btn sec" onclick="naturable.autofix()">Fix safe issues</button>
+          <button class="btn sec" onclick="naturable.loadSample()">Sample</button>
+          <button class="btn sec" onclick="naturable.undo()">Undo</button>
+          <button class="btn sec" onclick="naturable.redo()">Redo</button>
+          <button class="btn sec" onclick="naturable.restoreBaseline()">Restore baseline</button>
+          <button class="btn sec" onclick="naturable.copyResult()">Copy</button>
+          <button class="btn sec" onclick="naturable.clearText()">Clear</button>
+        </div>
+      </div>
+      <div class="pane">
+        <h3>Highlighted</h3>
+        <div class="legend"><b class="r">!</b> strong issue · <b class="y">i</b> suggestion · select a highlight for context</div>
+        <div id="render"><span class="empty">Highlighted output appears here.</span></div>
+      </div>
+    </div>
+    <p id="checker-notice" class="checker-notice" hidden></p>
+    <div class="issuesbox" id="issues-panel">
+      <div class="section-title"><h3>Writing patterns</h3><button class="text-button" onclick="naturable.restoreIgnored()">Restore ignored</button></div>
+      <div id="issues"><div class="empty">Run Check to see flagged patterns and suggestions.</div></div>
+    </div>
+    <div class="issuesbox comparebox" id="compare-panel">
+      <div class="section-title"><h3>Before / After</h3><button class="text-button" onclick="naturable.copySummary()">Copy changes summary</button></div>
+      <div id="diff-summary" class="diff-summary"></div>
+      <div id="diff-render" class="diff-render"><span class="empty">Make an edit after checking to compare changes.</span></div>
+    </div>
+  </div>
+
+  <p class="muted center" style="font-size:13px;margin-top:22px">Heuristic writing guidance, not an AI authorship verdict. Your text, baseline, and changes stay in this browser.</p>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap foot-grid">
+    <div>
+      <div class="brand"><span class="n">Naturable</span><span class="d">.app</span></div>
+      <p class="muted" style="margin-top:8px;font-size:14px">Make your writing naturally human.</p>
+    </div>
+    <div><h4>Product</h4><a href="app.html">Checker</a><a href="how-it-works.html">How it works</a><a href="pricing.html">Pricing</a></div>
+    <div><h4>Learn</h4><a href="learn/index.html">All articles</a><a href="learn/do-ai-humanizers-work.html">Do AI humanizers work?</a><a href="learn/what-is-perplexity-and-burstiness.html">Perplexity &amp; burstiness</a></div>
+    <div><h4>Company</h4><a href="about.html">About</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© 2026 Naturable</span>
+    <span>Runs on Cloudflare · Free tier processes text in your browser</span>
+  </div>
+</footer>
+<script src="assets/engine.js?v=20260712-v2"></script>
+</body>
+</html>

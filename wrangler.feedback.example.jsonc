@@ -1,0 +1,26 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "naturable-feedback",
+  "main": "workers/feedback.js",
+  "compatibility_date": "2026-07-13",
+  "routes": [
+    {
+      "pattern": "naturable.app/api/feedback*",
+      "zone_name": "naturable.app"
+    }
+  ],
+  "analytics_engine_datasets": [
+    {
+      "binding": "FEEDBACK_ANALYTICS",
+      "dataset": "naturable_rule_feedback"
+    }
+  ],
+  "send_email": [
+    {
+      "name": "FEEDBACK_EMAIL",
+      "destination_address": "your-verified-email@example.com",
+      "allowed_sender_addresses": ["feedback@naturable.app"]
+    }
+  ]
+}
+

@@ -1,0 +1,14 @@
+.DS_Store
+.next/
+node_modules/
+out/
+.wrangler/
+.codex-tmp/
+
+.env
+.env.*
+!.env.example
+
+*.log
+wrangler.feedback.jsonc
+
