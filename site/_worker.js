@@ -65,6 +65,9 @@ export default {
       }
       return Response.redirect(url.toString(), isRoot ? 302 : 308);
     }
+    if (url.pathname === "/zh" || url.pathname === "/zh/") {
+      return Response.redirect(`${url.origin}/zh-cn/`, 308);
+    }
     if (url.pathname === "/") {
       return Response.redirect(`${url.origin}/${locale}/`, 302);
     }

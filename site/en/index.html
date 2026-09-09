@@ -4,8 +4,8 @@
 <base href="/">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Naturable — Free AI Writing Checker | Make Your Writing Sound Human</title>
-<meta name="description" content="Naturable is a free AI writing checker. Paste your text and instantly see the AI tells — robotic phrasing, filler, and clichés — with clear fixes. Runs in your browser. No sign-up.">
+<title>Naturable — Strip AI Writing Style | Local &amp; Private for Blog, Email &amp; Marketing</title>
+<meta name="description" content="Naturable helps blog, email, and marketing writers remove GPT-ish tone — robotic phrasing, filler, and clichés. Runs locally in your browser. No cloud upload. No sign-up.">
 <link rel="canonical" href="https://naturable.app/en/">
 <link rel="alternate" hreflang="en" href="https://naturable.app/en/">
 <link rel="alternate" hreflang="zh-CN" href="https://naturable.app/zh-cn/">
@@ -14,13 +14,13 @@
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Naturable">
-<meta property="og:title" content="Naturable — Free AI Writing Checker">
-<meta property="og:description" content="Paste your text and instantly see the AI tells, with clear fixes. Free, private, runs in your browser.">
+<meta property="og:title" content="Naturable — Remove AI Writing Style, Locally">
+<meta property="og:description" content="For blog, email, and marketing copy. Strip robotic AI phrasing privately in your browser — nothing uploaded.">
 <meta property="og:url" content="https://naturable.app/">
 <meta property="og:image" content="https://naturable.app/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Naturable — Free AI Writing Checker">
-<meta name="twitter:description" content="See the AI tells in your writing and how to fix them. Free & private.">
+<meta name="twitter:title" content="Naturable — Remove AI Writing Style, Locally">
+<meta name="twitter:description" content="Blog, email, and marketing writers: remove GPT-ish tone locally. Free &amp; private.">
 <meta name="theme-color" content="#F0EEE6">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="manifest" href="site.webmanifest">
@@ -35,7 +35,7 @@
   "applicationCategory":"BusinessApplication",
   "operatingSystem":"Web",
   "url":"https://naturable.app/",
-  "description":"A free AI writing checker that highlights AI tells in text and suggests fixes. Runs in the browser.",
+  "description":"A free local writing checker for blog, email, and marketing writers. Highlights AI-style phrasing and suggests fixes — runs in the browser with no cloud upload.",
   "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
   "aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","ratingCount":"312"}
 }
@@ -47,7 +47,7 @@
   "mainEntity":[
     {"@type":"Question","name":"Is Naturable free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Checking, highlighting, and rule-based quick fixes are free and unlimited. Pro pricing is being tested and is not yet open."}},
     {"@type":"Question","name":"Does my text get uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. The current free checker runs entirely in your browser. Planned Pro processing is not yet open."}},
-    {"@type":"Question","name":"Does Naturable help bypass AI detectors?","acceptedAnswer":{"@type":"Answer","text":"Naturable is a writing-quality tool. It removes robotic phrasing so your writing reads naturally. It is not sold as a way to beat any specific detector."}},
+    {"@type":"Question","name":"Who is Naturable for?","acceptedAnswer":{"@type":"Answer","text":"Blog, email, and marketing writers who want drafts that sound human — not AI-generated. It improves writing quality for those audiences; it is not positioned as a detector-bypass tool."}},
     {"@type":"Question","name":"What are AI tells?","acceptedAnswer":{"@type":"Answer","text":"Recurring patterns typical of AI writing — em-dash overuse, filler phrases, clichés like 'a testament to', the 'rule of three', chatbot leftovers, and uniform sentence rhythm."}}
   ]
 }
@@ -72,14 +72,14 @@
 <main>
   <!-- HERO -->
   <section class="hero wrap">
-    <span class="tag-note">Free · runs in your browser · no sign-up</span>
-    <h1>Make every draft sound naturally <em>yours.</em></h1>
-    <p class="lead">Check mechanical writing patterns, edit each suggestion, compare the change, and recheck — in English or 简体中文.</p>
+    <span class="tag-note">Local · private · no cloud upload</span>
+    <h1>Strip the GPT tone. Keep <em>your</em> voice.</h1>
+    <p class="lead">Built for blog posts, emails, and marketing copy. Spot robotic phrasing, fix it in place, and never upload a draft — English or 简体中文.</p>
     <div class="cta">
       <a class="btn" href="#checker">Check your text</a>
       <a class="btn sec" href="how-it-works.html">How it works</a>
     </div>
-    <div class="trust">Trusted by writers, marketers, and non-native English speakers.</div>
+    <div class="trust">For blog writers, email marketers, and copy teams who care about privacy.</div>
   </section>
 
   <!-- CHECKER -->
@@ -87,7 +87,7 @@
     <div class="checker">
       <div class="doc-toolbar" aria-label="Document settings">
         <label>Input language <select id="input-language"><option value="auto">Auto</option><option value="en">English</option><option value="zh">简体中文 · Beta</option></select></label>
-        <label>Writing purpose <select id="purpose"><option value="general">General</option><option value="email">Email</option><option value="blog">Blog</option><option value="academic">Academic</option><option value="marketing">Marketing</option><option value="social">Social</option><option value="technical">Technical</option></select></label>
+        <label>Writing purpose <select id="purpose"><option value="blog" selected>Blog</option><option value="email">Email</option><option value="marketing">Marketing</option><option value="general">General</option><option value="academic">Academic</option><option value="social">Social</option><option value="technical">Technical</option></select></label>
         <span id="detected-language" class="meta-pill">English</span><span id="text-count" class="meta-pill">0 words</span><span id="save-status" class="save-status">Saved locally</span>
       </div>
       <div class="stats" id="scores">
@@ -151,7 +151,7 @@
       <div class="feat"><div class="ic">🔒</div><h3>Private by default</h3><p>Your text stays in your browser. We can't read what we never receive.</p></div>
       <div class="feat"><div class="ic">🔎</div><h3>Transparent</h3><p>Not a black box. Every flag tells you the pattern, why it matters, and the fix.</p></div>
       <div class="feat"><div class="ic">📏</div><h3>Measured</h3><p>An explainable naturalness score across clarity, specificity, rhythm, structure, and artifacts.</p></div>
-      <div class="feat"><div class="ic">✍️</div><h3>For everyone</h3><p>Blogs, emails, essays, marketing copy — general-purpose, not niche.</p></div>
+      <div class="feat"><div class="ic">✍️</div><h3>For blog, email &amp; marketing</h3><p>Purpose weights default to Blog — then Email and Marketing — so everyday shipping copy stays natural.</p></div>
       <div class="feat"><div class="ic">✨</div><h3>AI when you want it</h3><p>Pro AI rewrites and voice matching are currently being tested and are not yet open.</p></div>
     </div>
   </section>
@@ -170,7 +170,7 @@
     <div class="faq" style="margin-top:26px">
       <details open><summary>Is Naturable free?</summary><p>Yes. Checking, highlighting, and rule-based quick fixes are completely free and unlimited, with no sign-up. Pro pricing is being tested and is not yet open.</p></details>
       <details><summary>Does my text get uploaded?</summary><p>No. The current free checker runs entirely in your browser. Planned Pro processing is still being tested and is not yet open.</p></details>
-      <details><summary>Does this help me bypass AI detectors?</summary><p>Naturable is a writing-quality tool that removes robotic phrasing so your writing reads naturally. It is not sold as a way to beat any specific detector, and no tool can reliably guarantee that.</p></details>
+      <details><summary>Who is Naturable for?</summary><p>Blog, email, and marketing writers who want drafts that sound human — not AI-generated. We focus on writing quality for those audiences, not academic detector games or bypass claims.</p></details>
       <details><summary>What exactly is an "AI tell"?</summary><p>A recurring pattern typical of AI writing: em-dash overuse, filler phrases, clichés like "a testament to", the "rule of three", chatbot leftovers, and uniform sentence rhythm. See <a href="learn/how-to-remove-ai-tells.html">the full list</a>.</p></details>
     </div>
   </section>
@@ -180,7 +180,7 @@
   <div class="wrap foot-grid">
     <div>
       <div class="brand"><span class="n">Naturable</span><span class="d">.app</span></div>
-      <p class="muted" style="margin-top:8px;font-size:14px">Make your writing naturally human.</p>
+      <p class="muted" style="margin-top:8px;font-size:14px">Blog, email, and marketing copy — human tone, local privacy.</p>
     </div>
     <div><h4>Product</h4><a href="app.html">Checker</a><a href="how-it-works.html">How it works</a><a href="pricing.html">Pricing</a></div>
     <div><h4>Learn</h4><a href="learn/index.html">All articles</a><a href="learn/do-ai-humanizers-work.html">Do AI humanizers work?</a><a href="learn/what-is-perplexity-and-burstiness.html">Perplexity &amp; burstiness</a></div>
@@ -192,6 +192,6 @@
   </div>
 </footer>
 <script src="assets/engine.js?v=20260712-v2"></script>
-<script src="/assets/locale-pages.js?v=20260712-l1"></script>
+<script src="/assets/locale-pages.js?v=20260712-p0"></script>
 </body>
 </html>
