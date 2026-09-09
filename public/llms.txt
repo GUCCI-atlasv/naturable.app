@@ -1,0 +1,24 @@
+# Naturable
+
+> Local privacy writing tool for blog, email, and marketing drafts.
+
+Naturable is a browser-local natural writing editor for English and Simplified Chinese. It highlights mechanical AI-style patterns and helps writers revise in place. Free checking does not upload drafts to the cloud.
+
+## Key URLs
+
+- https://naturable.app/en/
+- https://naturable.app/zh-cn/
+- https://naturable.app/en/app/
+- https://naturable.app/zh-cn/app/
+- https://naturable.app/en/learn/
+- https://naturable.app/zh-cn/learn/
+- https://naturable.app/en/learn/remove-ai-writing-style/
+- https://naturable.app/zh-cn/learn/remove-ai-writing-style/
+- https://naturable.app/en/how-it-works/
+- https://naturable.app/en/pricing/
+- https://naturable.app/en/privacy/
+
+## What it is / is not
+
+- Is: on-device pattern checks for clearer blog, email, and marketing copy
+- Is not: an AI-detector bypass product, a guaranteed humanizer, or a cloud rewrite service

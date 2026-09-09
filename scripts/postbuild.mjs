@@ -1,6 +1,7 @@
 import fs from "node:fs";
 fs.copyFileSync("site/_worker.js","out/_worker.js");
 fs.copyFileSync("site/robots.txt","out/robots.txt");
+if(fs.existsSync("public/llms.txt"))fs.copyFileSync("public/llms.txt","out/llms.txt");
 
 const origin="https://naturable.app";
 const locales=["en","zh-cn"];
