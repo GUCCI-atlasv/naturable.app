@@ -4,7 +4,7 @@ fs.copyFileSync("site/robots.txt","out/robots.txt");
 
 const origin="https://naturable.app";
 const locales=["en","zh-cn"];
-const paths=["","app","how-it-works","pricing","about","privacy","terms","learn","learn/how-to-remove-ai-tells","learn/what-is-perplexity-and-burstiness","learn/do-ai-humanizers-work","learn/common-patterns-in-chinese-ai-copy","learn/make-a-stiff-email-more-direct","learn/replace-claims-with-evidence"];
+const paths=["","app","how-it-works","pricing","about","privacy","terms","learn","learn/remove-ai-writing-style","learn/how-to-remove-ai-tells","learn/what-is-perplexity-and-burstiness","learn/do-ai-humanizers-work","learn/common-patterns-in-chinese-ai-copy","learn/make-a-stiff-email-more-direct","learn/replace-claims-with-evidence"];
 const lastmod="2026-09-09";
 const escapeXml=value=>value.replaceAll("&","&amp;").replaceAll('"',"&quot;").replaceAll("<","&lt;").replaceAll(">","&gt;");
 const absolute=(locale,path)=>`${origin}/${locale}/${path?`${path}/`:""}`;

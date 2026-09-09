@@ -12,7 +12,7 @@ const assert = (condition, message) => {
 
 const sitemap = fs.readFileSync(sitemapPath, "utf8");
 const locations = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]);
-assert(locations.length === 28, `Expected 28 sitemap URLs, found ${locations.length}.`);
+assert(locations.length === 30, `Expected 30 sitemap URLs, found ${locations.length}.`);
 assert(new Set(locations).size === locations.length, "Sitemap contains duplicate URLs.");
 
 for (const location of locations) {

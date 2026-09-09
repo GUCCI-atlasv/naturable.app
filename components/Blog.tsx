@@ -1,8 +1,73 @@
 import Link from "next/link";
 import type {Locale} from "@/lib/content";
 
-type Article={slug:string;topic:string;title:string;description:string;readTime:string;keywords:string[];body:React.ReactNode};
+type Article={slug:string;topic:string;title:string;description:string;readTime:string;keywords:string[];body:React.ReactNode;datePublished?:string;dateModified?:string;updatedLabel?:string};
 const en:Article[]=[
+ {slug:"remove-ai-writing-style",topic:"AI writing style",title:"How to Remove AI Writing Style Without Uploading Your Draft",description:"Remove AI writing style — throat-clearing openers, empty intensifiers, template contrasts — with a local pass. No cloud upload. Built for blog, email, and marketing.",readTime:"8 min read",keywords:["remove ai writing style","AI writing style","remove GPT tone","local AI writing editor","AI writing patterns","natural writing without uploading"],datePublished:"2026-09-09",dateModified:"2026-09-09",updatedLabel:"Updated September 9, 2026",body:<>
+<p>Bloggers, email writers, and marketing teams keep hitting the same wall: the draft is done, but it still sounds like every other ChatGPT post. You do not need a cloud “humanizer” that uploads the text. You need to remove AI writing style — the mechanical patterns — while the draft stays on your machine.</p>
+<h2>What “AI writing style” actually looks like</h2>
+<p>It is not “any sentence a model wrote.” It is a small set of habits:</p>
+<ul>
+<li>Throat-clearing openers (“Great question!”, “In today’s digital landscape…”)</li>
+<li>Empty intensifiers (<em>robust</em>, <em>pivotal</em>, <em>leverage</em>, <em>potentially</em>)</li>
+<li>Template contrasts (“not just a tool, it’s a pivotal shift”)</li>
+<li>Even sentence length and always-sunny endings (“The future looks bright. I hope this helps!”)</li>
+</ul>
+<p>Readers get tired of the template, not of “machines” in the abstract.</p>
+<h3>Before / after (blog sample)</h3>
+<p><strong>Before:</strong><br/>Great question! In today's digital landscape, experts believe this robust technology is not just a tool, it's a pivotal shift. In order to leverage it, teams could potentially rethink their work. The future looks bright. I hope this helps!</p>
+<p><strong>After:</strong><br/>Most teams still paste the same three-paragraph outline into every post. Last week we cut one client email from 420 words to 180 by killing the opener and putting the ask in sentence one — open rate didn't move; reply rate did.</p>
+<p>Same topic space. The second version has a point of view, a number, and uneven rhythm.</p>
+<h2>How to remove AI writing style without uploading</h2>
+<h3>1. Manual pass (five minutes)</h3>
+<ol>
+<li>Delete the first sentence of most paragraphs.</li>
+<li>Ban a short list of stock words for this draft.</li>
+<li>Force uneven length: at least two sentences under five words, one over twenty-five.</li>
+<li>Add one concrete detail (name, number, date, client-safe fact).</li>
+<li>Take a position; cut the balanced “on the one hand” ending.</li>
+</ol>
+<h3>2. Local pattern check (optional, still no upload)</h3>
+<p>If you want a second pair of eyes that does not send the draft to a server, run the text through a browser-local tool such as <a href="/en/">Naturable</a>. It flags mechanical patterns, lets you accept or edit each suggestion, shows before/after, then rechecks — English and Chinese on separate rule tracks. Processing stays in the browser; there is no account wall for core use.</p>
+<p>Use Writing purpose <strong>Blog</strong>, <strong>Email</strong>, or <strong>Marketing</strong> so the weights match the job. Do not treat “pass an AI detector” as the success metric. Sound like yourself.</p>
+<p><strong>Naturable — highlighted patterns (EN):</strong></p>
+<figure className="blog-figure">
+<img src="/assets/blog/highlight-patterns.png" alt="Naturable highlighting GPT-ish filler and template phrases in the editor" width="1200" height="750" loading="lazy"/>
+<figcaption>Naturalness score, writing issues, and sentence rhythm stay on-device. Red/amber marks call out openers, empty intensifiers, and sunny closers — you decide what to keep.</figcaption>
+</figure>
+<p><strong>After a safe fix — Before / After panel:</strong></p>
+<figure className="blog-figure">
+<img src="/assets/blog/before-after-safe-fix.png" alt="Naturable Before/After panel after removing Great question!" width="1200" height="750" loading="lazy"/>
+<figcaption>One pass can drop the throat-clearing opener; the rest is still yours to rewrite with specifics.</figcaption>
+</figure>
+<h2>Local cleanup vs cloud humanizers</h2>
+<table>
+<thead><tr><th></th><th>Local (e.g. Naturable)</th><th>Cloud humanizer / paraphraser</th></tr></thead>
+<tbody>
+<tr><td>Upload draft?</td><td>No</td><td>Usually yes</td></tr>
+<tr><td>Edits</td><td>Pattern flags you control</td><td>Often one-shot rewrite</td></tr>
+<tr><td>Best for</td><td>Privacy-sensitive blog/email/marketing</td><td>Fast bulk rewrite when upload is fine</td></tr>
+<tr><td>Wrong goal</td><td>Detector theater</td><td>Detector theater</td></tr>
+</tbody>
+</table>
+<p>QuillBot-style paraphrasers polish wording. Undetectable-style products rewrite for “human scores.” Both typically need your text on their servers. If the draft is a client email or an unreleased post, that is the decision — not which buzzword ranks higher.</p>
+<h2>A 10-minute workflow for blog, email, and marketing</h2>
+<ol>
+<li>Paste the draft into a local editor or <a href="/en/">Naturable</a>.</li>
+<li>Set purpose: Blog / Email / Marketing.</li>
+<li>Clear safe pattern hits.</li>
+<li>Hand-fix anything that still sounds generic; keep your facts.</li>
+<li>Recheck once.</li>
+<li>Export and ship.</li>
+</ol>
+<p>That is enough to remove AI writing style for most short posts and emails without an AI writing humanizer that lives in the cloud.</p>
+<h2>FAQ</h2>
+<p><strong>Can I do this fully offline?</strong><br/>After the page is cached, a browser-local tool can keep working without sending the draft out. Confirm in your network panel if you need to prove it.</p>
+<p><strong>Does Chinese use the same blacklist?</strong><br/>No. English buzzword lists do not equal Chinese “套话.” Separate rules matter. See also <a href="/zh-cn/">Naturable 中文</a>.</p>
+<p><strong>Will this make the text “undetectable”?</strong><br/>Wrong question for blog and email writers. The goal is readable voice and specifics — not gaming a detector.</p>
+<p>Try a local pass on <a href="/en/">naturable.app</a> — private, no sign-up.</p>
+</>},
+
  {slug:"how-to-remove-ai-tells",topic:"AI writing patterns",title:"How to remove AI writing tells without losing your voice",description:"A practical editing checklist for removing AI writing tells, generic wording, formulaic sentences, vague evidence, and assistant chatter.",readTime:"7 min read",keywords:["AI writing tells","remove AI writing","AI writing patterns","make AI text sound human","natural writing editor"],body:<><p>AI writing tells are repeated choices that make a draft feel generic, mechanical, or detached from its subject. They are not proof that AI wrote the text. They are editing signals: vague claims, polished filler, uniform sentence shapes, and conclusions that sound important without saying anything testable.</p><h2>1. Remove assistant chatter and empty framing</h2><p>Delete phrases such as “Great question,” “I hope this helps,” and “It is important to note that.” A document should begin with its point, not with language left over from a chat interface.</p><h2>2. Replace generic AI vocabulary</h2><p>Words such as <em>robust</em>, <em>pivotal</em>, <em>leverage</em>, and <em>delve</em> are not always wrong. The problem is that they often replace a concrete action. Instead of “leverage a robust platform,” write what the team did and what changed: “The support team used the dashboard to cut response time by 18%.”</p><h2>3. Break formulaic sentence patterns</h2><p>Watch for repeated “not only … but also,” identical paragraph openings, and a sequence of “first, furthermore, finally.” Keep transitions only when they explain a real relationship between ideas.</p><h2>4. Name the evidence</h2><p>Replace “experts believe” and “studies show” with a named source, date, and finding. If no source is available, rewrite the sentence as your own clearly bounded observation.</p><h2>5. End with a result or next step</h2><p>Conclusions such as “the future looks bright” add confidence without information. Finish with the decision, result, risk, or action the reader needs.</p><h2>Quick editing checklist</h2><ul><li>Can every broad adjective be tied to a fact?</li><li>Does each transition express a real connection?</li><li>Are sources identifiable and verifiable?</li><li>Do sentence lengths follow the meaning rather than a template?</li><li>Does the ending give the reader something concrete?</li></ul></>},
  {slug:"what-is-perplexity-and-burstiness",topic:"Writing metrics",title:"Perplexity and burstiness in writing: what the metrics really mean",description:"Learn what perplexity and burstiness measure, why AI detectors use them, their limitations, and how to improve sentence rhythm naturally.",readTime:"6 min read",keywords:["perplexity and burstiness","perplexity in writing","burstiness in writing","AI detection metrics","sentence rhythm"],body:<><p>Perplexity and burstiness are statistical lenses often mentioned in discussions of AI-generated text. They can describe properties of writing, but neither metric can identify an author on its own.</p><h2>What is perplexity?</h2><p>Perplexity describes how predictable a sequence of words is to a language model. Familiar phrases and common word combinations tend to be easier to predict. A lower value does not automatically mean “written by AI,” and a higher value does not automatically mean “human.” Topic, genre, language ability, quotations, and technical terminology all affect predictability.</p><h2>What is burstiness?</h2><p>Burstiness describes variation across a text. In writing tools, it often refers to changes in sentence length, structure, or pacing. A paragraph made of six equally sized sentences can feel mechanical; a paragraph with deliberate short and long sentences may feel more dynamic.</p><h2>Why these metrics cannot prove authorship</h2><p>A careful human writer may produce predictable prose. An AI-assisted draft can contain wide sentence variation. Editing, translation, templates, and subject matter can move both metrics. That is why a naturalness score should be treated as guidance, not an AI authorship probability.</p><h2>How to improve rhythm without gaming a detector</h2><p>Do not insert rare words or random sentence fragments. Group related details, shorten the sentence that carries the main decision, and use a longer sentence when the relationship between ideas needs explanation. Rhythm should follow meaning.</p><h2>A better review question</h2><p>Instead of asking whether the score looks human, ask whether the reader can follow the argument, verify the evidence, and recognize the writer’s judgment.</p></>},
  {slug:"do-ai-humanizers-work",topic:"Responsible AI editing",title:"Do AI humanizers work? Benefits, risks, and a better workflow",description:"An honest guide to AI humanizers, detector claims, rewriting risks, and a transparent way to make AI-assisted writing clearer and more natural.",readTime:"7 min read",keywords:["do AI humanizers work","AI humanizer","humanize AI text","AI detector bypass","AI rewriting tool"],body:<><p>AI humanizers can improve a draft, but not for the reason many products advertise. Surface rewriting may remove repetitive phrases and vary sentence length. It cannot reliably prove human authorship or guarantee a result from an AI detector.</p><h2>Where an AI humanizer can help</h2><p>A useful tool can point out assistant chatter, vague wording, overused transitions, and repeated sentence patterns. These are ordinary editing problems. Fixing them can make a document clearer regardless of how the first draft was produced.</p><h2>Where black-box rewriting fails</h2><p>Whole-document rewriting can alter facts, weaken technical terms, introduce awkward synonyms, and erase the writer’s intent. A lower detector score is not evidence that the new version is more accurate or more natural.</p><h2>Why detector guarantees are unreliable</h2><p>Detection systems change, disagree with one another, and can misclassify translated, academic, concise, or second-language writing. Promising a guaranteed bypass encourages writers to optimize for an unstable score rather than their audience.</p><h2>A transparent humanization workflow</h2><ol><li>Keep the original draft as a baseline.</li><li>Identify specific writing patterns rather than rewriting everything.</li><li>Apply only changes you understand.</li><li>Check names, numbers, citations, and technical meaning.</li><li>Compare the revision with the baseline and recheck.</li></ol><p>The goal is not to disguise authorship. It is to produce clear, specific writing that the author can defend.</p></>},
@@ -12,21 +77,86 @@ const en:Article[]=[
 ];
 
 const zh:Article[]=[
- {...en[0],topic:"AI 写作",title:"怎样改掉明显的“AI 腔”，又不丢掉自己的表达",description:"从套话、泛化用词、模板句式、模糊来源和助手寒暄入手，逐项修改 AI 辅助写作。",readTime:"7 分钟",keywords:["AI 腔","去除 AI 写作痕迹","AI 写作修改","自然中文写作"],body:<><p>所谓“AI 腔”，通常不是某一个词造成的，而是套话、过度圆滑的句子、模糊论据和模板结尾叠加在一起。它不能证明作者是谁，却能提醒我们哪些地方值得重写。</p><h2>先删助手寒暄和空洞开场</h2><p>“希望这对你有所帮助”“值得注意的是”不属于正文。直接进入事实、判断或请求，信息会更清楚。</p><h2>把宽泛词换成动作和结果</h2><p>不要只写“赋能企业、打造生态、重塑体验”。写清楚谁做了什么，以及结果如何。例如：“客服团队用统一看板处理工单，平均响应时间缩短了 18%。”</p><h2>打散模板化句式</h2><p>连续使用“首先、其次、此外”，或反复出现“不仅……更……”，会让段落像自动生成的提纲。根据因果、对比和轻重关系重新排序。</p><h2>让论据可以核实</h2><p>“研究表明”和“专家认为”后面需要机构、作者、时间或链接。找不到来源时，就把它改成范围明确的个人观察。</p><h2>用具体结论收尾</h2><p>“未来可期”“开启新篇章”没有提供下一步。结尾应落在决定、结果、风险或行动上。</p><h2>改稿检查表</h2><ul><li>宽泛形容词是否有事实支持？</li><li>连接词是否真的说明了逻辑关系？</li><li>来源能否被读者核实？</li><li>结尾是否给出明确行动？</li></ul></>},
- {...en[1],topic:"写作指标",title:"困惑度和句子变化是什么？别把指标当成 AI 鉴定",description:"理解写作中的困惑度、Burstiness 和句子节奏，了解 AI 检测指标能说明什么、又不能证明什么。",readTime:"6 分钟",keywords:["困惑度","Burstiness","AI 检测指标","句子节奏","AI 写作判断"],body:<><p>困惑度和 Burstiness 经常出现在 AI 检测讨论里。它们可以描述文字的统计特征，但都不能单独证明作者身份。</p><h2>困惑度是什么</h2><p>困惑度大致反映一段词序对语言模型来说有多好预测。常见搭配通常更容易预测，但题材、文体、术语、引用和作者语言水平都会影响结果。</p><h2>Burstiness 是什么</h2><p>在写作工具中，它通常观察句子长度、结构和节奏的变化。六个长度相近、结构一致的句子容易显得机械；长短句根据内容自然变化，阅读节奏会更清楚。</p><h2>为什么不能据此鉴定作者</h2><p>认真编辑的人类作者也可能写出高度可预测的文字；AI 辅助文本经过修改后也可能变化很大。翻译、模板和专业题材都会改变指标。</p><h2>怎样自然改善节奏</h2><p>不要为了分数硬塞生僻词或句子碎片。把主要决定写短，把需要解释的关系写完整，让节奏跟着信息重点变化。</p><h2>更有用的问题</h2><p>与其问“分数像不像真人”，不如问：读者能不能跟上论证、核实依据，并看出作者自己的判断。</p></>},
- {...en[2],topic:"理性使用 AI",title:"AI Humanizer 真的有用吗？效果、风险和更可靠的流程",description:"客观看待 AI Humanizer、AI 检测规避承诺和整篇重写风险，学习透明、可控的自然化改稿方法。",readTime:"7 分钟",keywords:["AI Humanizer","AI 文本自然化","AI 检测规避","AI 改写工具"],body:<><p>AI Humanizer 有时能改善文字，但并不是因为它可以可靠“骗过检测”。换词和调整句长可以减少部分套话，却无法证明真人创作，也不能保证任何检测结果。</p><h2>它在哪些地方有帮助</h2><p>好的工具能指出助手寒暄、模糊用词、过度连接词和重复句式。这些本来就是普通的编辑问题，修好后文字会更清楚。</p><h2>黑盒重写有什么风险</h2><p>整篇自动重写可能改坏事实、弱化专业术语、引入别扭同义词，也可能抹掉作者原本的判断。检测分数降低，不代表内容更准确。</p><h2>为什么不能承诺通过检测</h2><p>不同检测器经常互相矛盾，而且会误判翻译文本、学术写作、简洁表达和非母语写作。追逐不稳定的分数，容易让文字偏离真正读者。</p><h2>更透明的修改流程</h2><ol><li>保留原稿作为对照。</li><li>定位具体表达问题，不整篇盲改。</li><li>只接受自己理解的修改。</li><li>复核姓名、数字、引用和专业含义。</li><li>查看前后差异，再检查一次。</li></ol></>},
- {...en[3],topic:"中文写作",title:"中文 AI 文案的常见套路，以及怎样改得更自然",description:"识别中文 AI 文案中的元话语、宣传动词、机械连接词、模板递进、模糊来源和意义拔高。",readTime:"7 分钟",keywords:["中文 AI 文案","中文 AI 腔","AI 文案修改","自然中文表达"],body:<><p>中文 AI 文案有自己的套路，不能照搬英文修改方法。问题往往不在语法，而在正式空话、宣传动词、对称句式和意义拔高不断叠加。</p><h2>拖延重点的元话语</h2><p>“值得注意的是、毋庸置疑的是、不可否认的是”只是在宣布重要。删掉外壳，直接写事实。</p><h2>没有动作的宣传动词</h2><p>“赋能、助力、打造、构建、引领、重塑”容易遮住真正动作。补上行动主体、具体动作和可衡量结果。</p><h2>机械连接词</h2><p>每段都按照“首先、其次、此外、最后”推进，会像自动生成的提纲。改用因果、对比、时间或优先级组织信息。</p><h2>模板化递进和意义拔高</h2><p>连续使用“不仅……更……”会让每句话都像口号。“开启新的篇章”也需要落到实际结果。</p><h2>修改示例</h2><p><strong>修改前：</strong>该平台将赋能企业数字化转型，开启高质量发展的新篇章。</p><p><strong>修改后：</strong>该平台把审批时间从三天缩短到一天，并让财务团队统一查看合同状态。</p></>},
- {...en[4],topic:"邮件写作",title:"怎样把一封生硬的邮件改得直接、清楚又专业",description:"删掉程式化客套，提前说明请求、负责人和截止时间，让商务邮件更直接、更容易执行。",readTime:"6 分钟",keywords:["商务邮件写作","邮件更直接","生硬邮件修改","专业邮件模板"],body:<><p>生硬的邮件常常让读者读完大半页，才找到真正请求。问题通常是客套过多、背景抽象、行动信息出现得太晚。</p><h2>前两句话就说明请求</h2><p>简单问候后直接写你需要什么。“请在周四前确认附件预算”比先解释一段规划工作的重要性更容易执行。</p><h2>用必要背景代替程式化客套</h2><p>专业不等于绕弯。保留礼貌，但删掉“冒昧打扰”“百忙之中拨冗”等模板句，写清截止时间和原因。</p><h2>明确负责人、动作和时间</h2><p>多人收件时，要说明谁需要回复，谁只是知会。日期最好带具体时间，避免“尽快”。</p><h2>修改示例</h2><p><strong>修改前：</strong>希望您一切安好。关于预算文件，烦请您在方便的时候拨冗审阅，不胜感激。</p><p><strong>修改后：</strong>请在周四下午 3 点前确认附件预算。我们需要在周五供应商会议前锁定最终金额。</p><h2>发送前检查</h2><ul><li>不滚动页面能否看到请求？</li><li>截止时间是否具体？</li><li>收件人是否知道怎样回复？</li></ul></>},
- {...en[5],topic:"营销写作",title:"营销文案别只喊口号：怎样用证据替代宽泛主张",description:"把创新、领先、无缝和赋能等宽泛营销主张，改成有数字、来源、客户结果和产品机制的可信文案。",readTime:"7 分钟",keywords:["营销文案","证据型文案","文案避免空话","可信营销写作"],body:<><p>当每个产品都“创新”，每套流程都“无缝”，每项结果都“颠覆”，读者只能被要求相信形容词。可信文案需要证据。</p><h2>找出形容词背后的主张</h2><p>看到“快速、简单、强大、领先”时，继续问：和什么相比、怎样衡量、对谁成立？</p><h2>选择最接近主张的证据</h2><p>产品行为、基准测试、客户结果、采用数量、独立研究和可核实引用都可以成为证据。不要用品牌口号支持功能结论。</p><h2>写清主体、动作和结果</h2><p>“平台赋能团队”没有说明机制。可以改成：“运营团队直接在 Slack 审批发票，审批时间中位数从 19 小时缩短到 6 小时。”</p><h2>诚实限定证据范围</h2><p>必要时写出样本、日期和条件。单个客户案例不能变成普遍承诺，“可以、通常、在本案例中”的边界并不削弱可信度。</p><h2>证据修改模板</h2><ul><li><strong>主张：</strong>希望读者相信什么？</li><li><strong>机制：</strong>哪个产品动作让它发生？</li><li><strong>证明：</strong>哪个数字、来源或案例支持它？</li><li><strong>边界：</strong>它在什么条件下成立？</li></ul></>}
+ {slug:"remove-ai-writing-style",topic:"去 AI 腔",title:"不上云，怎样去掉 AI 写作腔",description:"去掉开场套话、空洞强调词和模板对比句——草稿留在本地。面向博客、邮件与营销稿。",readTime:"8 分钟",keywords:["去掉 AI 写作腔","remove ai writing style","去 GPT 味","本地写作检查","AI 写作套路"],datePublished:"2026-09-09",dateModified:"2026-09-09",updatedLabel:"更新于 2026 年 9 月 9 日",body:<>
+<p>博客作者、邮件写手和营销团队常卡在同一件事：稿子写完了，读起来仍像千篇一律的 ChatGPT 帖。你不需要把正文上传到云端“humanizer”。你要去掉的是 AI 写作腔——那些机械套路——同时让草稿留在本机。</p>
+<h2>“AI 写作腔”到底长什么样</h2>
+<p>它不是“凡是模型写过的句子”，而是一小撮习惯：</p>
+<ul>
+<li>清嗓子式开场（“Great question!”、“In today’s digital landscape…”）</li>
+<li>空洞强调词（<em>robust</em>、<em>pivotal</em>、<em>leverage</em>、<em>potentially</em>）</li>
+<li>模板化对比（“not just a tool, it’s a pivotal shift”）</li>
+<li>句长过于整齐、结尾永远阳光（“The future looks bright. I hope this helps!”）</li>
+</ul>
+<p>读者烦的是模板，不是抽象的“机器”。</p>
+<h3>改前 / 改后（博客示例）</h3>
+<p><strong>改前：</strong><br/>Great question! In today's digital landscape, experts believe this robust technology is not just a tool, it's a pivotal shift. In order to leverage it, teams could potentially rethink their work. The future looks bright. I hope this helps!</p>
+<p><strong>改后：</strong><br/>Most teams still paste the same three-paragraph outline into every post. Last week we cut one client email from 420 words to 180 by killing the opener and putting the ask in sentence one — open rate didn't move; reply rate did.</p>
+<p>同一话题空间。第二版有立场、有数字、有起伏的节奏。</p>
+<h2>不上云，怎样去掉 AI 写作腔</h2>
+<h3>1. 五分钟手改</h3>
+<ol>
+<li>多数段落删掉第一句。</li>
+<li>为本稿禁用一小份套话词表。</li>
+<li>强制句长不齐：至少两句少于五个词，一句超过二十五个词。</li>
+<li>加一条具体信息（名字、数字、日期、客户可公开事实）。</li>
+<li>表明立场；删掉“一方面……另一方面……”式收尾。</li>
+</ol>
+<h3>2. 本地模式检查（可选，仍不上传）</h3>
+<p>若想多一双眼睛、又不把草稿送上服务器，可用浏览器本地工具，例如 <a href="/zh-cn/">Naturable</a>。它标出机械套路，让你逐条接受或改写，展示前后对比再复查——英文与中文分轨规则。处理留在浏览器；核心功能无需注册。</p>
+<p>写作场景选 <strong>博客</strong>、<strong>邮件</strong> 或 <strong>营销</strong>，权重才对得上任务。别把“过 AI 检测”当成功标准。听起来像你自己就够了。</p>
+<p><strong>Naturable — 高亮套路（英文界面）：</strong></p>
+<figure className="blog-figure">
+<img src="/assets/blog/highlight-patterns.png" alt="Naturable 在编辑器中高亮 GPT 味填充与模板短语" width="1200" height="750" loading="lazy"/>
+<figcaption>自然度评分、写作问题与句子节奏都留在本机。红/琥珀色标记开场、空洞强调词和阳光收尾——留不留由你决定。</figcaption>
+</figure>
+<p><strong>安全修复后的前后对比：</strong></p>
+<figure className="blog-figure">
+<img src="/assets/blog/before-after-safe-fix.png" alt="Naturable 去掉 Great question! 后的前后对比面板" width="1200" height="750" loading="lazy"/>
+<figcaption>一轮可去掉清嗓子开场；其余仍由你用具体事实重写。</figcaption>
+</figure>
+<h2>本地清理 vs 云端 humanizer</h2>
+<table>
+<thead><tr><th></th><th>本地（如 Naturable）</th><th>云端 humanizer / 改写器</th></tr></thead>
+<tbody>
+<tr><td>上传草稿？</td><td>否</td><td>通常要</td></tr>
+<tr><td>修改方式</td><td>你可控的套路标记</td><td>常为一键整篇重写</td></tr>
+<tr><td>更适合</td><td>隐私敏感的博客/邮件/营销</td><td>可接受上传时的批量改写</td></tr>
+<tr><td>错误目标</td><td>检测器表演</td><td>检测器表演</td></tr>
+</tbody>
+</table>
+<p>QuillBot 类工具润色措辞；Undetectable 类产品为“像人分数”重写。两者通常都要把文本放上服务器。若草稿是客户邮件或未发布帖，这才是真正的决策——不是哪个口号排名更高。</p>
+<h2>博客、邮件、营销的十分钟流程</h2>
+<ol>
+<li>把草稿贴进本地编辑器或 <a href="/zh-cn/">Naturable</a>。</li>
+<li>设定场景：博客 / 邮件 / 营销。</li>
+<li>清掉安全的套路命中。</li>
+<li>手改仍显空泛的地方；保留事实。</li>
+<li>再检查一次。</li>
+<li>导出并发布。</li>
+</ol>
+<p>对多数短帖和邮件，这就够去掉 AI 写作腔，而不必依赖活在云端的 AI writing humanizer。</p>
+<h2>常见问题</h2>
+<p><strong>能完全离线吗？</strong><br/>页面缓存后，浏览器本地工具可以在不外发草稿的情况下继续工作。需要举证时，在网络面板确认即可。</p>
+<p><strong>中文是否同一套黑名单？</strong><br/>不是。英文套话表不等于中文“套话”。分轨规则才重要。也可看 <a href="/zh-cn/">Naturable 中文</a>。</p>
+<p><strong>这会让文本“检测不过”吗？</strong><br/>对博客和邮件写手，这是错误问题。目标是可读的声音与具体细节——不是去刷检测器。</p>
+<p>在 <a href="/zh-cn/">naturable.app</a> 试一次本地改稿——隐私优先，无需注册。</p>
+</>},
+
+ {...en[1],topic:"AI 写作",title:"怎样改掉明显的“AI 腔”，又不丢掉自己的表达",description:"从套话、泛化用词、模板句式、模糊来源和助手寒暄入手，逐项修改 AI 辅助写作。",readTime:"7 分钟",keywords:["AI 腔","去除 AI 写作痕迹","AI 写作修改","自然中文写作"],body:<><p>所谓“AI 腔”，通常不是某一个词造成的，而是套话、过度圆滑的句子、模糊论据和模板结尾叠加在一起。它不能证明作者是谁，却能提醒我们哪些地方值得重写。</p><h2>先删助手寒暄和空洞开场</h2><p>“希望这对你有所帮助”“值得注意的是”不属于正文。直接进入事实、判断或请求，信息会更清楚。</p><h2>把宽泛词换成动作和结果</h2><p>不要只写“赋能企业、打造生态、重塑体验”。写清楚谁做了什么，以及结果如何。例如：“客服团队用统一看板处理工单，平均响应时间缩短了 18%。”</p><h2>打散模板化句式</h2><p>连续使用“首先、其次、此外”，或反复出现“不仅……更……”，会让段落像自动生成的提纲。根据因果、对比和轻重关系重新排序。</p><h2>让论据可以核实</h2><p>“研究表明”和“专家认为”后面需要机构、作者、时间或链接。找不到来源时，就把它改成范围明确的个人观察。</p><h2>用具体结论收尾</h2><p>“未来可期”“开启新篇章”没有提供下一步。结尾应落在决定、结果、风险或行动上。</p><h2>改稿检查表</h2><ul><li>宽泛形容词是否有事实支持？</li><li>连接词是否真的说明了逻辑关系？</li><li>来源能否被读者核实？</li><li>结尾是否给出明确行动？</li></ul></>},
+ {...en[2],topic:"写作指标",title:"困惑度和句子变化是什么？别把指标当成 AI 鉴定",description:"理解写作中的困惑度、Burstiness 和句子节奏，了解 AI 检测指标能说明什么、又不能证明什么。",readTime:"6 分钟",keywords:["困惑度","Burstiness","AI 检测指标","句子节奏","AI 写作判断"],body:<><p>困惑度和 Burstiness 经常出现在 AI 检测讨论里。它们可以描述文字的统计特征，但都不能单独证明作者身份。</p><h2>困惑度是什么</h2><p>困惑度大致反映一段词序对语言模型来说有多好预测。常见搭配通常更容易预测，但题材、文体、术语、引用和作者语言水平都会影响结果。</p><h2>Burstiness 是什么</h2><p>在写作工具中，它通常观察句子长度、结构和节奏的变化。六个长度相近、结构一致的句子容易显得机械；长短句根据内容自然变化，阅读节奏会更清楚。</p><h2>为什么不能据此鉴定作者</h2><p>认真编辑的人类作者也可能写出高度可预测的文字；AI 辅助文本经过修改后也可能变化很大。翻译、模板和专业题材都会改变指标。</p><h2>怎样自然改善节奏</h2><p>不要为了分数硬塞生僻词或句子碎片。把主要决定写短，把需要解释的关系写完整，让节奏跟着信息重点变化。</p><h2>更有用的问题</h2><p>与其问“分数像不像真人”，不如问：读者能不能跟上论证、核实依据，并看出作者自己的判断。</p></>},
+ {...en[3],topic:"理性使用 AI",title:"AI Humanizer 真的有用吗？效果、风险和更可靠的流程",description:"客观看待 AI Humanizer、AI 检测规避承诺和整篇重写风险，学习透明、可控的自然化改稿方法。",readTime:"7 分钟",keywords:["AI Humanizer","AI 文本自然化","AI 检测规避","AI 改写工具"],body:<><p>AI Humanizer 有时能改善文字，但并不是因为它可以可靠“骗过检测”。换词和调整句长可以减少部分套话，却无法证明真人创作，也不能保证任何检测结果。</p><h2>它在哪些地方有帮助</h2><p>好的工具能指出助手寒暄、模糊用词、过度连接词和重复句式。这些本来就是普通的编辑问题，修好后文字会更清楚。</p><h2>黑盒重写有什么风险</h2><p>整篇自动重写可能改坏事实、弱化专业术语、引入别扭同义词，也可能抹掉作者原本的判断。检测分数降低，不代表内容更准确。</p><h2>为什么不能承诺通过检测</h2><p>不同检测器经常互相矛盾，而且会误判翻译文本、学术写作、简洁表达和非母语写作。追逐不稳定的分数，容易让文字偏离真正读者。</p><h2>更透明的修改流程</h2><ol><li>保留原稿作为对照。</li><li>定位具体表达问题，不整篇盲改。</li><li>只接受自己理解的修改。</li><li>复核姓名、数字、引用和专业含义。</li><li>查看前后差异，再检查一次。</li></ol></>},
+ {...en[4],topic:"中文写作",title:"中文 AI 文案的常见套路，以及怎样改得更自然",description:"识别中文 AI 文案中的元话语、宣传动词、机械连接词、模板递进、模糊来源和意义拔高。",readTime:"7 分钟",keywords:["中文 AI 文案","中文 AI 腔","AI 文案修改","自然中文表达"],body:<><p>中文 AI 文案有自己的套路，不能照搬英文修改方法。问题往往不在语法，而在正式空话、宣传动词、对称句式和意义拔高不断叠加。</p><h2>拖延重点的元话语</h2><p>“值得注意的是、毋庸置疑的是、不可否认的是”只是在宣布重要。删掉外壳，直接写事实。</p><h2>没有动作的宣传动词</h2><p>“赋能、助力、打造、构建、引领、重塑”容易遮住真正动作。补上行动主体、具体动作和可衡量结果。</p><h2>机械连接词</h2><p>每段都按照“首先、其次、此外、最后”推进，会像自动生成的提纲。改用因果、对比、时间或优先级组织信息。</p><h2>模板化递进和意义拔高</h2><p>连续使用“不仅……更……”会让每句话都像口号。“开启新的篇章”也需要落到实际结果。</p><h2>修改示例</h2><p><strong>修改前：</strong>该平台将赋能企业数字化转型，开启高质量发展的新篇章。</p><p><strong>修改后：</strong>该平台把审批时间从三天缩短到一天，并让财务团队统一查看合同状态。</p></>},
+ {...en[5],topic:"邮件写作",title:"怎样把一封生硬的邮件改得直接、清楚又专业",description:"删掉程式化客套，提前说明请求、负责人和截止时间，让商务邮件更直接、更容易执行。",readTime:"6 分钟",keywords:["商务邮件写作","邮件更直接","生硬邮件修改","专业邮件模板"],body:<><p>生硬的邮件常常让读者读完大半页，才找到真正请求。问题通常是客套过多、背景抽象、行动信息出现得太晚。</p><h2>前两句话就说明请求</h2><p>简单问候后直接写你需要什么。“请在周四前确认附件预算”比先解释一段规划工作的重要性更容易执行。</p><h2>用必要背景代替程式化客套</h2><p>专业不等于绕弯。保留礼貌，但删掉“冒昧打扰”“百忙之中拨冗”等模板句，写清截止时间和原因。</p><h2>明确负责人、动作和时间</h2><p>多人收件时，要说明谁需要回复，谁只是知会。日期最好带具体时间，避免“尽快”。</p><h2>修改示例</h2><p><strong>修改前：</strong>希望您一切安好。关于预算文件，烦请您在方便的时候拨冗审阅，不胜感激。</p><p><strong>修改后：</strong>请在周四下午 3 点前确认附件预算。我们需要在周五供应商会议前锁定最终金额。</p><h2>发送前检查</h2><ul><li>不滚动页面能否看到请求？</li><li>截止时间是否具体？</li><li>收件人是否知道怎样回复？</li></ul></>},
+ {...en[6],topic:"营销写作",title:"营销文案别只喊口号：怎样用证据替代宽泛主张",description:"把创新、领先、无缝和赋能等宽泛营销主张，改成有数字、来源、客户结果和产品机制的可信文案。",readTime:"7 分钟",keywords:["营销文案","证据型文案","文案避免空话","可信营销写作"],body:<><p>当每个产品都“创新”，每套流程都“无缝”，每项结果都“颠覆”，读者只能被要求相信形容词。可信文案需要证据。</p><h2>找出形容词背后的主张</h2><p>看到“快速、简单、强大、领先”时，继续问：和什么相比、怎样衡量、对谁成立？</p><h2>选择最接近主张的证据</h2><p>产品行为、基准测试、客户结果、采用数量、独立研究和可核实引用都可以成为证据。不要用品牌口号支持功能结论。</p><h2>写清主体、动作和结果</h2><p>“平台赋能团队”没有说明机制。可以改成：“运营团队直接在 Slack 审批发票，审批时间中位数从 19 小时缩短到 6 小时。”</p><h2>诚实限定证据范围</h2><p>必要时写出样本、日期和条件。单个客户案例不能变成普遍承诺，“可以、通常、在本案例中”的边界并不削弱可信度。</p><h2>证据修改模板</h2><ul><li><strong>主张：</strong>希望读者相信什么？</li><li><strong>机制：</strong>哪个产品动作让它发生？</li><li><strong>证明：</strong>哪个数字、来源或案例支持它？</li><li><strong>边界：</strong>它在什么条件下成立？</li></ul></>}
 ];
 
 export const blogArticles:Record<Locale,Article[]>={en,"zh-cn":zh};
 export const getBlogArticle=(locale:Locale,slug:string)=>blogArticles[locale].find(a=>a.slug===slug);
 
-export function BlogIndexPage({locale}:{locale:Locale}){const cards=blogArticles[locale],z=locale==="zh-cn";return <main className="wrap shell-main content-page"><section className="content-hero"><span className="tag-note">{z?"Naturable 写作博客":"Naturable Blog"}</span><h1>{z?"自然写作、AI 辅助修改与清晰表达":"Natural writing, AI editing, and clearer communication"}</h1><p>{z?"用具体案例讲清 AI 写作套路、文本自然化、句子节奏、中文 AI 文案、商务邮件和证据型营销内容。":"Practical, evidence-based guides to AI writing patterns, humanizers, sentence rhythm, Chinese AI copy, professional email, and credible marketing content."}</p></section><section className="blog-topics" aria-label={z?"博客主题":"Blog topics"}>{(z?["AI 写作修改","中文表达","邮件写作","营销文案","写作指标"]:["AI writing","Natural editing","Chinese copy","Email writing","Evidence-based marketing"]).map(x=><span key={x}>{x}</span>)}</section><section className="guide-grid">{cards.map((article,i)=><Link className={`guide-card ${i===0?"featured":""}`} href={`/${locale}/learn/${article.slug}/`} key={article.slug}><div><span className="guide-topic">{article.topic}</span><span className="read-time">{article.readTime}</span></div><h2>{article.title}</h2><p>{article.description}</p><small>{z?"更新于 2026 年 7 月 12 日":"Updated Jul 12, 2026"}</small></Link>)}</section><section className="context-cta"><div><h2>{z?"读完指南，直接动手改稿":"Turn the guide into an edit"}</h2><p>{z?"导入 TXT 或 Markdown，逐条检查表达问题，再导出为 Markdown 或 HTML。":"Import TXT or Markdown, inspect each writing pattern, and export the revision as Markdown or HTML."}</p></div><Link className="btn" href={`/${locale}/app/`}>{z?"打开编辑器":"Open editor"}</Link></section></main>}
+export function BlogIndexPage({locale}:{locale:Locale}){const cards=blogArticles[locale],z=locale==="zh-cn";return <main className="wrap shell-main content-page"><section className="content-hero"><span className="tag-note">{z?"Naturable 写作博客":"Naturable Blog"}</span><h1>{z?"自然写作、AI 辅助修改与清晰表达":"Natural writing, AI editing, and clearer communication"}</h1><p>{z?"用具体案例讲清 AI 写作套路、文本自然化、句子节奏、中文 AI 文案、商务邮件和证据型营销内容。":"Practical, evidence-based guides to AI writing patterns, humanizers, sentence rhythm, Chinese AI copy, professional email, and credible marketing content."}</p></section><section className="blog-topics" aria-label={z?"博客主题":"Blog topics"}>{(z?["AI 写作修改","中文表达","邮件写作","营销文案","写作指标"]:["AI writing","Natural editing","Chinese copy","Email writing","Evidence-based marketing"]).map(x=><span key={x}>{x}</span>)}</section><section className="guide-grid">{cards.map((article,i)=><Link className={`guide-card ${i===0?"featured":""}`} href={`/${locale}/learn/${article.slug}/`} key={article.slug}><div><span className="guide-topic">{article.topic}</span><span className="read-time">{article.readTime}</span></div><h2>{article.title}</h2><p>{article.description}</p><small>{article.updatedLabel||(z?"更新于 2026 年 7 月 12 日":"Updated Jul 12, 2026")}</small></Link>)}</section><section className="context-cta"><div><h2>{z?"读完指南，直接动手改稿":"Turn the guide into an edit"}</h2><p>{z?"导入 TXT 或 Markdown，逐条检查表达问题，再导出为 Markdown 或 HTML。":"Import TXT or Markdown, inspect each writing pattern, and export the revision as Markdown or HTML."}</p></div><Link className="btn" href={`/${locale}/app/`}>{z?"打开编辑器":"Open editor"}</Link></section></main>}
 
 export function BlogArticlePage({locale,article}:{locale:Locale;article:Article}){
  const related=blogArticles[locale].filter(a=>a.slug!==article.slug).slice(0,3);
- const schema={"@context":"https://schema.org","@type":"BlogPosting",headline:article.title,description:article.description,datePublished:"2026-07-12",dateModified:"2026-07-12",inLanguage:locale==="zh-cn"?"zh-CN":"en",mainEntityOfPage:`https://naturable.app/${locale}/learn/${article.slug}/`,author:{"@type":"Organization",name:"Naturable"},publisher:{"@type":"Organization",name:"Naturable",url:"https://naturable.app/"}};
- return <main className="wrap shell-main blog-layout"><article className="prose blog-article"><nav className="breadcrumbs" aria-label="Breadcrumb"><Link href={`/${locale}/`}>Naturable</Link><span>›</span><Link href={`/${locale}/learn/`}>{locale==="zh-cn"?"博客":"Blog"}</Link></nav><span className="guide-topic">{article.topic}</span><h1>{article.title}</h1><p className="article-dek">{article.description}</p><div className="article-meta"><span>{locale==="zh-cn"?"更新于 2026 年 7 月 12 日":"Updated July 12, 2026"}</span><span>{article.readTime}</span></div>{article.body}<section className="article-cta"><h2>{locale==="zh-cn"?"检查你自己的草稿":"Check your own draft"}</h2><p>{locale==="zh-cn"?"把这些方法用到真实文本中，逐条查看问题、修改并复查。":"Apply these ideas to a real draft, review each pattern, edit, and recheck."}</p><Link className="btn" href={`/${locale}/app/`}>{locale==="zh-cn"?"打开编辑器":"Open the editor"}</Link></section></article><aside className="related-posts"><h2>{locale==="zh-cn"?"相关文章":"Related articles"}</h2>{related.map(item=><Link href={`/${locale}/learn/${item.slug}/`} key={item.slug}><span>{item.topic}</span><b>{item.title}</b></Link>)}</aside><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema).replace(/</g,"\\u003c")}}/></main>
+ const published=article.datePublished||"2026-07-12";const modified=article.dateModified||published;const schema={"@context":"https://schema.org","@type":"BlogPosting",headline:article.title,description:article.description,datePublished:published,dateModified:modified,inLanguage:locale==="zh-cn"?"zh-CN":"en",mainEntityOfPage:`https://naturable.app/${locale}/learn/${article.slug}/`,author:{"@type":"Organization",name:"Naturable"},publisher:{"@type":"Organization",name:"Naturable",url:"https://naturable.app/"}};
+ return <main className="wrap shell-main blog-layout"><article className="prose blog-article"><nav className="breadcrumbs" aria-label="Breadcrumb"><Link href={`/${locale}/`}>Naturable</Link><span>›</span><Link href={`/${locale}/learn/`}>{locale==="zh-cn"?"博客":"Blog"}</Link></nav><span className="guide-topic">{article.topic}</span><h1>{article.title}</h1><p className="article-dek">{article.description}</p><div className="article-meta"><span>{article.updatedLabel||(locale==="zh-cn"?"更新于 2026 年 7 月 12 日":"Updated July 12, 2026")}</span><span>{article.readTime}</span></div>{article.body}<section className="article-cta"><h2>{locale==="zh-cn"?"检查你自己的草稿":"Check your own draft"}</h2><p>{locale==="zh-cn"?"把这些方法用到真实文本中，逐条查看问题、修改并复查。":"Apply these ideas to a real draft, review each pattern, edit, and recheck."}</p><Link className="btn" href={`/${locale}/app/`}>{locale==="zh-cn"?"打开编辑器":"Open the editor"}</Link></section></article><aside className="related-posts"><h2>{locale==="zh-cn"?"相关文章":"Related articles"}</h2>{related.map(item=><Link href={`/${locale}/learn/${item.slug}/`} key={item.slug}><span>{item.topic}</span><b>{item.title}</b></Link>)}</aside><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema).replace(/</g,"\\u003c")}}/></main>
 }
