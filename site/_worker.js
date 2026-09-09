@@ -19,6 +19,24 @@ function withHeaders(response, headers) {
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    // Yandex Webmaster: CF Pages pretty-URLs 308 *.html → extensionless, and trailing-slash
+    // logic then loops. Serve verification HTML with 200 at the exact .html URL.
+    const yandex = url.pathname.match(/^\/(yandex_[a-f0-9]+)(?:\.html)?\/?$/i);
+    if (yandex) {
+      const body = `<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>Verification: ${yandex[1].slice("yandex_".length)}</body>
+</html>
+`;
+      if (yandex[1].toLowerCase() === "yandex_2b17ac31e9824eb8") {
+        return new Response(body, {
+          status: 200,
+          headers: { "Content-Type": "text/html; charset=UTF-8" }
+        });
+      }
+    }
     const locale = preferredLocale(request);
     const legacyRoutes = {
       "/index.html": "/en/",
@@ -72,7 +90,7 @@ export default {
       return Response.redirect(`${url.origin}/${locale}/`, 302);
     }
     const lastSegment = url.pathname.split("/").pop() || "";
-    if (!url.pathname.endsWith("/") && !lastSegment.includes(".")) {
+    if (!url.pathname.endsWith("/") && !lastSegment.includes(".") && !/^yandex_[a-f0-9]+$/i.test(lastSegment)) {
       url.pathname += "/";
       return Response.redirect(url.toString(), 308);
     }
