@@ -55,12 +55,12 @@ function HomeSections({locale:l,privacy}:{locale:Locale;privacy:string}){
   const blocks=z?[
     {h2:"Naturable 会检查什么",p:"标出 GPT 味套话、模板结构和助手残留，并给出可核对的修改建议。"},
     {h2:"专为博客、邮件与营销稿",p:"写作场景默认博客，其次邮件与营销，让日常发出的文案更自然。"},
-    {h2:"默认本地隐私",p:privacy},
+    {h2:"草稿不离开浏览器",p:privacy},
     {h2:"一次本地检查怎么做",p:"标出套话、边改边对比、再检查一遍——草稿始终留在浏览器。"}
   ]:[
     {h2:"What Naturable checks",p:"Highlights GPT-ish filler, template structure, and assistant artifacts — with suggestions you can verify."},
     {h2:"Built for blog, email, and marketing",p:"Purpose defaults to Blog — then Email and Marketing — so everyday shipping copy stays natural."},
-    {h2:"Private by default",p:privacy},
+    {h2:"Draft never leaves the browser",p:privacy},
     {h2:"How a local pass works",p:"Spot robotic phrasing, fix in place, compare, and recheck — all in your browser."}
   ];
   return <section className="wrap center"><div className="cards home-p2-cards">{blocks.map(b=><div className="feat" key={b.h2}><h2>{b.h2}</h2><p>{b.p}</p></div>)}</div></section>;
@@ -73,7 +73,7 @@ export default async function LocalePage({params}:{params:Promise<{locale:string
   if(!key){
     content=<>
       <HomeJsonLd locale={l}/>
-      <section className="hero wrap"><span className="tag-note">{c.tag}</span><h1>{c.hero}</h1><p className="lead">{c.lead}</p><div className="cta"><a className="btn" href="#checker">{c.cta}</a><a className="btn sec" href={`/${l}/how-it-works/`}>{c.how}</a></div><div className="trust">{c.trust}</div></section>
+      <section className="hero wrap"><span className="tag-note">{c.tag}</span><h1>{c.hero}</h1><p className="lead">{c.lead}</p><div className="cta"><a className="btn" href="#checker">{c.cta}</a><a className="btn sec" href={`/${l}/how-it-works/`}>{c.how}</a></div><p className="privacy-chip" role="status">{c.privacy}</p><div className="trust">{c.trust}</div></section>
       <section id="checker" className="wrap"><Checker locale={l} demo/></section>
       <HomeSections locale={l} privacy={c.privacy}/>
     </>;
