@@ -32,7 +32,7 @@ const paths = [
 /** Source files that drive each sitemap path (for real lastmod). */
 const pathSources = {
   "": ["lib/content.tsx", "app/[locale]/[[...slug]]/page.tsx", "site/index.html"],
-  app: ["components/Checker.tsx", "public/assets/engine.js", "site/app.html"],
+  app: ["components/AppPage.tsx", "components/Checker.tsx", "public/assets/engine.js", "site/app.html"],
   "how-it-works": ["components/ContentPages.tsx", "site/how-it-works.html"],
   pricing: ["components/ContentPages.tsx", "site/pricing.html"],
   about: ["lib/content.tsx", "site/about.html"],
