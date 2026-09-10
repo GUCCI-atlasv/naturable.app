@@ -14,7 +14,7 @@ function cacheControlFor(url, contentType) {
     /\.(?:js|css|woff2?|ttf|otf|ico|svg|png|jpg|jpeg|webp|gif|avif)$/i.test(path)
   ) {
     // Fingerprinted Next assets and static binaries: long-lived immutable.
-    // /assets/engine.js is versioned via ?v= query from the app.
+    // /assets/engine.<contenthash>.js is emitted at postbuild (no ?v=).
     return "public, max-age=31536000, immutable";
   }
   if (contentType.includes("text/html") || path.endsWith("/") || path.endsWith(".html")) {
