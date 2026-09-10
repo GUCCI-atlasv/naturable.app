@@ -215,3 +215,9 @@ hr{border:none;border-top:1px solid var(--line);margin:40px 0}
   .mobile-tabs button{border:0;background:none;border-radius:9px;padding:10px;font:600 13px var(--sans);color:var(--gray)}.mobile-tabs button.active{background:var(--panel-2);color:var(--ink);box-shadow:0 1px 4px rgba(0,0,0,.08)}
   .tool-btns .btn{min-height:44px}.issue-actions button{min-height:44px}
 }
+
+.privacy-chip{display:inline-flex;align-items:center;gap:8px;margin-top:14px;padding:8px 12px;border-radius:999px;background:var(--clay-bg);border:1px solid #eccab8;color:var(--clay-d);font-size:13px;font-weight:600}
+.privacy-chip:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--sage);box-shadow:0 0 0 3px rgba(91,140,90,.18)}
+.net-pill{font-weight:600}
+.net-pill.is-offline{color:var(--clay-d)}
+.net-pill.is-offline:before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--ochre);margin-right:6px;vertical-align:middle}

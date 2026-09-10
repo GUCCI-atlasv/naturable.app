@@ -6,6 +6,23 @@ function preferredLocale(request) {
   return saved || (["CN"].includes(country) || (!country && /^zh(?:-CN)?\b/i.test(accept)) ? "zh-cn" : "en");
 }
 
+
+function cacheControlFor(url, contentType) {
+  const path = url.pathname;
+  if (
+    path.startsWith("/_next/static/") ||
+    /\.(?:js|css|woff2?|ttf|otf|ico|svg|png|jpg|jpeg|webp|gif|avif)$/i.test(path)
+  ) {
+    // Fingerprinted Next assets and static binaries: long-lived immutable.
+    // /assets/engine.js is versioned via ?v= query from the app.
+    return "public, max-age=31536000, immutable";
+  }
+  if (contentType.includes("text/html") || path.endsWith("/") || path.endsWith(".html")) {
+    return "public, s-maxage=3600, stale-while-revalidate=86400";
+  }
+  return null;
+}
+
 function withHeaders(response, headers) {
   const nextHeaders = new Headers(response.headers);
   for (const [name, value] of Object.entries(headers)) nextHeaders.set(name, value);
@@ -96,8 +113,14 @@ export default {
     }
     let response = await env.ASSETS.fetch(request);
     const contentType = response.headers.get("content-type") || "";
+    // Self-hosted robots/llms from ASSETS. Cloudflare Managed robots injection
+    // (Block AI bots) still prepends Disallow until Dashboard toggle is OFF.
     if (url.pathname.endsWith(".txt")) {
       response = withHeaders(response, { "X-Robots-Tag": "noindex" });
+    }
+    const cacheControl = cacheControlFor(url, contentType);
+    if (cacheControl) {
+      response = withHeaders(response, { "Cache-Control": cacheControl });
     }
     if (contentType.includes("text/html")) {
       const language = url.pathname.startsWith("/zh-cn/") ? "zh-CN" : "en";
