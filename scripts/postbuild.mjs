@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import crypto from "node:crypto";
 import {execFileSync} from "node:child_process";
 
 fs.copyFileSync("site/_worker.js","out/_worker.js");
@@ -8,6 +9,58 @@ const robotsSrc = fs.existsSync("public/robots.txt") ? "public/robots.txt" : "si
 fs.copyFileSync(robotsSrc, "out/robots.txt");
 if (fs.existsSync("public/llms.txt")) fs.copyFileSync("public/llms.txt", "out/llms.txt");
 if (fs.existsSync("public/_headers")) fs.copyFileSync("public/_headers", "out/_headers");
+
+// Content-hash engine.js so HTML can keep long-lived immutable cache without ?v= bumps.
+{
+  const engineSrc = path.join("out", "assets", "engine.js");
+  if (!fs.existsSync(engineSrc)) {
+    throw new Error("postbuild: out/assets/engine.js missing — did Next copy public/assets?");
+  }
+  const engineBuf = fs.readFileSync(engineSrc);
+  const hash = crypto.createHash("sha256").update(engineBuf).digest("hex").slice(0, 12);
+  const hashedName = `engine.${hash}.js`;
+  const hashedPath = path.join("out", "assets", hashedName);
+  fs.writeFileSync(hashedPath, engineBuf);
+  // Leave unhashed engine.js for stray bookmarks; HTML/JS refs become hashed-only.
+  const replaceEngineRefs = text => {
+    const hashed = `/assets/${hashedName}`;
+    const hashedEsc = `\\/assets\\/${hashedName}`;
+    text = text.replace(/\/assets\/engine\.js\?v=[^"'\\\s]*/g, hashed);
+    text = text.replace(/\\\/assets\\\/engine\.js\?v=[^"'\\\s]*/g, hashedEsc);
+    text = text.replaceAll("/assets/engine.js", hashed);
+    text = text.replaceAll("\\/assets\\/engine.js", hashedEsc);
+    return text;
+  };
+  let rewritten = 0;
+  const walk = dir => {
+    for (const entry of fs.readdirSync(dir, {withFileTypes: true})) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        walk(full);
+        continue;
+      }
+      if (!/\.(html|js|json|txt|map)$/i.test(entry.name)) continue;
+      if (full === engineSrc || full === hashedPath) continue;
+      const before = fs.readFileSync(full, "utf8");
+      if (!before.includes("assets/engine.js")) continue;
+      const after = replaceEngineRefs(before);
+      if (after !== before) {
+        fs.writeFileSync(full, after);
+        rewritten += 1;
+      }
+    }
+  };
+  walk("out");
+  const homeHtml = fs.readFileSync(path.join("out", "en", "index.html"), "utf8");
+  if (!homeHtml.includes(`/assets/${hashedName}`)) {
+    throw new Error(`postbuild: en/index.html missing hashed engine ref ${hashedName}`);
+  }
+  if (/\/assets\/engine\.js\?v=/.test(homeHtml)) {
+    throw new Error("postbuild: en/index.html still has engine.js?v=");
+  }
+  console.log(`postbuild: engine → ${hashedName} (sha256[:12]); rewritten ${rewritten} files`);
+}
+
 
 const origin = "https://naturable.app";
 const locales = ["en", "zh-cn"];
