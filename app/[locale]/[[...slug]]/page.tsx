@@ -4,13 +4,14 @@ import Checker from "@/components/Checker";
 import {Header,Footer} from "@/components/SiteShell";
 import {copy,pages,type Locale} from "@/lib/content";
 import {HowPage,PricingPage,LearnPage} from "@/components/ContentPages";
+import {AppPage} from "@/components/AppPage";
 import {BlogArticlePage,BlogIndexPage,getBlogArticle} from "@/components/Blog";
 const locales:Locale[]=["en","zh-cn"];
 const articleSlugs=["remove-ai-writing-style","how-to-remove-ai-tells","what-is-perplexity-and-burstiness","do-ai-humanizers-work","common-patterns-in-chinese-ai-copy","make-a-stiff-email-more-direct","replace-claims-with-evidence"];
 const slugs=["", "app","how-it-works","pricing","about","privacy","terms","learn",...articleSlugs.map(slug=>`learn/${slug}`)];
 const descriptions:Record<Locale,Record<string,string>>={
-  en:{"":"Clear GPT-ish filler and template structure in your browser. Built for blog, email, and marketing drafts — no upload, no account. Local rules, English and Chinese.",app:"Edit blog, email, and marketing drafts locally. Strip GPT-ish tone with clear fixes — no cloud upload.","how-it-works":"See how Naturable identifies writing patterns, explains suggestions, and helps you revise without hiding the editing process.",pricing:"Compare Naturable Free and Pro features for private, explainable writing revision.",learn:"Naturable Blog covers AI writing patterns, humanizers, perplexity and burstiness, Chinese AI copy, professional email, and evidence-based marketing."},
-  "zh-cn":{"":"在浏览器里给博客、邮件、营销稿去 GPT 味：清套话、破结构。本地隐私，草稿不上云，无需注册。英中规则分轨。",app:"在本地编辑博客、邮件、营销稿草稿，标出套话并边改边对比；文本不上云。","how-it-works":"了解 Naturable 如何发现表达问题、解释修改建议，并保留清晰可控的修改过程。",pricing:"比较 Naturable 免费版与专业版的自然表达检查功能。",learn:"Naturable 博客关注 AI 写作修改、中文 AI 文案、困惑度与句子节奏、商务邮件和证据型营销写作。"}
+  en:{"":"Clear GPT-ish filler and template structure in your browser. Built for blog, email, and marketing drafts — no upload, no account. Local rules, English and Chinese.",app:"Remove AI writing style in your browser. Local rules flag filler and stiff structure — draft never uploaded.","how-it-works":"See how Naturable identifies writing patterns, explains suggestions, and helps you revise without hiding the editing process.",pricing:"Compare Naturable Free and Pro features for private, explainable writing revision.",learn:"Naturable Blog covers AI writing patterns, humanizers, perplexity and burstiness, Chinese AI copy, professional email, and evidence-based marketing."},
+  "zh-cn":{"":"在浏览器里给博客、邮件、营销稿去 GPT 味：清套话、破结构。本地隐私，草稿不上云，无需注册。英中规则分轨。",app:"在浏览器里去掉 AI 写作腔：本地规则清套话、破结构，草稿不上云。","how-it-works":"了解 Naturable 如何发现表达问题、解释修改建议，并保留清晰可控的修改过程。",pricing:"比较 Naturable 免费版与专业版的自然表达检查功能。",learn:"Naturable 博客关注 AI 写作修改、中文 AI 文案、困惑度与句子节奏、商务邮件和证据型营销写作。"}
 };
 const routePath=(locale:string,key:string)=>`/${locale}/${key?`${key}/`:""}`;
 export function generateStaticParams(){return locales.flatMap(locale=>slugs.map(slug=>({locale,slug:slug?slug.split("/"):undefined})))}
@@ -21,7 +22,7 @@ export async function generateMetadata({params}:{params:Promise<{locale:string;s
   const article=key.startsWith("learn/")?getBlogArticle(l,key.slice(6)):null;
   const item=key&&key!=="app"?(pages[l] as any)?.[key]:null;
   const isHome=!key;
-  const titleBase=article?.title||(key==="learn"?(l==="zh-cn"?"自然写作与 AI 文本修改博客":"Natural Writing and AI Editing Blog"):item?.title)||(key==="app"?(l==="zh-cn"?"自然写作编辑器 — 博客 / 邮件 / 营销稿":"Natural Writing Editor — Blog, Email & Marketing"):(isHome?(l==="zh-cn"?"给博客 / 邮件 / 营销稿去 GPT 味 — 草稿不上云":"Remove AI Writing Style Locally"):copy[l]?.footer))||"Naturable";
+  const titleBase=article?.title||(key==="learn"?(l==="zh-cn"?"自然写作与 AI 文本修改博客":"Natural Writing and AI Editing Blog"):item?.title)||(key==="app"?(l==="zh-cn"?"本地去掉 AI 写作腔 — 文本编辑器":"Remove AI Writing Style — Local Editor"):(isHome?(l==="zh-cn"?"给博客 / 邮件 / 营销稿去 GPT 味 — 草稿不上云":"Remove AI Writing Style Locally"):copy[l]?.footer))||"Naturable";
   // EN home uses absolute title so brand pipe form is exact (~55); ZH stays short via template.
   const title=isHome&&l==="en"?{absolute:"Remove AI Writing Style Locally | Naturable"}:titleBase;
   const ogTitle=isHome&&l==="en"?"Remove AI Writing Style Locally | Naturable":titleBase;
@@ -78,7 +79,7 @@ export default async function LocalePage({params}:{params:Promise<{locale:string
       <HomeSections locale={l} privacy={c.privacy}/>
     </>;
   }else if(key==="app"){
-    content=<main className="wrap shell-main"><h1>{l==="zh-cn"?"自然写作编辑器":"Natural writing editor"}</h1><p className="muted">{l==="zh-cn"?"检查 → 修改 → 对比 → 复查。专为博客、邮件、营销稿 — 免费、本地、不上云。":"Check → edit → compare → recheck. Tuned for blog, email, and marketing — free, private, entirely local."}</p><Checker locale={l}/></main>;
+    content=<AppPage locale={l}/>;
   }else if(key==="how-it-works"){content=<HowPage locale={l}/>;}
   else if(key==="pricing"){content=<PricingPage locale={l}/>;}
   else if(key==="learn"){content=<BlogIndexPage locale={l}/>;}
