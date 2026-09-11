@@ -32,12 +32,12 @@ const en:Article[]=[
 <p>Use Writing purpose <strong>Blog</strong>, <strong>Email</strong>, or <strong>Marketing</strong> so the weights match the job. Do not treat “pass an AI detector” as the success metric. Sound like yourself.</p>
 <p><strong>Naturable — highlighted patterns (EN):</strong></p>
 <figure className="blog-figure">
-<img src="/assets/blog/highlight-patterns.png" alt="Naturable highlighting GPT-ish filler and template phrases in the editor" width="1200" height="750" loading="lazy"/>
+<img src="/assets/highlight-rewrite.png" alt="Naturable highlighting GPT-ish filler and template phrases in the editor" width="1600" height="900" loading="lazy"/>
 <figcaption>Naturalness score, writing issues, and sentence rhythm stay on-device. Red/amber marks call out openers, empty intensifiers, and sunny closers — you decide what to keep.</figcaption>
 </figure>
 <p><strong>After a safe fix — Before / After panel:</strong></p>
 <figure className="blog-figure">
-<img src="/assets/blog/before-after-safe-fix.png" alt="Naturable Before/After panel after removing Great question!" width="1200" height="750" loading="lazy"/>
+<img src="/assets/before-after-ai-tone.png" alt="Naturable Before/After panel after removing Great question!" width="1600" height="900" loading="lazy"/>
 <figcaption>One pass can drop the throat-clearing opener; the rest is still yours to rewrite with specifics.</figcaption>
 </figure>
 <h2>Local cleanup vs cloud humanizers</h2>
@@ -106,12 +106,12 @@ const zh:Article[]=[
 <p>写作场景选 <strong>博客</strong>、<strong>邮件</strong> 或 <strong>营销</strong>，权重才对得上任务。别把“过 AI 检测”当成功标准。听起来像你自己就够了。</p>
 <p><strong>Naturable — 高亮套路（英文界面）：</strong></p>
 <figure className="blog-figure">
-<img src="/assets/blog/highlight-patterns.png" alt="Naturable 在编辑器中高亮 GPT 味填充与模板短语" width="1200" height="750" loading="lazy"/>
+<img src="/assets/highlight-rewrite.png" alt="Naturable 在编辑器中高亮 GPT 味填充与模板短语" width="1600" height="900" loading="lazy"/>
 <figcaption>自然度评分、写作问题与句子节奏都留在本机。红/琥珀色标记开场、空洞强调词和阳光收尾——留不留由你决定。</figcaption>
 </figure>
 <p><strong>安全修复后的前后对比：</strong></p>
 <figure className="blog-figure">
-<img src="/assets/blog/before-after-safe-fix.png" alt="Naturable 去掉 Great question! 后的前后对比面板" width="1200" height="750" loading="lazy"/>
+<img src="/assets/before-after-ai-tone.png" alt="Naturable 去掉 Great question! 后的前后对比面板" width="1600" height="900" loading="lazy"/>
 <figcaption>一轮可去掉清嗓子开场；其余仍由你用具体事实重写。</figcaption>
 </figure>
 <h2>本地清理 vs 云端 humanizer</h2>

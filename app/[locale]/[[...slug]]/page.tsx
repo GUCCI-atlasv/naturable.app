@@ -28,11 +28,10 @@ export async function generateMetadata({params}:{params:Promise<{locale:string;s
   const ogTitle=isHome&&l==="en"?"Remove AI Writing Style Locally | Naturable":titleBase;
   const description=article?.description||descriptions[l]?.[key]||item?.description||descriptions[l]?.[""];
   const canonical=routePath(locale,key);
-  // Temporary OG fallbacks: dedicated og-*.png assets are not in public/ yet.
-  // Remap to existing live blog PNGs so og:image / twitter:image never 404.
+  // Official OG assets (public/assets); home EN/ZH + remove-ai article dedicated.
   const ogImagePath=article?.slug==="remove-ai-writing-style"
-    ?"/assets/blog/before-after-safe-fix.png"
-    :"/assets/blog/highlight-patterns.png";
+    ?"/assets/og-remove-ai-writing-style.png"
+    :(l==="zh-cn"?"/assets/og-home-zh.png":"/assets/og-home-en.png");
   const ogImageAlt=article?.slug==="remove-ai-writing-style"
     ?(l==="zh-cn"?"Naturable 去掉 AI 写作腔前后对比":"Naturable before/after after removing AI writing style")
     :(l==="zh-cn"?"Naturable：写得更自然，也更像你。":"Naturable: Make every draft naturally yours.");
