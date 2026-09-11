@@ -28,13 +28,22 @@ export async function generateMetadata({params}:{params:Promise<{locale:string;s
   const ogTitle=isHome&&l==="en"?"Remove AI Writing Style Locally | Naturable":titleBase;
   const description=article?.description||descriptions[l]?.[key]||item?.description||descriptions[l]?.[""];
   const canonical=routePath(locale,key);
+  // Temporary OG fallbacks: dedicated og-*.png assets are not in public/ yet.
+  // Remap to existing live blog PNGs so og:image / twitter:image never 404.
+  const ogImagePath=article?.slug==="remove-ai-writing-style"
+    ?"/assets/blog/before-after-safe-fix.png"
+    :"/assets/blog/highlight-patterns.png";
+  const ogImageAlt=article?.slug==="remove-ai-writing-style"
+    ?(l==="zh-cn"?"Naturable 去掉 AI 写作腔前后对比":"Naturable before/after after removing AI writing style")
+    :(l==="zh-cn"?"Naturable：写得更自然，也更像你。":"Naturable: Make every draft naturally yours.");
+  const ogImages=[{url:ogImagePath,width:1200,height:630,alt:ogImageAlt}];
   return {
     title,
     description,
     keywords:article?.keywords,
     alternates:{canonical,languages:{en:routePath("en",key),"zh-CN":routePath("zh-cn",key),"x-default":routePath("en",key)}},
-    openGraph:{title:ogTitle,description,url:canonical,siteName:"Naturable",locale:l==="zh-cn"?"zh_CN":"en_US",type:article?"article":"website",publishedTime:article?(article.datePublished||"2026-07-12"):undefined,modifiedTime:article?(article.dateModified||article.datePublished||"2026-07-12"):undefined},
-    twitter:{title:ogTitle,description},
+    openGraph:{title:ogTitle,description,url:canonical,siteName:"Naturable",locale:l==="zh-cn"?"zh_CN":"en_US",type:article?"article":"website",publishedTime:article?(article.datePublished||"2026-07-12"):undefined,modifiedTime:article?(article.dateModified||article.datePublished||"2026-07-12"):undefined,images:ogImages},
+    twitter:{card:"summary_large_image",title:ogTitle,description,images:[ogImagePath]},
     robots:{index:true,follow:true}
   };
 }
