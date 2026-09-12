@@ -90,15 +90,11 @@ export default {
       url.pathname = canonicalTarget;
       return Response.redirect(url.toString(), 308);
     }
+    // www → apex 301 (preserve path + query); locale redirect happens on apex.
     if (url.hostname === "www.naturable.app") {
-      const isRoot = url.pathname === "/";
+      url.protocol = "https:";
       url.hostname = "naturable.app";
-      if (isRoot) url.pathname = `/${locale}/`;
-      const wwwLastSegment = url.pathname.split("/").pop() || "";
-      if (url.pathname !== "/" && !url.pathname.endsWith("/") && !wwwLastSegment.includes(".")) {
-        url.pathname += "/";
-      }
-      return Response.redirect(url.toString(), isRoot ? 302 : 308);
+      return Response.redirect(url.toString(), 301);
     }
     if (url.pathname === "/zh" || url.pathname === "/zh/") {
       return Response.redirect(`${url.origin}/zh-cn/`, 308);
