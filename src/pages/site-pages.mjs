@@ -17,9 +17,6 @@ export function editorPages() {
       title: "Editor: check and fix AI writing patterns locally — Naturable",
       description: "The full Naturable editor: highlights AI writing patterns, explains each one, applies safe fixes you approve, and compares versions. Drafts stay in your browser.",
       scripts: EDITOR_SCRIPTS,
-      schema: [
-        { "@context": "https://schema.org", "@type": "WebApplication", name: "Naturable editor", url: "https://naturable.app/en/app/", applicationCategory: "UtilitiesApplication", operatingSystem: "Web browser", offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } },
-      ],
       body: editor({ lang: "en" }),
     },
     {
@@ -61,16 +58,7 @@ export function extensionPage() {
     scripts: ["/assets/js/site.js"],
     schema: [
       crumbs.schema,
-      faqSchema(FAQ),
-      {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        name: "Naturable – AI Writing Pattern Checker",
-        applicationCategory: "BrowserApplication",
-        operatingSystem: "Chrome",
-        offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-        ...(live ? { downloadUrl: SITE.chromeStoreUrl } : {}),
-      },
+      faqSchema(FAQ)
     ],
     body: `<div class="wrap" style="padding-bottom:64px">
   ${crumbs.html}

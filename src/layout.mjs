@@ -132,6 +132,10 @@ export function breadcrumbs(lang, items) {
   // items: [[label, href|null], ...] excluding Home
   const t = T[lang];
   const all = [[t.crumbHome, t.home], ...items];
+  // Google requires a URL on every breadcrumb except the last one.
+  all.slice(0, -1).forEach(([label, href]) => {
+    if (!href) throw new Error(`breadcrumb "${label}" needs a URL (only the last crumb may omit it)`);
+  });
   const html = `<nav class="breadcrumb" aria-label="Breadcrumb"><ol>${all
     .map(([label, href], i) =>
       href && i < all.length - 1 ? `<li><a href="${href}">${esc(label)}</a></li>` : `<li${i === all.length - 1 ? ' aria-current="page"' : ""}>${esc(label)}</li>`,

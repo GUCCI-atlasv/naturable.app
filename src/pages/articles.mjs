@@ -133,7 +133,7 @@ ${TEST_SOURCE ? `<div class="callout"><p><strong>Source paragraph</strong></p><p
 /* ---------------- P1-1: ChatGPT em dash ---------------- */
 export function emDash() {
   const PATH = "/en/chatgpt-em-dash/";
-  const crumbs = breadcrumbs("en", [["Tools", null], ["Em dash checker", null]]);
+  const crumbs = breadcrumbs("en", [["Guides", "/en/learn/"], ["Em dash checker", null]]);
   const description = "Why does ChatGPT use so many em dashes? The likely reasons, when a dash is worth keeping, and a free em dash remover that counts dashes per 1,000 words and lets you replace each one.";
   const FAQ = [
     ["Why does ChatGPT use so many em dashes?", "Nobody outside the AI labs knows for sure. Likely reasons: edited books and articles in the training data use them heavily, and human raters may have preferred replies that read as polished. Both are plausible; neither is proven."],
@@ -153,7 +153,6 @@ export function emDash() {
       crumbs.schema,
       articleSchema({ lang: "en", path: PATH, headline: "Why Does ChatGPT Use So Many Em Dashes?", description, datePublished: "2026-10-22", dateModified: "2026-10-22" }),
       faqSchema(FAQ),
-      { "@context": "https://schema.org", "@type": "WebApplication", name: "Em dash checker", url: "https://naturable.app" + PATH, applicationCategory: "UtilitiesApplication", operatingSystem: "Web browser", offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } },
     ],
     body: `<div class="wrap" style="padding-bottom:64px">
   ${crumbs.html}
@@ -187,7 +186,7 @@ export function emDash() {
 /* ---------------- P1-2: Perplexity & burstiness ---------------- */
 export function burstiness() {
   const PATH = "/en/learn/what-is-perplexity-and-burstiness/";
-  const crumbs = breadcrumbs("en", [["Tools", null], ["Burstiness calculator", null]]);
+  const crumbs = breadcrumbs("en", [["Guides", "/en/learn/"], ["Burstiness calculator", null]]);
   const description = "What burstiness and perplexity mean in writing, why AI detectors use them, and their limits. Free burstiness calculator: sentence-length chart, standard deviation and same-length runs.";
   const FAQ = [
     ["What does burstiness mean in writing?", "How much sentence length and shape vary across a text. Writing that mixes short and long sentences has high burstiness; writing where every sentence is about the same length has low burstiness."],
@@ -208,7 +207,6 @@ export function burstiness() {
       crumbs.schema,
       articleSchema({ lang: "en", path: PATH, headline: "Perplexity and burstiness in writing: what the metrics really mean", description, datePublished: "2026-07-12", dateModified: "2026-10-22" }),
       faqSchema(FAQ),
-      { "@context": "https://schema.org", "@type": "WebApplication", name: "Burstiness calculator", url: "https://naturable.app" + PATH, applicationCategory: "UtilitiesApplication", operatingSystem: "Web browser", offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } },
     ],
     body: `<div class="wrap" style="padding-bottom:64px">
   ${crumbs.html}

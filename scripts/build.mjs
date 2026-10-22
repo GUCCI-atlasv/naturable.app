@@ -260,6 +260,29 @@ for (const href of new Set(Object.values(DOCS.words))) {
   if (!(idsByPath[path] || new Set()).has(hashPart)) errors.push(`docs: word link ${href} has no target`);
 }
 
+// Structured data: the fields Google's rich-result reports treat as required.
+const APP_TYPES = new Set(["SoftwareApplication", "WebApplication", "MobileApplication"]);
+for (const p of pages) {
+  for (const [, json] of p.html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {
+    let d;
+    try { d = JSON.parse(json); } catch (e) { errors.push(`${p.path}: invalid JSON-LD (${e.message})`); continue; }
+    const where = `${p.path}: ${d["@type"]}`;
+    if (d["@type"] === "BreadcrumbList") {
+      d.itemListElement.slice(0, -1).forEach((i) => { if (!i.item) errors.push(`${where} "${i.name}" is missing item`); });
+    } else if (d["@type"] === "Article") {
+      if (!d.headline || d.headline.length > 110) errors.push(`${where} headline missing or over 110 chars`);
+      if (!d.datePublished) errors.push(`${where} missing datePublished`);
+    } else if (d["@type"] === "FAQPage") {
+      d.mainEntity.forEach((q) => { if (!q.name || !q.acceptedAnswer?.text) errors.push(`${where} has an empty question or answer`); });
+    } else if (d["@type"] === "Dataset") {
+      if (!d.description || d.description.length < 50) errors.push(`${where} description must be 50+ chars`);
+    } else if (APP_TYPES.has(d["@type"])) {
+      // Google requires aggregateRating or review for software rich results; don't add them without real data.
+      if (!d.aggregateRating && !d.review) errors.push(`${where} needs aggregateRating or review (real data only)`);
+    }
+  }
+}
+
 if (!SITE.githubUrl) warnings.push("SITE.githubUrl is empty: GitHub links point to /en/how-it-works/#rules (src/site.mjs).");
 if (!SITE.chromeStoreUrl) warnings.push("SITE.chromeStoreUrl is empty: \"Add to Chrome\" points to /en/chrome-extension/ (coming soon).");
 

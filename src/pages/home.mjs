@@ -51,17 +51,6 @@ export default function home() {
         inLanguage: ["en", "zh-CN"],
         publisher: { "@id": abs("/#organization") },
       },
-      {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        name: "Naturable",
-        applicationCategory: "UtilitiesApplication",
-        operatingSystem: "Web browser",
-        url: abs("/en/app/"),
-        description: "A local, explainable checker for AI writing patterns. Runs in the browser; text is not uploaded.",
-        offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-        publisher: { "@id": abs("/#organization") },
-      },
       faqSchema(FAQ_EN),
     ],
     body: `<div class="wrap">
