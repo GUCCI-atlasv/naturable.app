@@ -1,0 +1,31 @@
+{
+  "path": "/zh-cn/learn/replace-claims-with-evidence/",
+  "lang": "zh",
+  "title": "营销文案别只喊口号：怎样用证据替代宽泛主张 — Naturable",
+  "description": "把创新、领先、无缝和赋能等宽泛营销主张，改成有数字、来源、客户结果和产品机制的可信文案。",
+  "h1": "营销文案别只喊口号：怎样用证据替代宽泛主张",
+  "lede": "把创新、领先、无缝和赋能等宽泛营销主张，改成有数字、来源、客户结果和产品机制的可信文案。",
+  "topic": "营销写作",
+  "readTime": "7 分钟",
+  "datePublished": "2026-07-12",
+  "dateModified": "2026-07-12",
+  "bodyHtml": "<p>当每个产品都“创新”，每套流程都“无缝”，每项结果都“颠覆”，读者只能被要求相信形容词。可信文案需要证据。</p><h2>找出形容词背后的主张</h2><p>看到“快速、简单、强大、领先”时，继续问：和什么相比、怎样衡量、对谁成立？</p><h2>选择最接近主张的证据</h2><p>产品行为、基准测试、客户结果、采用数量、独立研究和可核实引用都可以成为证据。不要用品牌口号支持功能结论。</p><h2>写清主体、动作和结果</h2><p>“平台赋能团队”没有说明机制。可以改成：“运营团队直接在 Slack 审批发票，审批时间中位数从 19 小时缩短到 6 小时。”</p><h2>诚实限定证据范围</h2><p>必要时写出样本、日期和条件。单个客户案例不能变成普遍承诺，“可以、通常、在本案例中”的边界并不削弱可信度。</p><h2>证据修改模板</h2><ul><li><strong>主张：</strong>希望读者相信什么？</li><li><strong>机制：</strong>哪个产品动作让它发生？</li><li><strong>证明：</strong>哪个数字、来源或案例支持它？</li><li><strong>边界：</strong>它在什么条件下成立？</li></ul>",
+  "related": [
+    {
+      "href": "/zh-cn/learn/remove-ai-writing-style/",
+      "topic": "去 AI 腔",
+      "title": "不上云，怎样去掉 AI 写作腔"
+    },
+    {
+      "href": "/zh-cn/learn/how-to-remove-ai-tells/",
+      "topic": "AI 写作",
+      "title": "怎样改掉明显的“AI 腔”，又不丢掉自己的表达"
+    },
+    {
+      "href": "/zh-cn/learn/what-is-perplexity-and-burstiness/",
+      "topic": "写作指标",
+      "title": "困惑度和句子变化是什么？别把指标当成 AI 鉴定"
+    }
+  ],
+  "importedFrom": "https://naturable.app/zh-cn/learn/replace-claims-with-evidence/"
+}

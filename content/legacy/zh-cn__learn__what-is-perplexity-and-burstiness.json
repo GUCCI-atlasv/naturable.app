@@ -1,0 +1,31 @@
+{
+  "path": "/zh-cn/learn/what-is-perplexity-and-burstiness/",
+  "lang": "zh",
+  "title": "困惑度和句子变化是什么？别把指标当成 AI 鉴定 — Naturable",
+  "description": "理解写作中的困惑度、Burstiness 和句子节奏，了解 AI 检测指标能说明什么、又不能证明什么。",
+  "h1": "困惑度和句子变化是什么？别把指标当成 AI 鉴定",
+  "lede": "理解写作中的困惑度、Burstiness 和句子节奏，了解 AI 检测指标能说明什么、又不能证明什么。",
+  "topic": "写作指标",
+  "readTime": "6 分钟",
+  "datePublished": "2026-07-12",
+  "dateModified": "2026-07-12",
+  "bodyHtml": "<p>困惑度和 Burstiness 经常出现在 AI 检测讨论里。它们可以描述文字的统计特征，但都不能单独证明作者身份。</p><h2>困惑度是什么</h2><p>困惑度大致反映一段词序对语言模型来说有多好预测。常见搭配通常更容易预测，但题材、文体、术语、引用和作者语言水平都会影响结果。</p><h2>Burstiness 是什么</h2><p>在写作工具中，它通常观察句子长度、结构和节奏的变化。六个长度相近、结构一致的句子容易显得机械；长短句根据内容自然变化，阅读节奏会更清楚。</p><h2>为什么不能据此鉴定作者</h2><p>认真编辑的人类作者也可能写出高度可预测的文字；AI 辅助文本经过修改后也可能变化很大。翻译、模板和专业题材都会改变指标。</p><h2>怎样自然改善节奏</h2><p>不要为了分数硬塞生僻词或句子碎片。把主要决定写短，把需要解释的关系写完整，让节奏跟着信息重点变化。</p><h2>更有用的问题</h2><p>与其问“分数像不像真人”，不如问：读者能不能跟上论证、核实依据，并看出作者自己的判断。</p>",
+  "related": [
+    {
+      "href": "/zh-cn/learn/remove-ai-writing-style/",
+      "topic": "去 AI 腔",
+      "title": "不上云，怎样去掉 AI 写作腔"
+    },
+    {
+      "href": "/zh-cn/learn/how-to-remove-ai-tells/",
+      "topic": "AI 写作",
+      "title": "怎样改掉明显的“AI 腔”，又不丢掉自己的表达"
+    },
+    {
+      "href": "/zh-cn/learn/do-ai-humanizers-work/",
+      "topic": "理性使用 AI",
+      "title": "AI Humanizer 真的有用吗？效果、风险和更可靠的流程"
+    }
+  ],
+  "importedFrom": "https://naturable.app/zh-cn/learn/what-is-perplexity-and-burstiness/"
+}

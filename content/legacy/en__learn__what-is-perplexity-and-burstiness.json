@@ -1,0 +1,31 @@
+{
+  "path": "/en/learn/what-is-perplexity-and-burstiness/",
+  "lang": "en",
+  "title": "Perplexity and burstiness in writing: what the metrics really mean — Naturable",
+  "description": "Learn what perplexity and burstiness measure, why AI detectors use them, their limitations, and how to improve sentence rhythm naturally.",
+  "h1": "Perplexity and burstiness in writing: what the metrics really mean",
+  "lede": "Learn what perplexity and burstiness measure, why AI detectors use them, their limitations, and how to improve sentence rhythm naturally.",
+  "topic": "Writing metrics",
+  "readTime": "6 min read",
+  "datePublished": "2026-07-12",
+  "dateModified": "2026-07-12",
+  "bodyHtml": "<p>Perplexity and burstiness are statistical lenses often mentioned in discussions of AI-generated text. They can describe properties of writing, but neither metric can identify an author on its own.</p><h2>What is perplexity?</h2><p>Perplexity describes how predictable a sequence of words is to a language model. Familiar phrases and common word combinations tend to be easier to predict. A lower value does not automatically mean “written by AI,” and a higher value does not automatically mean “human.” Topic, genre, language ability, quotations, and technical terminology all affect predictability.</p><h2>What is burstiness?</h2><p>Burstiness describes variation across a text. In writing tools, it often refers to changes in sentence length, structure, or pacing. A paragraph made of six equally sized sentences can feel mechanical; a paragraph with deliberate short and long sentences may feel more dynamic.</p><h2>Why these metrics cannot prove authorship</h2><p>A careful human writer may produce predictable prose. An AI-assisted draft can contain wide sentence variation. Editing, translation, templates, and subject matter can move both metrics. That is why a naturalness score should be treated as guidance, not an AI authorship probability.</p><h2>How to improve rhythm without gaming a detector</h2><p>Do not insert rare words or random sentence fragments. Group related details, shorten the sentence that carries the main decision, and use a longer sentence when the relationship between ideas needs explanation. Rhythm should follow meaning.</p><h2>A better review question</h2><p>Instead of asking whether the score looks human, ask whether the reader can follow the argument, verify the evidence, and recognize the writer’s judgment.</p>",
+  "related": [
+    {
+      "href": "/en/learn/remove-ai-writing-style/",
+      "topic": "AI writing style",
+      "title": "How to Remove AI Writing Style Without Uploading Your Draft"
+    },
+    {
+      "href": "/en/learn/how-to-remove-ai-tells/",
+      "topic": "AI writing patterns",
+      "title": "How to remove AI writing tells without losing your voice"
+    },
+    {
+      "href": "/en/learn/do-ai-humanizers-work/",
+      "topic": "Responsible AI editing",
+      "title": "Do AI humanizers work? Benefits, risks, and a better workflow"
+    }
+  ],
+  "importedFrom": "https://naturable.app/en/learn/what-is-perplexity-and-burstiness/"
+}

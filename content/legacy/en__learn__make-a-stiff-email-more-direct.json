@@ -1,0 +1,31 @@
+{
+  "path": "/en/learn/make-a-stiff-email-more-direct/",
+  "lang": "en",
+  "title": "How to make a stiff email more direct, clear, and professional — Naturable",
+  "description": "Edit a stiff business email by shortening scripted politeness, stating the request early, clarifying deadlines, and keeping a professional tone.",
+  "h1": "How to make a stiff email more direct, clear, and professional",
+  "lede": "Edit a stiff business email by shortening scripted politeness, stating the request early, clarifying deadlines, and keeping a professional tone.",
+  "topic": "Email editing",
+  "readTime": "6 min read",
+  "datePublished": "2026-07-12",
+  "dateModified": "2026-07-12",
+  "bodyHtml": "<p>A stiff email makes the reader work to find the request. It often contains ceremonial greetings, abstract context, and several layers of politeness before the actual action appears.</p><h2>Put the request in the first two sentences</h2><p>After a brief greeting, state what you need. “Could you approve the attached budget by Thursday?” is easier to act on than a paragraph about the importance of the planning process.</p><h2>Replace scripted politeness with useful context</h2><p>Professional does not mean indirect. Keep courtesy, but remove phrases such as “I am writing to humbly request” or “at your earliest possible convenience.” Give a real deadline and explain why it matters.</p><h2>Make responsibility explicit</h2><p>Name the owner, action, object, and date. If several people receive the email, say who should reply and who is copied for awareness.</p><h2>Use a scannable structure</h2><p>For more than one request, use short bullets. Put background after the request, not before it. End by confirming the next step.</p><h2>Email example</h2><p><strong>Before:</strong> I hope this message finds you well. I am reaching out regarding the budget document and would greatly appreciate it if you could review it at your earliest convenience.</p><p><strong>After:</strong> Could you approve the attached budget by 3 p.m. Thursday? We need the final figure before Friday’s vendor call.</p><h2>Final check</h2><ul><li>Is the request visible without scrolling?</li><li>Does every deadline include a date or time?</li><li>Can the recipient tell exactly how to respond?</li></ul>",
+  "related": [
+    {
+      "href": "/en/learn/remove-ai-writing-style/",
+      "topic": "AI writing style",
+      "title": "How to Remove AI Writing Style Without Uploading Your Draft"
+    },
+    {
+      "href": "/en/learn/how-to-remove-ai-tells/",
+      "topic": "AI writing patterns",
+      "title": "How to remove AI writing tells without losing your voice"
+    },
+    {
+      "href": "/en/learn/what-is-perplexity-and-burstiness/",
+      "topic": "Writing metrics",
+      "title": "Perplexity and burstiness in writing: what the metrics really mean"
+    }
+  ],
+  "importedFrom": "https://naturable.app/en/learn/make-a-stiff-email-more-direct/"
+}

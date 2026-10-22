@@ -1,0 +1,15 @@
+{
+  "path": "/zh-cn/privacy/",
+  "lang": "zh",
+  "title": "隐私政策 — Naturable",
+  "description": "在浏览器里给博客、邮件、营销稿去 GPT 味：清套话、破结构。本地隐私，草稿不上云，无需注册。英中规则分轨。",
+  "h1": "隐私政策",
+  "lede": "免费版的检查和修改都在浏览器里完成。你的正文、修改前版本和对比内容不会上传到服务器。",
+  "topic": "",
+  "readTime": null,
+  "datePublished": null,
+  "dateModified": null,
+  "bodyHtml": "<h2>为什么会自动选择语言</h2><p>Cloudflare 会根据访问地区推荐中文或英文。你手动切换后，我们会用 Cookie 记住选择，下次不再重复判断。</p><h2>规则反馈</h2><p>当你选择“有帮助”“误报”或“建议不清楚”时，Naturable 只发送反馈类型、规则 ID、语言、写作场景、严重程度、置信度和引擎版本。反馈不会包含原文、命中片段、修改结果、Diff、草稿名称、文本 hash、前后文或任何可用于推测内容长度的数据。</p><p>反馈只按规则 ID、语言和写作场景聚合，用于找出需要人工审核的规则。系统不会根据反馈自动修改线上规则；任何调整都必须结合固定测试集审核。</p><h2>我们会记录什么</h2><p>为了改进产品，我们可能记录所选语言、写作场景、规则编号、问题类型和大致数量，但不会记录正文、命中的句子或修改内容。</p><p>如有疑问，请联系 <a href=\"mailto:privacy@naturable.app\">privacy@naturable.app</a>。</p>",
+  "related": [],
+  "importedFrom": "https://naturable.app/zh-cn/privacy/"
+}

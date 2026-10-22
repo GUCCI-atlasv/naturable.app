@@ -1,0 +1,15 @@
+{
+  "path": "/en/terms/",
+  "lang": "en",
+  "title": "Terms of Service — Naturable",
+  "description": "Remove AI writing style from your drafts locally. Spot GPT tone, fix common AI patterns, and rewrite with Naturable — no upload, free to start.",
+  "h1": "Terms of Service",
+  "lede": "Naturable is a writing-assistance tool. You are responsible for the content you edit and how you use the output.",
+  "topic": "",
+  "readTime": null,
+  "datePublished": null,
+  "dateModified": null,
+  "bodyHtml": "<h2>No detector guarantee</h2><p>Scores and suggestions are heuristic guidance. Naturable does not guarantee an outcome against any detector, grader, or reviewer.</p><h2>Your text</h2><p>You retain all rights to the text you submit and the output you receive.</p>",
+  "related": [],
+  "importedFrom": "https://naturable.app/en/terms/"
+}

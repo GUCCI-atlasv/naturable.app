@@ -1,0 +1,31 @@
+{
+  "path": "/zh-cn/learn/common-patterns-in-chinese-ai-copy/",
+  "lang": "zh",
+  "title": "中文 AI 文案的常见套路，以及怎样改得更自然 — Naturable",
+  "description": "识别中文 AI 文案中的元话语、宣传动词、机械连接词、模板递进、模糊来源和意义拔高。",
+  "h1": "中文 AI 文案的常见套路，以及怎样改得更自然",
+  "lede": "识别中文 AI 文案中的元话语、宣传动词、机械连接词、模板递进、模糊来源和意义拔高。",
+  "topic": "中文写作",
+  "readTime": "7 分钟",
+  "datePublished": "2026-07-12",
+  "dateModified": "2026-07-12",
+  "bodyHtml": "<p>中文 AI 文案有自己的套路，不能照搬英文修改方法。问题往往不在语法，而在正式空话、宣传动词、对称句式和意义拔高不断叠加。</p><h2>拖延重点的元话语</h2><p>“值得注意的是、毋庸置疑的是、不可否认的是”只是在宣布重要。删掉外壳，直接写事实。</p><h2>没有动作的宣传动词</h2><p>“赋能、助力、打造、构建、引领、重塑”容易遮住真正动作。补上行动主体、具体动作和可衡量结果。</p><h2>机械连接词</h2><p>每段都按照“首先、其次、此外、最后”推进，会像自动生成的提纲。改用因果、对比、时间或优先级组织信息。</p><h2>模板化递进和意义拔高</h2><p>连续使用“不仅……更……”会让每句话都像口号。“开启新的篇章”也需要落到实际结果。</p><h2>修改示例</h2><p><strong>修改前：</strong>该平台将赋能企业数字化转型，开启高质量发展的新篇章。</p><p><strong>修改后：</strong>该平台把审批时间从三天缩短到一天，并让财务团队统一查看合同状态。</p>",
+  "related": [
+    {
+      "href": "/zh-cn/learn/remove-ai-writing-style/",
+      "topic": "去 AI 腔",
+      "title": "不上云，怎样去掉 AI 写作腔"
+    },
+    {
+      "href": "/zh-cn/learn/how-to-remove-ai-tells/",
+      "topic": "AI 写作",
+      "title": "怎样改掉明显的“AI 腔”，又不丢掉自己的表达"
+    },
+    {
+      "href": "/zh-cn/learn/what-is-perplexity-and-burstiness/",
+      "topic": "写作指标",
+      "title": "困惑度和句子变化是什么？别把指标当成 AI 鉴定"
+    }
+  ],
+  "importedFrom": "https://naturable.app/zh-cn/learn/common-patterns-in-chinese-ai-copy/"
+}

@@ -1,0 +1,31 @@
+{
+  "path": "/en/learn/common-patterns-in-chinese-ai-copy/",
+  "lang": "en",
+  "title": "Common patterns in Chinese AI copy—and how to rewrite them — Naturable",
+  "description": "Identify common Chinese AI writing patterns such as meta phrases, promotional verbs, mechanical transitions, vague sources, and inflated conclusions.",
+  "h1": "Common patterns in Chinese AI copy—and how to rewrite them",
+  "lede": "Identify common Chinese AI writing patterns such as meta phrases, promotional verbs, mechanical transitions, vague sources, and inflated conclusions.",
+  "topic": "Chinese writing",
+  "readTime": "7 min read",
+  "datePublished": "2026-07-12",
+  "dateModified": "2026-07-12",
+  "bodyHtml": "<p>Chinese AI copy has patterns that do not map neatly onto English advice. The problem is rarely grammar. It is often an accumulation of formal framing, promotional verbs, symmetrical sentence structures, and conclusions that inflate significance.</p><h2>Meta phrases that delay the point</h2><p>Expressions such as “值得注意的是,” “毋庸置疑的是,” and “不可否认的是” announce importance instead of demonstrating it. Remove the frame and begin with the fact.</p><h2>Promotional verbs without an action</h2><p>“赋能、助力、打造、构建、引领、重塑” can hide who did what. Replace them with an actor, an action, and a measurable result.</p><h2>Mechanical transitions</h2><p>A paragraph that always moves through “首先、其次、此外、最后” sounds like a generated outline. Organize information by cause, contrast, chronology, or priority, and use a transition only when the relationship needs to be stated.</p><h2>Inflated parallel structures</h2><p>Repeated “不仅……更……” sentences make every claim sound equally dramatic. State the main result directly, then support it with evidence.</p><h2>Vague sources and ceremonial endings</h2><p>“有研究表明” needs a source. “开启新的篇章” needs a concrete outcome. Chinese writing becomes more credible when it names institutions, dates, numbers, decisions, and next steps.</p><h2>Before and after</h2><p><strong>Before:</strong> 该平台将赋能企业数字化转型，开启高质量发展的新篇章。</p><p><strong>After:</strong> 该平台把审批时间从三天缩短到一天，并让财务团队统一查看合同状态。</p>",
+  "related": [
+    {
+      "href": "/en/learn/remove-ai-writing-style/",
+      "topic": "AI writing style",
+      "title": "How to Remove AI Writing Style Without Uploading Your Draft"
+    },
+    {
+      "href": "/en/learn/how-to-remove-ai-tells/",
+      "topic": "AI writing patterns",
+      "title": "How to remove AI writing tells without losing your voice"
+    },
+    {
+      "href": "/en/learn/what-is-perplexity-and-burstiness/",
+      "topic": "Writing metrics",
+      "title": "Perplexity and burstiness in writing: what the metrics really mean"
+    }
+  ],
+  "importedFrom": "https://naturable.app/en/learn/common-patterns-in-chinese-ai-copy/"
+}

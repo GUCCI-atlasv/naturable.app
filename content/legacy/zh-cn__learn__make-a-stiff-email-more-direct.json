@@ -1,0 +1,31 @@
+{
+  "path": "/zh-cn/learn/make-a-stiff-email-more-direct/",
+  "lang": "zh",
+  "title": "怎样把一封生硬的邮件改得直接、清楚又专业 — Naturable",
+  "description": "删掉程式化客套，提前说明请求、负责人和截止时间，让商务邮件更直接、更容易执行。",
+  "h1": "怎样把一封生硬的邮件改得直接、清楚又专业",
+  "lede": "删掉程式化客套，提前说明请求、负责人和截止时间，让商务邮件更直接、更容易执行。",
+  "topic": "邮件写作",
+  "readTime": "6 分钟",
+  "datePublished": "2026-07-12",
+  "dateModified": "2026-07-12",
+  "bodyHtml": "<p>生硬的邮件常常让读者读完大半页，才找到真正请求。问题通常是客套过多、背景抽象、行动信息出现得太晚。</p><h2>前两句话就说明请求</h2><p>简单问候后直接写你需要什么。“请在周四前确认附件预算”比先解释一段规划工作的重要性更容易执行。</p><h2>用必要背景代替程式化客套</h2><p>专业不等于绕弯。保留礼貌，但删掉“冒昧打扰”“百忙之中拨冗”等模板句，写清截止时间和原因。</p><h2>明确负责人、动作和时间</h2><p>多人收件时，要说明谁需要回复，谁只是知会。日期最好带具体时间，避免“尽快”。</p><h2>修改示例</h2><p><strong>修改前：</strong>希望您一切安好。关于预算文件，烦请您在方便的时候拨冗审阅，不胜感激。</p><p><strong>修改后：</strong>请在周四下午 3 点前确认附件预算。我们需要在周五供应商会议前锁定最终金额。</p><h2>发送前检查</h2><ul><li>不滚动页面能否看到请求？</li><li>截止时间是否具体？</li><li>收件人是否知道怎样回复？</li></ul>",
+  "related": [
+    {
+      "href": "/zh-cn/learn/remove-ai-writing-style/",
+      "topic": "去 AI 腔",
+      "title": "不上云，怎样去掉 AI 写作腔"
+    },
+    {
+      "href": "/zh-cn/learn/how-to-remove-ai-tells/",
+      "topic": "AI 写作",
+      "title": "怎样改掉明显的“AI 腔”，又不丢掉自己的表达"
+    },
+    {
+      "href": "/zh-cn/learn/what-is-perplexity-and-burstiness/",
+      "topic": "写作指标",
+      "title": "困惑度和句子变化是什么？别把指标当成 AI 鉴定"
+    }
+  ],
+  "importedFrom": "https://naturable.app/zh-cn/learn/make-a-stiff-email-more-direct/"
+}

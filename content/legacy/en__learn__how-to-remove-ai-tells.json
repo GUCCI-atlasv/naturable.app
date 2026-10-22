@@ -1,0 +1,31 @@
+{
+  "path": "/en/learn/how-to-remove-ai-tells/",
+  "lang": "en",
+  "title": "How to remove AI writing tells without losing your voice — Naturable",
+  "description": "A practical editing checklist for removing AI writing tells, generic wording, formulaic sentences, vague evidence, and assistant chatter.",
+  "h1": "How to remove AI writing tells without losing your voice",
+  "lede": "A practical editing checklist for removing AI writing tells, generic wording, formulaic sentences, vague evidence, and assistant chatter.",
+  "topic": "AI writing patterns",
+  "readTime": "7 min read",
+  "datePublished": "2026-07-12",
+  "dateModified": "2026-07-12",
+  "bodyHtml": "<p>AI writing tells are repeated choices that make a draft feel generic, mechanical, or detached from its subject. They are not proof that AI wrote the text. They are editing signals: vague claims, polished filler, uniform sentence shapes, and conclusions that sound important without saying anything testable.</p><h2>1. Remove assistant chatter and empty framing</h2><p>Delete phrases such as “Great question,” “I hope this helps,” and “It is important to note that.” A document should begin with its point, not with language left over from a chat interface.</p><h2>2. Replace generic AI vocabulary</h2><p>Words such as <em>robust</em>, <em>pivotal</em>, <em>leverage</em>, and <em>delve</em> are not always wrong. The problem is that they often replace a concrete action. Instead of “leverage a robust platform,” write what the team did and what changed: “The support team used the dashboard to cut response time by 18%.”</p><h2>3. Break formulaic sentence patterns</h2><p>Watch for repeated “not only … but also,” identical paragraph openings, and a sequence of “first, furthermore, finally.” Keep transitions only when they explain a real relationship between ideas.</p><h2>4. Name the evidence</h2><p>Replace “experts believe” and “studies show” with a named source, date, and finding. If no source is available, rewrite the sentence as your own clearly bounded observation.</p><h2>5. End with a result or next step</h2><p>Conclusions such as “the future looks bright” add confidence without information. Finish with the decision, result, risk, or action the reader needs.</p><h2>Quick editing checklist</h2><ul><li>Can every broad adjective be tied to a fact?</li><li>Does each transition express a real connection?</li><li>Are sources identifiable and verifiable?</li><li>Do sentence lengths follow the meaning rather than a template?</li><li>Does the ending give the reader something concrete?</li></ul><h3>Check your text against the current rule pack</h3><p>Run the draft through Naturable’s versioned rule packs (en-v1.0 shipping / zh-v1.0 Beta). Each hit shows the rule name and why—not a fixed pattern count on the marketing page.</p>",
+  "related": [
+    {
+      "href": "/en/learn/remove-ai-writing-style/",
+      "topic": "AI writing style",
+      "title": "How to Remove AI Writing Style Without Uploading Your Draft"
+    },
+    {
+      "href": "/en/learn/what-is-perplexity-and-burstiness/",
+      "topic": "Writing metrics",
+      "title": "Perplexity and burstiness in writing: what the metrics really mean"
+    },
+    {
+      "href": "/en/learn/do-ai-humanizers-work/",
+      "topic": "Responsible AI editing",
+      "title": "Do AI humanizers work? Benefits, risks, and a better workflow"
+    }
+  ],
+  "importedFrom": "https://naturable.app/en/learn/how-to-remove-ai-tells/"
+}

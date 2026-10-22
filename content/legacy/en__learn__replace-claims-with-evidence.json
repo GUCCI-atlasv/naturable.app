@@ -1,0 +1,31 @@
+{
+  "path": "/en/learn/replace-claims-with-evidence/",
+  "lang": "en",
+  "title": "Replace marketing claims with evidence: a practical editing guide — Naturable",
+  "description": "Turn vague marketing claims into credible copy with specific evidence, numbers, sources, customer outcomes, and clear product actions.",
+  "h1": "Replace marketing claims with evidence: a practical editing guide",
+  "lede": "Turn vague marketing claims into credible copy with specific evidence, numbers, sources, customer outcomes, and clear product actions.",
+  "topic": "Evidence-based writing",
+  "readTime": "7 min read",
+  "datePublished": "2026-07-12",
+  "dateModified": "2026-07-12",
+  "bodyHtml": "<p>Marketing copy becomes weak when every product is “innovative,” every workflow is “seamless,” and every result is “transformative.” These claims ask the reader to trust an adjective instead of showing evidence.</p><h2>Find the claim hidden inside the adjective</h2><p>For every word such as <em>fast</em>, <em>easy</em>, <em>robust</em>, or <em>leading</em>, ask: compared with what, measured how, and for whom?</p><h2>Use the strongest available evidence</h2><p>Evidence can include product behavior, benchmark results, customer outcomes, adoption numbers, independent research, or a clearly attributed quotation. Choose the evidence closest to the claim.</p><h2>Write the actor, action, and result</h2><p>“Our platform empowers teams” does not describe a mechanism. “Operations teams can approve invoices from Slack, reducing median approval time from 19 hours to 6” gives the reader something testable.</p><h2>Qualify evidence honestly</h2><p>State the sample, date, or condition when it matters. Do not turn one customer result into a universal promise. Credible copy distinguishes “can,” “typically,” and “in this case.”</p><h2>Evidence editing template</h2><ul><li><strong>Claim:</strong> What do we want the reader to believe?</li><li><strong>Mechanism:</strong> What product action makes it possible?</li><li><strong>Proof:</strong> What number, source, or example supports it?</li><li><strong>Boundary:</strong> Under what conditions is it true?</li></ul><p>Specific evidence does more than improve naturalness. It gives buyers a reason to trust the copy.</p>",
+  "related": [
+    {
+      "href": "/en/learn/remove-ai-writing-style/",
+      "topic": "AI writing style",
+      "title": "How to Remove AI Writing Style Without Uploading Your Draft"
+    },
+    {
+      "href": "/en/learn/how-to-remove-ai-tells/",
+      "topic": "AI writing patterns",
+      "title": "How to remove AI writing tells without losing your voice"
+    },
+    {
+      "href": "/en/learn/what-is-perplexity-and-burstiness/",
+      "topic": "Writing metrics",
+      "title": "Perplexity and burstiness in writing: what the metrics really mean"
+    }
+  ],
+  "importedFrom": "https://naturable.app/en/learn/replace-claims-with-evidence/"
+}
