@@ -1,4 +1,6 @@
-# Chrome Web Store listing (ready to paste, not submitted)
+# Chrome Web Store listing (ready to paste)
+
+Status: submitted 2026-10-23, rejected for keyword spam (site-name list in the description); description below is the fix to resubmit.
 
 Per PRD §6.4: write around AI words / AI writing patterns / em dash. Never use "humanizer", "undetectable", "bypass", or detector names.
 Claims below match what the extension does today (0.1.0, rules en-v1.1); keep them in step when the rules change.
@@ -16,34 +18,34 @@ Underlines AI writing patterns (AI words, template openers, em dashes) where you
 **Language:** English
 
 **Description:**
+(Revised 2026-10-23 after review flagged keyword spam, "Yellow Argon": no lists of site or product names, and only a
+couple of example words. Keep it that way.)
 
 ```
-Naturable underlines the patterns that make writing sound like a chatbot, right where you write: email, LinkedIn, X, Reddit, Notion, Medium, WordPress and other sites you turn it on for.
+Naturable underlines the patterns that make writing sound like a chatbot, in the text boxes of the sites you choose, and explains each one.
 
 What it flags
-• AI vocabulary: delve, leverage, robust, tapestry and 50+ other words and phrases
-• Template openers and closers: "In today's fast-paced world", "The future looks bright"
-• Vague sources: "Experts believe", "Studies show"
-• Assistant leftovers: "Great question!", "I hope this helps!"
-• Stacked hedges, filler phrases and heavy em dash use
+• Overused AI vocabulary, such as "delve" and "leverage"
+• Template openers and closers, such as "The future looks bright"
+• Vague sources, such as "Experts believe"
+• Leftover assistant phrases, such as "I hope this helps!"
+• Stacked hedges, wordy filler and heavy em dash use
 
 How it works
-• Turn it on for a site from the toolbar button. Chrome asks once for that site only
-• Hover an underline to see the rule, why it reads as AI, and what to do instead
-• Click Ignore for a phrase you meant to use, or Learn more for the full explanation on naturable.app
-• Right-click selected text and choose "Check with Naturable" to get a score and every finding in the side panel
-• Paste anything into the side panel, including text from Google Docs
-• Pick what you're writing (email, blog, academic and more) to adjust how strict it is
+• Turn it on for a site from the toolbar button. Chrome asks once, for that site only
+• Hover an underline to see the rule, why it reads as AI-written, and what to do instead
+• Ignore a phrase you meant to use, or open the full explanation on naturable.app
+• Right-click selected text and choose "Check with Naturable" to see a score and every finding in the side panel
+• Paste any text into the side panel, including from editors that can't be underlined
+• Choose what you're writing (email, blog, academic and more) to adjust how strict it is
 
 Private by design
 • Runs on your device. Your text is never uploaded, and there's no account
-• It's off until you turn it on for a site, and it never turns on for banking, payment or sign-in pages
+• It stays off until you turn it on for a site, and never turns on for banking, payment or sign-in pages
 • It doesn't read password, payment or one-time-code fields
 
 Open rules
-Every rule is open source, with examples and tests: github.com/GUCCI-atlasv/naturable-rules (rule data CC BY 4.0, code MIT). They're the same rules the naturable.app editor uses.
-
-English rules are stable; Chinese rules are in beta.
+Every rule is open source, with examples and tests, and is the same one the naturable.app editor uses. English rules are stable; Chinese rules are in beta.
 
 Naturable is not an AI detector. A flag is a style signal, not evidence of who wrote the text. It doesn't rewrite your text; you decide what to change.
 ```
