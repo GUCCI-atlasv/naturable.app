@@ -109,7 +109,6 @@
   /** Link from a hit to the page that explains it. Data comes from docs.js (generated from the rules). */
   function docsFor(issue) {
     var D = window.NAT_DOCS || { rules: {}, words: {} };
-    if (issue.rule.docs) return issue.rule.docs;
     if (issue.text) {
       var w = D.words[issue.text.toLowerCase()];
       if (w && issue.rule.id === "en.lexicon.cliche") return w;

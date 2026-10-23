@@ -32,6 +32,7 @@ export function documentIssues(text, language) {
       auto: false,
       safeFix: false,
       weight: 1,
+      docs: zh ? "https://naturable.app/zh-cn/how-it-works/" : "https://naturable.app/en/signs-of-ai-writing/#same-shape-sentences",
     },
     start: null,
     end: null,

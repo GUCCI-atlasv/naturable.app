@@ -40,7 +40,8 @@
       "before": "Experts believe this approach works.",
       "after": "A 2024 NIST brief found this approach works.",
       "auto": false,
-      "evidence_policy": "never_invent"
+      "evidence_policy": "never_invent",
+      "docs": "https://naturable.app/en/signs-of-ai-writing/#vague-sources"
     },
     {
       "id": "en.hollow.generic_conclusion",
@@ -69,7 +70,8 @@
       "before": "The future looks bright.",
       "after": "Ship the pilot to three teams next quarter.",
       "auto": false,
-      "evidence_policy": "never_invent"
+      "evidence_policy": "never_invent",
+      "docs": "https://naturable.app/en/signs-of-ai-writing/#generic-conclusions"
     },
     {
       "id": "en.hollow.fake_certainty",
@@ -98,7 +100,8 @@
       "before": "It is clear that adoption will rise.",
       "after": "Adoption rose 12% after the pilot.",
       "auto": false,
-      "evidence_policy": "never_invent"
+      "evidence_policy": "never_invent",
+      "docs": "https://naturable.app/en/signs-of-ai-writing/#fake-certainty"
     },
     {
       "id": "en.hollow.unsourced_everyone",
@@ -127,7 +130,8 @@
       "before": "As we all know, speed matters.",
       "after": "Speed matters when checkout takes over three seconds.",
       "auto": false,
-      "evidence_policy": "never_invent"
+      "evidence_policy": "never_invent",
+      "docs": "https://naturable.app/en/signs-of-ai-writing/#template-openers"
     },
     {
       "id": "en.hollow.specificity_cover",
@@ -155,7 +159,8 @@
       "before": "Revenue hit $4.2M. Experts believe growth is strong.",
       "after": "Revenue hit $4.2M, up 18% year over year.",
       "auto": false,
-      "evidence_policy": "keep_numbers"
+      "evidence_policy": "keep_numbers",
+      "docs": "https://naturable.app/en/how-it-works/#rule-en-hollow-specificity_cover"
     },
     {
       "id": "en.structure.not_just_but",
@@ -184,7 +189,8 @@
       "before": "This technology is not just a tool, it's a pivotal shift.",
       "after": "The change cuts review time in half.",
       "auto": false,
-      "evidence_policy": "never_invent"
+      "evidence_policy": "never_invent",
+      "docs": "https://naturable.app/en/signs-of-ai-writing/#not-just-frame"
     },
     {
       "id": "en.structure.colon_throat",
@@ -216,7 +222,8 @@
       "fix": {
         "type": "delete"
       },
-      "evidence_policy": "keep_numbers"
+      "evidence_policy": "keep_numbers",
+      "docs": "https://naturable.app/en/signs-of-ai-writing/#throat-clearing"
     },
     {
       "id": "en.structure.list_intro_empty",
@@ -248,7 +255,8 @@
       "fix": {
         "type": "delete"
       },
-      "evidence_policy": "keep_numbers"
+      "evidence_policy": "keep_numbers",
+      "docs": "https://naturable.app/en/signs-of-ai-writing/#throat-clearing"
     },
     {
       "id": "en.structure.signpost",
@@ -280,7 +288,8 @@
       "fix": {
         "type": "delete"
       },
-      "evidence_policy": "keep_numbers"
+      "evidence_policy": "keep_numbers",
+      "docs": "https://naturable.app/en/signs-of-ai-writing/#template-openers"
     },
     {
       "id": "en.structure.adjacent_parallel",
@@ -308,7 +317,8 @@
       "before": "It improves speed. It improves quality. It improves trust.",
       "after": "It improves speed. Quality follows when reviews shrink. Trust rises when numbers stay visible.",
       "auto": false,
-      "evidence_policy": "never_invent"
+      "evidence_policy": "never_invent",
+      "docs": "https://naturable.app/en/signs-of-ai-writing/#same-shape-sentences"
     },
     {
       "id": "en.structure.rule_of_three_slogans",
@@ -337,7 +347,8 @@
       "before": "Better, faster, and stronger results await.",
       "after": "Median review time dropped from 4 days to 1.",
       "auto": false,
-      "evidence_policy": "never_invent"
+      "evidence_policy": "never_invent",
+      "docs": "https://naturable.app/en/how-it-works/#rule-en-structure-rule_of_three_slogans"
     },
     {
       "id": "en.structure.in_conclusion",
@@ -369,7 +380,8 @@
       "fix": {
         "type": "delete"
       },
-      "evidence_policy": "keep_numbers"
+      "evidence_policy": "keep_numbers",
+      "docs": "https://naturable.app/en/signs-of-ai-writing/#generic-conclusions"
     },
     {
       "id": "en.structure.dash_dense",
@@ -401,7 +413,8 @@
       "before": "The plan — including the dates — is ready — and approved.",
       "after": "The plan, including the dates, is ready and approved.",
       "auto": false,
-      "evidence_policy": "never_invent"
+      "evidence_policy": "never_invent",
+      "docs": "https://naturable.app/en/signs-of-ai-writing/#em-dashes"
     },
     {
       "id": "en.structure.positive_negative_parallel",
@@ -430,7 +443,8 @@
       "before": "Whether you're a beginner or an expert, this is essential.",
       "after": "New editors should learn the shortcut first.",
       "auto": false,
-      "evidence_policy": "never_invent"
+      "evidence_policy": "never_invent",
+      "docs": "https://naturable.app/en/how-it-works/#rule-en-structure-positive_negative_parallel"
     },
     {
       "id": "en.artifact.chat",
@@ -462,7 +476,8 @@
       "fix": {
         "type": "delete"
       },
-      "evidence_policy": "keep_numbers"
+      "evidence_policy": "keep_numbers",
+      "docs": "https://naturable.app/en/signs-of-ai-writing/#assistant-leftovers"
     },
     {
       "id": "en.artifact.disclaimer",
@@ -494,7 +509,8 @@
       "fix": {
         "type": "delete"
       },
-      "evidence_policy": "keep_numbers"
+      "evidence_policy": "keep_numbers",
+      "docs": "https://naturable.app/en/signs-of-ai-writing/#model-disclaimers"
     },
     {
       "id": "en.artifact.let_me",
@@ -526,7 +542,8 @@
       "fix": {
         "type": "delete"
       },
-      "evidence_policy": "keep_numbers"
+      "evidence_policy": "keep_numbers",
+      "docs": "https://naturable.app/en/how-it-works/#rule-en-artifact-let_me"
     },
     {
       "id": "en.lexicon.filler_phrase",
@@ -565,7 +582,8 @@
           "for all intents and purposes": "essentially"
         }
       },
-      "evidence_policy": "keep_numbers"
+      "evidence_policy": "keep_numbers",
+      "docs": "https://naturable.app/en/signs-of-ai-writing/#filler-phrases"
     },
     {
       "id": "en.lexicon.cliche",
@@ -594,7 +612,8 @@
       "before": "We leverage a robust solution.",
       "after": "We use Postgres with read replicas.",
       "auto": false,
-      "evidence_policy": "never_invent"
+      "evidence_policy": "never_invent",
+      "docs": "https://naturable.app/en/ai-words-to-avoid/#top-words"
     },
     {
       "id": "en.lexicon.transition_stack",
@@ -627,7 +646,8 @@
         "type": "replace_match",
         "strip": true
       },
-      "evidence_policy": "keep_numbers"
+      "evidence_policy": "keep_numbers",
+      "docs": "https://naturable.app/en/signs-of-ai-writing/#transition-openers"
     },
     {
       "id": "en.lexicon.hedge_stack",
@@ -666,7 +686,8 @@
           "tends to somewhat": "tends to"
         }
       },
-      "evidence_policy": "keep_numbers"
+      "evidence_policy": "keep_numbers",
+      "docs": "https://naturable.app/en/signs-of-ai-writing/#stacked-hedges"
     },
     {
       "id": "en.lexicon.play_role",
@@ -695,7 +716,8 @@
       "before": "Caching plays a vital role in latency.",
       "after": "Caching cuts p95 latency by 40%.",
       "auto": false,
-      "evidence_policy": "never_invent"
+      "evidence_policy": "never_invent",
+      "docs": "https://naturable.app/en/signs-of-ai-writing/#role-and-journey"
     },
     {
       "id": "en.lexicon.journey_unlock",
@@ -724,7 +746,8 @@
       "before": "This unlocks the full potential of the team.",
       "after": "This frees two engineers from weekly triage.",
       "auto": false,
-      "evidence_policy": "never_invent"
+      "evidence_policy": "never_invent",
+      "docs": "https://naturable.app/en/signs-of-ai-writing/#role-and-journey"
     }
   ]
 }

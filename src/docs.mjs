@@ -2,7 +2,7 @@
 // emitted as /assets/js/docs.js for the browser, so the checker, editor and site always link to the same anchor.
 // Rule packs may add their own `docs` field later; when present it wins (see NatUI.docsFor).
 import { packs } from "../vendor/naturable-rules/src/index.js";
-import { TELLS } from "./content/tells.mjs";
+import { SITE } from "./site.mjs";
 import { WORD_GROUPS, PHRASE_GROUPS } from "./content/ai-words.mjs";
 
 export const WORDS_PATH = "/en/ai-words-to-avoid/";
@@ -14,11 +14,14 @@ export const slug = (s) =>
 
 export const ruleAnchor = (id) => "rule-" + id.replace(/\./g, "-");
 
+// Rule links come from the packs (`docs`, required by naturable-rules >= 1.2.0) so the site, the extension,
+// the Skill and the GitHub README all point to the same anchor. The build's link check fails if one breaks.
 const rules = {};
-for (const r of packs.en.rules) rules[r.id] = RULES_PATH + "#" + ruleAnchor(r.id);
-for (const r of packs.zh.rules) rules[r.id] = "/zh-cn/how-it-works/";
-for (const t of TELLS) for (const id of t.rules) rules[id] = SIGNS_PATH + "#" + t.id;
-rules["en.lexicon.cliche"] = WORDS_PATH + "#top-words";
+for (const r of [...packs.en.rules, ...packs.zh.rules]) {
+  if (!r.docs?.startsWith(SITE.origin + "/")) throw new Error(`${r.id}: docs must start with ${SITE.origin}/`);
+  rules[r.id] = r.docs.slice(SITE.origin.length);
+}
+// Document-level issue built by the engine's scorer (not a pack rule).
 rules["en.rhythm.repeated_start"] = SIGNS_PATH + "#same-shape-sentences";
 
 // Word-level anchors for en.lexicon.cliche hits (lower-cased matched text -> anchor).
@@ -35,7 +38,6 @@ for (const g of PHRASE_GROUPS) for (const [phrase] of g.entries) words[phrase.to
 export const DOCS = { rules, words };
 
 export function docsFor(issue) {
-  if (issue.rule.docs) return issue.rule.docs;
   if (issue.rule.id === "en.lexicon.cliche" && issue.text && words[issue.text.toLowerCase()]) return words[issue.text.toLowerCase()];
   return rules[issue.rule.id] || RULES_PATH;
 }

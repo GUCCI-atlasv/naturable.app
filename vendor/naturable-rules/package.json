@@ -1,6 +1,6 @@
 {
   "name": "naturable-rules",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Open, explainable rules for spotting AI-sounding writing patterns (English + Chinese beta). Runs locally; no upload. Not an AI detector.",
   "type": "module",
   "main": "./src/index.js",
@@ -24,7 +24,8 @@
   "keywords": ["ai writing", "writing style", "ai words to avoid", "linter", "prose", "agent skill"],
   "license": "MIT AND CC-BY-4.0",
   "homepage": "https://naturable.app",
-  "repository": { "type": "git", "url": "[YOUR_GITHUB_REPO_URL]" },
+  "bugs": { "url": "https://github.com/GUCCI-atlasv/naturable-rules/issues" },
+  "repository": { "type": "git", "url": "git+https://github.com/GUCCI-atlasv/naturable-rules.git" },
   "devDependencies": {
     "esbuild": "0.24.0"
   }

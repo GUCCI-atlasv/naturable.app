@@ -1,4 +1,4 @@
-/* naturable-rules 1.1.0 · packs en-v1.1 / zh-v1.1 · code MIT, rule data CC BY 4.0 */
+/* naturable-rules 1.2.0 · packs en-v1.1 / zh-v1.1 · code MIT, rule data CC BY 4.0 */
 
 // packs/en.json
 var en_default = {
@@ -43,7 +43,8 @@ var en_default = {
       before: "Experts believe this approach works.",
       after: "A 2024 NIST brief found this approach works.",
       auto: false,
-      evidence_policy: "never_invent"
+      evidence_policy: "never_invent",
+      docs: "https://naturable.app/en/signs-of-ai-writing/#vague-sources"
     },
     {
       id: "en.hollow.generic_conclusion",
@@ -72,7 +73,8 @@ var en_default = {
       before: "The future looks bright.",
       after: "Ship the pilot to three teams next quarter.",
       auto: false,
-      evidence_policy: "never_invent"
+      evidence_policy: "never_invent",
+      docs: "https://naturable.app/en/signs-of-ai-writing/#generic-conclusions"
     },
     {
       id: "en.hollow.fake_certainty",
@@ -101,7 +103,8 @@ var en_default = {
       before: "It is clear that adoption will rise.",
       after: "Adoption rose 12% after the pilot.",
       auto: false,
-      evidence_policy: "never_invent"
+      evidence_policy: "never_invent",
+      docs: "https://naturable.app/en/signs-of-ai-writing/#fake-certainty"
     },
     {
       id: "en.hollow.unsourced_everyone",
@@ -130,7 +133,8 @@ var en_default = {
       before: "As we all know, speed matters.",
       after: "Speed matters when checkout takes over three seconds.",
       auto: false,
-      evidence_policy: "never_invent"
+      evidence_policy: "never_invent",
+      docs: "https://naturable.app/en/signs-of-ai-writing/#template-openers"
     },
     {
       id: "en.hollow.specificity_cover",
@@ -158,7 +162,8 @@ var en_default = {
       before: "Revenue hit $4.2M. Experts believe growth is strong.",
       after: "Revenue hit $4.2M, up 18% year over year.",
       auto: false,
-      evidence_policy: "keep_numbers"
+      evidence_policy: "keep_numbers",
+      docs: "https://naturable.app/en/how-it-works/#rule-en-hollow-specificity_cover"
     },
     {
       id: "en.structure.not_just_but",
@@ -187,7 +192,8 @@ var en_default = {
       before: "This technology is not just a tool, it's a pivotal shift.",
       after: "The change cuts review time in half.",
       auto: false,
-      evidence_policy: "never_invent"
+      evidence_policy: "never_invent",
+      docs: "https://naturable.app/en/signs-of-ai-writing/#not-just-frame"
     },
     {
       id: "en.structure.colon_throat",
@@ -219,7 +225,8 @@ var en_default = {
       fix: {
         type: "delete"
       },
-      evidence_policy: "keep_numbers"
+      evidence_policy: "keep_numbers",
+      docs: "https://naturable.app/en/signs-of-ai-writing/#throat-clearing"
     },
     {
       id: "en.structure.list_intro_empty",
@@ -251,7 +258,8 @@ var en_default = {
       fix: {
         type: "delete"
       },
-      evidence_policy: "keep_numbers"
+      evidence_policy: "keep_numbers",
+      docs: "https://naturable.app/en/signs-of-ai-writing/#throat-clearing"
     },
     {
       id: "en.structure.signpost",
@@ -283,7 +291,8 @@ var en_default = {
       fix: {
         type: "delete"
       },
-      evidence_policy: "keep_numbers"
+      evidence_policy: "keep_numbers",
+      docs: "https://naturable.app/en/signs-of-ai-writing/#template-openers"
     },
     {
       id: "en.structure.adjacent_parallel",
@@ -311,7 +320,8 @@ var en_default = {
       before: "It improves speed. It improves quality. It improves trust.",
       after: "It improves speed. Quality follows when reviews shrink. Trust rises when numbers stay visible.",
       auto: false,
-      evidence_policy: "never_invent"
+      evidence_policy: "never_invent",
+      docs: "https://naturable.app/en/signs-of-ai-writing/#same-shape-sentences"
     },
     {
       id: "en.structure.rule_of_three_slogans",
@@ -340,7 +350,8 @@ var en_default = {
       before: "Better, faster, and stronger results await.",
       after: "Median review time dropped from 4 days to 1.",
       auto: false,
-      evidence_policy: "never_invent"
+      evidence_policy: "never_invent",
+      docs: "https://naturable.app/en/how-it-works/#rule-en-structure-rule_of_three_slogans"
     },
     {
       id: "en.structure.in_conclusion",
@@ -372,7 +383,8 @@ var en_default = {
       fix: {
         type: "delete"
       },
-      evidence_policy: "keep_numbers"
+      evidence_policy: "keep_numbers",
+      docs: "https://naturable.app/en/signs-of-ai-writing/#generic-conclusions"
     },
     {
       id: "en.structure.dash_dense",
@@ -404,7 +416,8 @@ var en_default = {
       before: "The plan \u2014 including the dates \u2014 is ready \u2014 and approved.",
       after: "The plan, including the dates, is ready and approved.",
       auto: false,
-      evidence_policy: "never_invent"
+      evidence_policy: "never_invent",
+      docs: "https://naturable.app/en/signs-of-ai-writing/#em-dashes"
     },
     {
       id: "en.structure.positive_negative_parallel",
@@ -433,7 +446,8 @@ var en_default = {
       before: "Whether you're a beginner or an expert, this is essential.",
       after: "New editors should learn the shortcut first.",
       auto: false,
-      evidence_policy: "never_invent"
+      evidence_policy: "never_invent",
+      docs: "https://naturable.app/en/how-it-works/#rule-en-structure-positive_negative_parallel"
     },
     {
       id: "en.artifact.chat",
@@ -465,7 +479,8 @@ var en_default = {
       fix: {
         type: "delete"
       },
-      evidence_policy: "keep_numbers"
+      evidence_policy: "keep_numbers",
+      docs: "https://naturable.app/en/signs-of-ai-writing/#assistant-leftovers"
     },
     {
       id: "en.artifact.disclaimer",
@@ -497,7 +512,8 @@ var en_default = {
       fix: {
         type: "delete"
       },
-      evidence_policy: "keep_numbers"
+      evidence_policy: "keep_numbers",
+      docs: "https://naturable.app/en/signs-of-ai-writing/#model-disclaimers"
     },
     {
       id: "en.artifact.let_me",
@@ -529,7 +545,8 @@ var en_default = {
       fix: {
         type: "delete"
       },
-      evidence_policy: "keep_numbers"
+      evidence_policy: "keep_numbers",
+      docs: "https://naturable.app/en/how-it-works/#rule-en-artifact-let_me"
     },
     {
       id: "en.lexicon.filler_phrase",
@@ -568,7 +585,8 @@ var en_default = {
           "for all intents and purposes": "essentially"
         }
       },
-      evidence_policy: "keep_numbers"
+      evidence_policy: "keep_numbers",
+      docs: "https://naturable.app/en/signs-of-ai-writing/#filler-phrases"
     },
     {
       id: "en.lexicon.cliche",
@@ -597,7 +615,8 @@ var en_default = {
       before: "We leverage a robust solution.",
       after: "We use Postgres with read replicas.",
       auto: false,
-      evidence_policy: "never_invent"
+      evidence_policy: "never_invent",
+      docs: "https://naturable.app/en/ai-words-to-avoid/#top-words"
     },
     {
       id: "en.lexicon.transition_stack",
@@ -630,7 +649,8 @@ var en_default = {
         type: "replace_match",
         strip: true
       },
-      evidence_policy: "keep_numbers"
+      evidence_policy: "keep_numbers",
+      docs: "https://naturable.app/en/signs-of-ai-writing/#transition-openers"
     },
     {
       id: "en.lexicon.hedge_stack",
@@ -669,7 +689,8 @@ var en_default = {
           "tends to somewhat": "tends to"
         }
       },
-      evidence_policy: "keep_numbers"
+      evidence_policy: "keep_numbers",
+      docs: "https://naturable.app/en/signs-of-ai-writing/#stacked-hedges"
     },
     {
       id: "en.lexicon.play_role",
@@ -698,7 +719,8 @@ var en_default = {
       before: "Caching plays a vital role in latency.",
       after: "Caching cuts p95 latency by 40%.",
       auto: false,
-      evidence_policy: "never_invent"
+      evidence_policy: "never_invent",
+      docs: "https://naturable.app/en/signs-of-ai-writing/#role-and-journey"
     },
     {
       id: "en.lexicon.journey_unlock",
@@ -727,7 +749,8 @@ var en_default = {
       before: "This unlocks the full potential of the team.",
       after: "This frees two engineers from weekly triage.",
       auto: false,
-      evidence_policy: "never_invent"
+      evidence_policy: "never_invent",
+      docs: "https://naturable.app/en/signs-of-ai-writing/#role-and-journey"
     }
   ]
 };
@@ -811,7 +834,8 @@ var zh_default = {
       before: "\u503C\u5F97\u80AF\u5B9A\u3002\u4EA7\u54C1\u8282\u594F\u66F4\u5FEB\u4E86\u3002",
       after: "\u8FD9\u4E00\u70B9\u503C\u5F97\u80AF\u5B9A\uFF1A\u4EA7\u54C1\u8282\u594F\u66F4\u5FEB\u4E86\u3002",
       auto: false,
-      evidence_policy: "never_invent"
+      evidence_policy: "never_invent",
+      docs: "https://naturable.app/zh-cn/how-it-works/"
     },
     {
       id: "zh.metaphor.ideal_persona",
@@ -841,7 +865,8 @@ var zh_default = {
       before: "\u5B83\u50CF\u4E00\u4F4D\u667A\u6167\u7684\u5BFC\u5E08\uFF0C\u6307\u5F15\u65B9\u5411\u3002",
       after: "\u503C\u73ED\u5DE5\u7A0B\u5E08\u4F1A\u5728\u544A\u8B66\u540E15\u5206\u949F\u5185\u63A5\u624B\u3002",
       auto: false,
-      evidence_policy: "never_invent"
+      evidence_policy: "never_invent",
+      docs: "https://naturable.app/zh-cn/how-it-works/"
     },
     {
       id: "zh.colon.list_intro",
@@ -874,7 +899,8 @@ var zh_default = {
       fix: {
         type: "delete"
       },
-      evidence_policy: "keep_numbers"
+      evidence_policy: "keep_numbers",
+      docs: "https://naturable.app/zh-cn/how-it-works/"
     },
     {
       id: "zh.colon.prompt",
@@ -907,7 +933,8 @@ var zh_default = {
       fix: {
         type: "delete"
       },
-      evidence_policy: "keep_numbers"
+      evidence_policy: "keep_numbers",
+      docs: "https://naturable.app/zh-cn/how-it-works/"
     },
     {
       id: "zh.flip.not_but",
@@ -937,7 +964,8 @@ var zh_default = {
       before: "\u8FD9\u4E0D\u662F\u5DE5\u5177\u95EE\u9898\uFF0C\u800C\u662F\u6D41\u7A0B\u95EE\u9898\u3002",
       after: "\u8BC4\u5BA1\u6392\u961F\u62D6\u6162\u4E86\u53D1\u5E03\u3002",
       auto: false,
-      evidence_policy: "never_invent"
+      evidence_policy: "never_invent",
+      docs: "https://naturable.app/zh-cn/how-it-works/"
     },
     {
       id: "zh.opener.filler",
@@ -970,7 +998,8 @@ var zh_default = {
       fix: {
         type: "delete"
       },
-      evidence_policy: "keep_numbers"
+      evidence_policy: "keep_numbers",
+      docs: "https://naturable.app/zh-cn/how-it-works/"
     },
     {
       id: "zh.ordinal.fake_heading",
@@ -1000,7 +1029,8 @@ var zh_default = {
       before: "\u9996\u5148\uFF0C\u63D0\u5347\u6548\u7387\u3002\u5176\u6B21\uFF0C\u964D\u4F4E\u6210\u672C\u3002",
       after: "\u6548\u7387\u5148\u63D0\u5347\uFF1B\u6210\u672C\u4E5F\u4F1A\u8DDF\u7740\u4E0B\u964D\u3002",
       auto: false,
-      evidence_policy: "never_invent"
+      evidence_policy: "never_invent",
+      docs: "https://naturable.app/zh-cn/how-it-works/"
     },
     {
       id: "zh.dash.dense",
@@ -1029,7 +1059,8 @@ var zh_default = {
       before: "\u65B9\u6848\u2014\u2014\u5305\u62EC\u6392\u671F\u2014\u2014\u5DF2\u7ECF\u2014\u2014\u786E\u8BA4\u3002",
       after: "\u65B9\u6848\uFF08\u542B\u6392\u671F\uFF09\u5DF2\u7ECF\u786E\u8BA4\u3002",
       auto: false,
-      evidence_policy: "never_invent"
+      evidence_policy: "never_invent",
+      docs: "https://naturable.app/zh-cn/how-it-works/"
     },
     {
       id: "zh.adjacent.parallel",
@@ -1058,7 +1089,8 @@ var zh_default = {
       before: "\u5B83\u63D0\u5347\u4E86\u6548\u7387\u3002\u5B83\u964D\u4F4E\u4E86\u6210\u672C\u3002\u5B83\u6539\u5584\u4E86\u4F53\u9A8C\u3002",
       after: "\u6548\u7387\u5148\u4E0A\u53BB\uFF1B\u6210\u672C\u968F\u6279\u91CF\u4E0B\u964D\u3002\u4F53\u9A8C\u5219\u6765\u81EA\u66F4\u77ED\u7684\u7B49\u5F85\u3002",
       auto: false,
-      evidence_policy: "never_invent"
+      evidence_policy: "never_invent",
+      docs: "https://naturable.app/zh-cn/how-it-works/"
     },
     {
       id: "zh.enumeration.dense",
@@ -1087,7 +1119,8 @@ var zh_default = {
       before: "\u6DB5\u76D6\u6548\u7387\u3001\u8D28\u91CF\u3001\u4F53\u9A8C\u3001\u6210\u672C\u3001\u5B89\u5168\u3001\u5408\u89C4\u3001\u6269\u5C55\u3002",
       after: "\u5148\u770B\u6548\u7387\u4E0E\u8D28\u91CF\uFF1B\u6210\u672C\u3001\u5B89\u5168\u53E6\u5F00\u4E00\u8282\u3002",
       auto: false,
-      evidence_policy: "never_invent"
+      evidence_policy: "never_invent",
+      docs: "https://naturable.app/zh-cn/how-it-works/"
     },
     {
       id: "zh.translationese.passive",
@@ -1117,7 +1150,8 @@ var zh_default = {
       before: "\u65B9\u6848\u88AB\u56E2\u961F\u6240\u8BA4\u53EF\u3002",
       after: "\u56E2\u961F\u8BA4\u53EF\u4E86\u8FD9\u5957\u65B9\u6848\u3002",
       auto: false,
-      evidence_policy: "never_invent"
+      evidence_policy: "never_invent",
+      docs: "https://naturable.app/zh-cn/how-it-works/"
     },
     {
       id: "zh.translationese.de_stack",
@@ -1147,7 +1181,8 @@ var zh_default = {
       before: "\u8FD9\u662F\u6211\u4EEC\u56E2\u961F\u7684\u975E\u5E38\u91CD\u8981\u7684\u9700\u8981\u91CD\u89C6\u7684\u95EE\u9898\u3002",
       after: "\u8FD9\u4E2A\u95EE\u9898\u9700\u8981\u8BA4\u771F\u5BF9\u5F85\u3002",
       auto: false,
-      evidence_policy: "never_invent"
+      evidence_policy: "never_invent",
+      docs: "https://naturable.app/zh-cn/how-it-works/"
     },
     {
       id: "zh.translationese.men",
@@ -1186,7 +1221,8 @@ var zh_default = {
           \u4EBA\u4EEC\u4EEC: "\u4EBA\u4EEC"
         }
       },
-      evidence_policy: "keep_numbers"
+      evidence_policy: "keep_numbers",
+      docs: "https://naturable.app/zh-cn/how-it-works/"
     },
     {
       id: "zh.translationese.ongoing",
@@ -1223,7 +1259,8 @@ var zh_default = {
           \u6B63\u5728\u8FDB\u884C: "\u5728"
         }
       },
-      evidence_policy: "keep_numbers"
+      evidence_policy: "keep_numbers",
+      docs: "https://naturable.app/zh-cn/how-it-works/"
     },
     {
       id: "zh.translationese.one_of",
@@ -1253,7 +1290,8 @@ var zh_default = {
       before: "\u8FD9\u662F\u6700\u91CD\u8981\u7684\u6311\u6218\u4E4B\u4E00\u3002",
       after: "\u8FD9\u662F\u773C\u4E0B\u6700\u7D27\u7684\u6311\u6218\u3002",
       auto: false,
-      evidence_policy: "never_invent"
+      evidence_policy: "never_invent",
+      docs: "https://naturable.app/zh-cn/how-it-works/"
     },
     {
       id: "zh.artifact.chat",
@@ -1285,7 +1323,8 @@ var zh_default = {
       fix: {
         type: "delete"
       },
-      evidence_policy: "keep_numbers"
+      evidence_policy: "keep_numbers",
+      docs: "https://naturable.app/zh-cn/how-it-works/"
     }
   ]
 };
@@ -1506,7 +1545,8 @@ function documentIssues(text, language) {
       suggestion: zh ? "\u8C03\u6574\u53E5\u9996\u4E0E\u53E5\u5B50\u91CD\u5FC3\u3002" : "Vary the opening and sentence focus.",
       auto: false,
       safeFix: false,
-      weight: 1
+      weight: 1,
+      docs: zh ? "https://naturable.app/zh-cn/how-it-works/" : "https://naturable.app/en/signs-of-ai-writing/#same-shape-sentences"
     },
     start: null,
     end: null,

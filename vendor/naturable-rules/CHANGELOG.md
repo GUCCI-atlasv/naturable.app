@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.2.0 — 2026-10-23 · packs en-v1.1 / zh-v1.1 · engine 3.0.0
+
+No detection changes: the same text gets the same hits and the same score as 1.1.0.
+
+- Every rule now has a `docs` URL pointing to its explanation on naturable.app. `npm run validate` fails if one is missing. The document-level "Repeated sentence openings" issue links there too.
+- The CLI's `--json` output includes `learn_more` for each issue, and the text report prints it.
+- `skill/references/*.md` list each rule's link, and the README's rules index is generated from the packs.
+
 ## 1.1.0 — 2026-10-22 · packs en-v1.1 / zh-v1.1 · engine 3.0.0
 
 This release extracts the rules from naturable.app (engine 2.2.0, packs en-v1.0 / zh-v1.0, released 2026-10-01) into a standalone repository.

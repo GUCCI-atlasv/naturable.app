@@ -76,7 +76,8 @@
       "before": "值得肯定。产品节奏更快了。",
       "after": "这一点值得肯定：产品节奏更快了。",
       "auto": false,
-      "evidence_policy": "never_invent"
+      "evidence_policy": "never_invent",
+      "docs": "https://naturable.app/zh-cn/how-it-works/"
     },
     {
       "id": "zh.metaphor.ideal_persona",
@@ -106,7 +107,8 @@
       "before": "它像一位智慧的导师，指引方向。",
       "after": "值班工程师会在告警后15分钟内接手。",
       "auto": false,
-      "evidence_policy": "never_invent"
+      "evidence_policy": "never_invent",
+      "docs": "https://naturable.app/zh-cn/how-it-works/"
     },
     {
       "id": "zh.colon.list_intro",
@@ -139,7 +141,8 @@
       "fix": {
         "type": "delete"
       },
-      "evidence_policy": "keep_numbers"
+      "evidence_policy": "keep_numbers",
+      "docs": "https://naturable.app/zh-cn/how-it-works/"
     },
     {
       "id": "zh.colon.prompt",
@@ -172,7 +175,8 @@
       "fix": {
         "type": "delete"
       },
-      "evidence_policy": "keep_numbers"
+      "evidence_policy": "keep_numbers",
+      "docs": "https://naturable.app/zh-cn/how-it-works/"
     },
     {
       "id": "zh.flip.not_but",
@@ -202,7 +206,8 @@
       "before": "这不是工具问题，而是流程问题。",
       "after": "评审排队拖慢了发布。",
       "auto": false,
-      "evidence_policy": "never_invent"
+      "evidence_policy": "never_invent",
+      "docs": "https://naturable.app/zh-cn/how-it-works/"
     },
     {
       "id": "zh.opener.filler",
@@ -235,7 +240,8 @@
       "fix": {
         "type": "delete"
       },
-      "evidence_policy": "keep_numbers"
+      "evidence_policy": "keep_numbers",
+      "docs": "https://naturable.app/zh-cn/how-it-works/"
     },
     {
       "id": "zh.ordinal.fake_heading",
@@ -265,7 +271,8 @@
       "before": "首先，提升效率。其次，降低成本。",
       "after": "效率先提升；成本也会跟着下降。",
       "auto": false,
-      "evidence_policy": "never_invent"
+      "evidence_policy": "never_invent",
+      "docs": "https://naturable.app/zh-cn/how-it-works/"
     },
     {
       "id": "zh.dash.dense",
@@ -294,7 +301,8 @@
       "before": "方案——包括排期——已经——确认。",
       "after": "方案（含排期）已经确认。",
       "auto": false,
-      "evidence_policy": "never_invent"
+      "evidence_policy": "never_invent",
+      "docs": "https://naturable.app/zh-cn/how-it-works/"
     },
     {
       "id": "zh.adjacent.parallel",
@@ -323,7 +331,8 @@
       "before": "它提升了效率。它降低了成本。它改善了体验。",
       "after": "效率先上去；成本随批量下降。体验则来自更短的等待。",
       "auto": false,
-      "evidence_policy": "never_invent"
+      "evidence_policy": "never_invent",
+      "docs": "https://naturable.app/zh-cn/how-it-works/"
     },
     {
       "id": "zh.enumeration.dense",
@@ -352,7 +361,8 @@
       "before": "涵盖效率、质量、体验、成本、安全、合规、扩展。",
       "after": "先看效率与质量；成本、安全另开一节。",
       "auto": false,
-      "evidence_policy": "never_invent"
+      "evidence_policy": "never_invent",
+      "docs": "https://naturable.app/zh-cn/how-it-works/"
     },
     {
       "id": "zh.translationese.passive",
@@ -382,7 +392,8 @@
       "before": "方案被团队所认可。",
       "after": "团队认可了这套方案。",
       "auto": false,
-      "evidence_policy": "never_invent"
+      "evidence_policy": "never_invent",
+      "docs": "https://naturable.app/zh-cn/how-it-works/"
     },
     {
       "id": "zh.translationese.de_stack",
@@ -412,7 +423,8 @@
       "before": "这是我们团队的非常重要的需要重视的问题。",
       "after": "这个问题需要认真对待。",
       "auto": false,
-      "evidence_policy": "never_invent"
+      "evidence_policy": "never_invent",
+      "docs": "https://naturable.app/zh-cn/how-it-works/"
     },
     {
       "id": "zh.translationese.men",
@@ -451,7 +463,8 @@
           "人们们": "人们"
         }
       },
-      "evidence_policy": "keep_numbers"
+      "evidence_policy": "keep_numbers",
+      "docs": "https://naturable.app/zh-cn/how-it-works/"
     },
     {
       "id": "zh.translationese.ongoing",
@@ -488,7 +501,8 @@
           "正在进行": "在"
         }
       },
-      "evidence_policy": "keep_numbers"
+      "evidence_policy": "keep_numbers",
+      "docs": "https://naturable.app/zh-cn/how-it-works/"
     },
     {
       "id": "zh.translationese.one_of",
@@ -518,7 +532,8 @@
       "before": "这是最重要的挑战之一。",
       "after": "这是眼下最紧的挑战。",
       "auto": false,
-      "evidence_policy": "never_invent"
+      "evidence_policy": "never_invent",
+      "docs": "https://naturable.app/zh-cn/how-it-works/"
     },
     {
       "id": "zh.artifact.chat",
@@ -550,7 +565,8 @@
       "fix": {
         "type": "delete"
       },
-      "evidence_policy": "keep_numbers"
+      "evidence_policy": "keep_numbers",
+      "docs": "https://naturable.app/zh-cn/how-it-works/"
     }
   ]
 }
