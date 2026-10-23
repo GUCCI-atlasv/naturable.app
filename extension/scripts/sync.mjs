@@ -1,7 +1,7 @@
 // Pull the rule engine and word links from their sources, and render the icons.
-//   RULES_DIR  naturable-rules checkout   (default ../naturable-rules)
-//   SITE_DIR   naturable.app checkout     (default ../naturable.app-20261022)
-// Output is committed, so the extension builds without either checkout.
+//   RULES_DIR  naturable-rules checkout   (default: ../../naturable-rules, next to this repo)
+//   SITE_DIR   the site                   (default: this repo's root, one level up)
+// Output is committed, so the extension builds without the rules checkout.
 import { copyFileSync, mkdirSync, writeFileSync, readFileSync } from "node:fs";
 import { resolve, join } from "node:path";
 import { pathToFileURL } from "node:url";
@@ -9,8 +9,8 @@ import { chromium } from "playwright-core";
 import { chromePath } from "./chrome.mjs";
 
 const ROOT = resolve(import.meta.dirname, "..");
-const RULES = resolve(ROOT, process.env.RULES_DIR || "../naturable-rules");
-const SITE = resolve(ROOT, process.env.SITE_DIR || "../naturable.app-20261022");
+const RULES = resolve(ROOT, process.env.RULES_DIR || "../../naturable-rules");
+const SITE = resolve(ROOT, process.env.SITE_DIR || "..");
 const ORIGIN = "https://naturable.app";
 
 // 1. Engine + packs (one IIFE, exposes Naturable). No code is ever fetched at runtime.

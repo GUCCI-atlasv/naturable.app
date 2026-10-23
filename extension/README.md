@@ -1,5 +1,7 @@
 # Naturable for Chrome
 
+Lives in `extension/` of the naturable.app repo. Run the commands below from this folder; the site build ignores it.
+
 Underlines AI writing patterns (AI words, template openers, vague sources, em dashes) in the text boxes you write in, and explains each one. Runs locally with the bundled [naturable-rules](https://github.com/GUCCI-atlasv/naturable-rules); nothing is uploaded. PRD v2 §6.
 
 **Not an AI detector.** It doesn't rewrite text, doesn't score other people's writing, and doesn't help text pass detectors.
@@ -41,7 +43,7 @@ src/                      the extension as loaded by Chrome (zip this)
   shared/docs-words.js    generated: word -> naturable.app anchor
   vendor/                 generated: naturable-rules engine + licenses
 scripts/
-  sync.mjs                refresh vendor/, docs-words.js and icons from ../naturable-rules and ../naturable.app-20261022
+  sync.mjs                refresh vendor/, docs-words.js and icons from ../../naturable-rules and the site (..)
   check.mjs               policy/static checks
   screens.mjs             screenshots into test/screenshots/
   pack.mjs                dist/naturable-extension-<version>.zip

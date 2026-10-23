@@ -23,6 +23,7 @@ Node 20.10+ (uses JSON import attributes).
 | `src/pages/` | Page definitions |
 | `content/legacy/` | Text of the pre-v2 pages kept as-is (EN about/terms/3 articles, all ZH pages). Imported once with `scripts/import-legacy.mjs` |
 | `public/` | CSS, client JS, fonts (self-hosted, OFL), favicon, robots.txt |
+| `extension/` | Chrome extension (MV3), with its own `package.json`, tests and README. Not part of the site build. |
 
 ## What the build checks (and fails on)
 
