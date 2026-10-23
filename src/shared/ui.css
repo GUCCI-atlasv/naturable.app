@@ -1,0 +1,38 @@
+/* Extension pages (popup, side panel). Tokens match naturable.app. */
+@font-face { font-family: "Inter"; font-style: normal; font-weight: 100 900; src: url("../fonts/inter-latin.woff2") format("woff2"); }
+
+:root {
+  --bg: #F4F1EA; --surface: #FFFDF8; --surface-2: #F7F4EE; --white: #FFFFFF;
+  --ink: #1F1D1A; --ink-2: #3A3631; --muted: #4E4A43;
+  --line: #E2DDD2; --line-2: #CFC8BA;
+  --accent: #A2462A; --accent-ink: #7E3520; --accent-bg: #F6DDD1;
+  --warn: #7A5600; --warn-ink: #5E4300; --warn-bg: #F4E5B5;
+  --ok: #2F5F3F; --ok-ink: #1E4A2B; --ok-bg: #DCEBDD;
+  --sans: Inter, system-ui, -apple-system, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; font: 14px/1.45 var(--sans); color: var(--ink); background: var(--bg); }
+a { color: var(--accent); }
+a:hover { color: var(--accent-ink); }
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; border-radius: 4px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+.brand { font-weight: 700; font-size: 17px; letter-spacing: -0.01em; }
+.brand .dot { color: var(--accent); }
+
+.btn { min-height: 38px; display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 0 14px;
+  border-radius: 10px; border: 1px solid var(--line-2); background: var(--white); color: var(--ink); font: 500 14px var(--sans); cursor: pointer; }
+.btn:hover { background: var(--surface-2); }
+.btn-primary { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+.btn-primary:hover { background: var(--ink-2); }
+.btn-sm { min-height: 32px; font-size: 13px; padding: 0 12px; }
+.link { border: 0; background: none; padding: 0; color: var(--accent); font: inherit; cursor: pointer; text-decoration: underline; }
+
+.field { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.field span { color: var(--muted); font-size: 13px; }
+select { font: 14px var(--sans); color: var(--ink); background: var(--white); border: 1px solid var(--line-2); border-radius: 8px; min-height: 34px; padding: 0 8px; }
+
+.sev { display: inline-block; font-size: 11px; font-weight: 600; padding: 1px 8px; border-radius: 999px; background: var(--accent-bg); color: var(--accent-ink); }
+.sev.suggestion { background: var(--warn-bg); color: var(--warn-ink); }
+.ink-ok { color: var(--ok); } .ink-warn { color: var(--warn); } .ink-bad { color: var(--accent); } .ink-none { color: var(--muted); }
