@@ -38,7 +38,8 @@ export function extensionPage() {
   const live = !!SITE.chromeStoreUrl;
   const crumbs = breadcrumbs("en", [["Chrome extension", null]]);
   const FAQ = [
-    ["Does the extension read everything I type?", "It checks text only in the text boxes on sites you turn it on for, on your device. It doesn't send the text anywhere, and it's off by default for password and payment fields."],
+    ["Does the extension read everything I type?", "No. It's off until you turn it on for a site, and then it checks only the text box you're typing in, on your device. It never sends text anywhere. It won't turn on for banking, payment or sign-in sites, and it never reads password or payment fields."],
+    ["Why does Chrome ask to \"read and change\" data on a site?", "That is Chrome's standard wording for letting an extension run on a site. Naturable asks for one site at a time, only when you turn it on there, and it only reads the text box you're typing in to draw underlines. Turning the site off in the popup removes the access again."],
     ["Does it work in Google Docs?", "Google Docs draws text on a canvas, so inline underlines can't reach it. Select the text and use \"Check with Naturable\", or paste it into the side panel."],
     ["Does it rewrite my text?", "No. It underlines patterns and explains them. You decide what to change."],
     ["Is it free?", "Yes. No account, no word limit."],
@@ -47,12 +48,14 @@ export function extensionPage() {
     ["activeTab", "Check the text box you're using when you ask it to."],
     ["contextMenus", "Add \"Check with Naturable\" to the right-click menu."],
     ["sidePanel", "Show the full check in Chrome's side panel."],
-    ["storage", "Remember your settings and the sites you've turned off, on this device."],
+    ["storage", "Remember your writing purpose and the phrases you've chosen to ignore, on this device."],
+    ["scripting", "Start the checker on the sites you've turned on."],
+    ["Site access (optional)", "Asked for one site at a time, only when you turn Naturable on for that site. Nothing is requested when you install it."],
   ];
   return {
     lang: "en",
     path: PATH,
-    updated: "2026-10-22",
+    updated: "2026-10-23",
     title: "Naturable for Chrome — AI Writing Pattern Checker Extension",
     description: "Naturable for Chrome underlines AI writing patterns — AI words, template openers, em dashes — as you type in Gmail, LinkedIn, Notion and more. Runs locally; nothing is uploaded.",
     scripts: ["/assets/js/site.js"],
@@ -95,14 +98,14 @@ export function extensionPage() {
       <div class="feature"><h3>Explains each flag</h3><p>Hover a hit to see the rule, why it reads as AI, a suggestion, and a link to the full explanation on this site.</p></div>
       <div class="feature"><h3>Check a selection</h3><p>Right-click selected text and choose "Check with Naturable" to see the result and score in the side panel.</p></div>
       <div class="feature"><h3>Side panel for anything</h3><p>Paste text into the side panel for a full check. Useful for Google Docs and other editors that draw text on a canvas.</p></div>
-      <div class="feature"><h3>Per-site switch</h3><p>Turn it off for any site. It stays off for password and payment fields.</p></div>
+      <div class="feature"><h3>Per-site switch</h3><p>Turn it on only where you write. It never turns on for banking, payment or sign-in sites, and never reads password or payment fields.</p></div>
       <div class="feature"><h3>Rules ship with the extension</h3><p>The rule pack is bundled and updated with each release. The extension never downloads code at runtime.</p></div>
     </div>
   </section>
 
   <section class="home-section" aria-labelledby="perm-h">
     <h2 class="section-title" id="perm-h">Permissions, and why</h2>
-    <p class="lead-p" style="max-width:760px">No account, no text collection. Content scripts run only on sites you enable.</p>
+    <p class="lead-p" style="max-width:760px">No account, no text collection. The checker runs only on sites you turn on, and only you can grant that, one site at a time.</p>
     <div style="overflow-x:auto"><table class="perm-table"><thead><tr><th>Permission</th><th>Used for</th></tr></thead><tbody>${perms.map(([p, d]) => `<tr><td><code>${p}</code></td><td>${esc(d)}</td></tr>`).join("")}</tbody></table></div>
     <p class="fine">It doesn't rewrite your text automatically, doesn't upload anything, and doesn't score other people's writing.</p>
   </section>
@@ -218,7 +221,7 @@ export function privacyPages() {
       lang: "en",
       path: "/en/privacy/",
       alternate: "/zh-cn/privacy/",
-      updated: "2026-10-22",
+      updated: "2026-10-23",
       title: "Privacy Policy — Naturable",
       description: "Naturable checks text in your browser. Drafts are not uploaded, there are no accounts, and the site uses no analytics or advertising cookies.",
       scripts: ["/assets/js/site.js"],
@@ -227,6 +230,10 @@ export function privacyPages() {
 <p>The rules engine runs in the page. Text you paste or type is processed on your device and is never sent to our servers or to any third party.</p>
 <h2>What's stored on your device</h2>
 <p>The editor saves your current draft, its first checked version, your writing purpose and the rules you've turned off in your browser's local storage, so they're there when you come back. "Open the full editor" passes the draft to the editor through session storage in the same tab. Clear the draft in the editor, or clear site data in your browser, to remove them.</p>
+<h2>Chrome extension</h2>
+<p>Naturable for Chrome runs the same rules inside your browser. It checks text only in the text box you're typing in, and only on sites you've turned it on for (or on a page where you click "Check this page once"). Text you select and send with "Check with Naturable" goes to the extension's side panel on your device. The extension never sends text, browsing history or page content to us or to anyone else, and it has no account, analytics or remote code.</p>
+<p>It never turns on for banking, payment, password-manager or sign-in sites, and it doesn't read password, payment or one-time-code fields, or text boxes in forms that contain them.</p>
+<p>On your device, the extension stores your writing purpose and the phrases you've chosen to ignore (Chrome extension storage), and a selection waiting for the side panel (cleared when the side panel reads it or the browser closes). Which sites it may run on is kept by Chrome as the extension's site access. Turning a site off in the popup removes that site's access; "Reset" in the popup clears ignored phrases; removing the extension deletes everything it stored.</p>
 <h2>Cookies and analytics</h2>
 <p>This site sets no cookies and runs no analytics, advertising or tracking scripts.</p>
 <h2>Hosting</h2>
@@ -239,7 +246,7 @@ export function privacyPages() {
       lang: "zh",
       path: "/zh-cn/privacy/",
       alternate: "/en/privacy/",
-      updated: "2026-10-22",
+      updated: "2026-10-23",
       title: "隐私政策 — Naturable",
       description: "Naturable 在浏览器中检查文本。草稿不上传，无需账号，网站不使用统计或广告 Cookie。",
       scripts: ["/assets/js/site.js"],
@@ -248,6 +255,10 @@ export function privacyPages() {
 <p>规则引擎在页面中运行。你粘贴或输入的文本只在当前设备上处理，不会发送到我们的服务器或任何第三方。</p>
 <h2>保存在本机的内容</h2>
 <p>编辑器会把当前草稿、首次检查时的版本、写作场景和你关闭的规则保存在浏览器的本地存储中，方便下次继续。点击「打开完整编辑器」时，草稿通过同一标签页的会话存储传给编辑器。你可以在编辑器里清空草稿，或在浏览器中清除网站数据来删除它们。</p>
+<h2>Chrome 扩展</h2>
+<p>Naturable 的 Chrome 扩展在浏览器内运行同一套规则。它只检查你正在输入的文本框，而且只在你开启过的网站上运行（或在你点击「检查此页面一次」的页面上）。通过「Check with Naturable」发送的选中文本只会进入本机的扩展侧边栏。扩展不会把文本、浏览记录或页面内容发送给我们或任何第三方，也没有账号、统计或远程代码。</p>
+<p>它不会在银行、支付、密码管理器和登录类网站上开启，也不会读取密码、支付卡、一次性验证码字段，以及包含这些字段的表单中的文本框。</p>
+<p>扩展会在本机保存你的写作场景和你选择忽略的短语（Chrome 扩展存储），以及等待侧边栏读取的选中文本（侧边栏读取后或浏览器关闭时清除）。允许运行的网站由 Chrome 作为扩展的网站访问权限保存。在弹窗中关闭某个网站会撤销该网站的访问权限，点击「Reset」会清空忽略的短语，卸载扩展会删除它保存的全部内容。</p>
 <h2>Cookie 与统计</h2>
 <p>本网站不设置 Cookie，也不运行统计、广告或追踪脚本。</p>
 <h2>托管服务</h2>
@@ -273,7 +284,7 @@ export function learnIndex(lang, posts) {
     lang,
     path,
     alternate: zh ? "/en/learn/" : "/zh-cn/learn/",
-    updated: "2026-10-22",
+    updated: "2026-10-23",
     title: zh ? "自然写作与 AI 改稿博客 — Naturable" : "Guides to AI writing patterns — Naturable",
     description: zh
       ? "Naturable 博客：AI 写作模式、AI Humanizer、困惑度与句子节奏、中文 AI 文案、商务邮件与有证据的营销文案。"
@@ -351,7 +362,7 @@ export function notFound() {
     lang: "en",
     path: "/404.html",
     noindex: true,
-    updated: "2026-10-22",
+    updated: "2026-10-23",
     title: "Page not found — Naturable",
     description: "This page doesn't exist.",
     scripts: ["/assets/js/site.js"],
