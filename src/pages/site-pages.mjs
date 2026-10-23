@@ -113,6 +113,7 @@ export function extensionPage() {
   <section class="home-section faq" aria-labelledby="ext-faq-h" style="max-width:860px">
     <h2 class="section-title" id="ext-faq-h">Questions</h2>
     ${faqHtml(FAQ)}
+    <p class="fine">More help: <a href="/en/support/#extension">Support</a>.</p>
   </section>
 </div>`,
   };
@@ -214,6 +215,49 @@ ${esc(cliCmd("draft.md --fix"))}</pre>
     </aside>
   </div>
 </div>`,
+  };
+}
+
+/* ---------------- Support (/en/support/): Chrome Web Store support URL ---------------- */
+export function supportPage() {
+  const PATH = "/en/support/";
+  const crumbs = breadcrumbs("en", [["Support", null]]);
+  const mail = `<a href="mailto:${SITE.contactEmail}">${SITE.contactEmail}</a>`;
+  const issues = SITE.githubUrl ? `${SITE.githubUrl}/issues` : null;
+  return {
+    lang: "en",
+    path: PATH,
+    updated: "2026-10-23",
+    title: "Support — Naturable",
+    description: "Get help with Naturable and the Naturable Chrome extension: contact, report a wrong flag, and fixes for common problems.",
+    scripts: ["/assets/js/site.js"],
+    schema: [crumbs.schema],
+    body: proseShell("en", "Support", "Help with the Naturable editor and the Chrome extension.", `
+<h2 id="contact">Contact</h2>
+<p>Email ${mail}. Tell us what you were doing, what you expected and what happened. For the extension, include the site, your Chrome version and the extension version (listed under Naturable on <code>chrome://extensions</code>).</p>
+<p>Please don't send private drafts. A short made-up sentence that shows the problem is enough.</p>
+${issues ? `<h2 id="report-a-rule">Report a wrong or missing flag</h2>
+<p>The rules are open source. If something is flagged that shouldn't be, or a common pattern is missed, <a href="${esc(issues)}">open an issue on GitHub</a> with the sentence, the rule name and why you think it's wrong. That's the fastest way to get a rule fixed, and everyone can see the discussion.</p>` : ""}
+<h2 id="extension">Chrome extension</h2>
+<h3 id="no-underlines">I don't see any underlines</h3>
+<ul>
+<li>Turn Naturable on for the site: click the Naturable icon in the toolbar and switch it on. Chrome asks once for that site.</li>
+<li>Click into the text box and type or paste. Underlines appear a moment after you stop typing.</li>
+<li>Reload the page if it was open before you turned Naturable on.</li>
+<li>Google Docs and other editors that draw text on a canvas can't be underlined. Select the text, right-click and choose "Check with Naturable", or paste it into the side panel.</li>
+<li>Naturable stays off on banking, payment and sign-in sites, and in password, payment and one-time-code fields, on purpose.</li>
+</ul>
+<h3 id="turn-off">Turn it off for a site</h3>
+<p>Click the Naturable icon on that site and switch it off, or use "Sites with underlines on" in the popup. Turning a site off also removes the extension's access to it.</p>
+<h3 id="ignored">Bring back an ignored phrase</h3>
+<p>Phrases you ignore are remembered on your device. Click the Naturable icon and choose "Reset" next to the ignored-phrases count.</p>
+<h3 id="remove">Remove the extension</h3>
+<p>Right-click the Naturable icon and choose "Remove from Chrome". Its settings and ignored phrases are deleted with it.</p>
+<h2 id="editor">Web editor</h2>
+<p>The <a href="/en/app/">editor</a> runs in your browser and saves your draft on this device. Clearing the draft, or clearing site data in your browser, removes it. <a href="/en/how-it-works/">How it works</a> lists every rule with examples.</p>
+<h2 id="not-a-detector">What Naturable doesn't do</h2>
+<p>Naturable isn't an AI detector and can't tell who wrote a text. We can't help with detector results or appeals. See <a href="/en/signs-of-ai-writing/#limits">what these signs can't tell you</a>.</p>
+<p>How we handle data: <a href="/en/privacy/">Privacy policy</a>.</p>`, { crumbs }),
   };
 }
 

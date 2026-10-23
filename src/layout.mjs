@@ -39,7 +39,7 @@ const T = {
     cols: () => [
       ["Product", [["/en/app/", "Editor"], [chromeHref(), "Chrome extension"], [githubHref(), "Open-source rules"], ["/en/how-it-works/#skill", "Agent Skill"]]],
       ["Guides & tools", [["/en/ai-words-to-avoid/", "AI words to avoid"], ["/en/signs-of-ai-writing/", "Signs of AI writing"], ["/en/learn/do-ai-humanizers-work/", "Do AI humanizers work?"], ["/en/chatgpt-em-dash/", "ChatGPT em dash checker"], ["/en/learn/what-is-perplexity-and-burstiness/", "Burstiness calculator"], ["/en/learn/", "All articles"]]],
-      ["Naturable", [["/en/how-it-works/", "How it works"], ["/en/about/", "About"], ["/en/privacy/", "Privacy"], ["/en/terms/", "Terms"]]],
+      ["Naturable", [["/en/how-it-works/", "How it works"], ["/en/about/", "About"], ["/en/privacy/", "Privacy"], ["/en/terms/", "Terms"], ["/en/support/", "Support"]]],
     ],
     copyright: "© 2026 Naturable · Rules CC BY 4.0 · Code MIT",
     langName: "English",

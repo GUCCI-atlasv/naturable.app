@@ -15,7 +15,7 @@ import home from "../src/pages/home.mjs";
 import wordsPage from "../src/pages/words.mjs";
 import signsPage from "../src/pages/signs.mjs";
 import { humanizers, emDash, burstiness } from "../src/pages/articles.mjs";
-import { editorPages, extensionPage, howItWorks, privacyPages, learnIndex, legacyPage, notFound } from "../src/pages/site-pages.mjs";
+import { editorPages, extensionPage, howItWorks, privacyPages, supportPage, learnIndex, legacyPage, notFound } from "../src/pages/site-pages.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = join(root, "out");
@@ -94,7 +94,7 @@ pages.push(...home());
 pages.push(wordsPage({ annotated }));
 pages.push(signsPage());
 pages.push(humanizers(), emDash(), burstiness());
-pages.push(...editorPages(), extensionPage(), howItWorks(), ...privacyPages(), notFound());
+pages.push(...editorPages(), extensionPage(), howItWorks(), ...privacyPages(), supportPage(), notFound());
 
 // Legacy pages kept as-is in the new template: EN about/terms + 3 articles, and every ZH page (PRD §5.9).
 const KEEP_EN = ["/en/about/", "/en/terms/", "/en/learn/common-patterns-in-chinese-ai-copy/", "/en/learn/make-a-stiff-email-more-direct/", "/en/learn/replace-claims-with-evidence/"];

@@ -49,7 +49,7 @@ Naturable is not an AI detector. A flag is a style signal, not evidence of who w
 ```
 
 **Homepage URL:** https://naturable.app/en/chrome-extension/
-**Support URL:** mailto:privacy@naturable.app (or https://github.com/GUCCI-atlasv/naturable-rules/issues)
+**Support URL:** https://naturable.app/en/support/ (the dashboard rejects mailto: links)
 
 **Screenshots (1280×800 RGB PNG, upload in this order):**
 1. `store/screenshots/01-mail-hover-card.png`: webmail compose, underlines + hover card on "Experts believe"
