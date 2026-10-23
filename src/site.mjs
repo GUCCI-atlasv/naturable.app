@@ -7,8 +7,8 @@ export const SITE = {
   // TODO: Chrome Web Store listing. Empty = "Add to Chrome" points to /en/chrome-extension/ (shows "coming soon").
   chromeStoreUrl: "",
   contactEmail: "privacy@naturable.app",
-  // Set to true once naturable-rules is on npm; until then the CLI runs straight from the GitHub repo.
-  npmPublished: false,
+  // naturable-rules is on npm (1.2.0, 2026-10-23); false makes the site show the GitHub form of the command.
+  npmPublished: true,
 };
 
 export const githubHref = () => SITE.githubUrl || "/en/how-it-works/#rules";
