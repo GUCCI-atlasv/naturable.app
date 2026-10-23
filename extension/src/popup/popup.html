@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Naturable</title>
+<link rel="stylesheet" href="../shared/ui.css">
+<link rel="stylesheet" href="popup.css">
+</head>
+<body>
+<header class="top">
+  <span class="brand">Naturable<span class="dot">.</span></span>
+  <a class="site-link" href="https://naturable.app/en/" target="_blank" rel="noopener">naturable.app</a>
+</header>
+
+<main>
+  <section class="site" id="site">
+    <div class="site-row">
+      <div>
+        <div class="host" id="host">—</div>
+        <div class="status" id="status"></div>
+      </div>
+      <label class="switch" id="switch-wrap" hidden>
+        <input type="checkbox" id="toggle" role="switch">
+        <span class="track" aria-hidden="true"></span>
+        <span class="sr-only">Underline on this site</span>
+      </label>
+    </div>
+    <button class="btn btn-sm" id="once" hidden>Check this page once</button>
+  </section>
+
+  <button class="btn btn-primary" id="panel">Open side panel</button>
+
+  <label class="field">
+    <span>Writing for</span>
+    <select id="purpose">
+      <option value="general">General</option>
+      <option value="email">Email</option>
+      <option value="blog">Blog</option>
+      <option value="marketing">Marketing</option>
+      <option value="social">Social</option>
+      <option value="academic">Academic</option>
+      <option value="technical">Technical</option>
+    </select>
+  </label>
+
+  <details class="sites" id="sites-box">
+    <summary>Sites with underlines on <span id="sites-count">0</span></summary>
+    <ul id="sites"></ul>
+    <p class="empty" id="sites-empty">None yet. Turn it on from a site you write on.</p>
+  </details>
+
+  <p class="ignored" id="ignored-row" hidden><span id="ignored-count"></span> <button class="link" id="reset">Reset</button></p>
+</main>
+
+<footer class="foot">
+  <span>Runs on this device. Nothing is uploaded.</span>
+  <span>Rules <span id="version"></span></span>
+</footer>
+<script src="../vendor/naturable.iife.js"></script>
+<script src="../shared/common.js"></script>
+<script src="popup.js"></script>
+</body>
+</html>
