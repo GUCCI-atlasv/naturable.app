@@ -1,7 +1,7 @@
 import { esc, breadcrumbs, faqHtml, faqSchema, articleSchema, icons } from "../layout.mjs";
 import { editor } from "../components.mjs";
 import { ruleAnchor } from "../docs.mjs";
-import { SITE, githubHref, chromeHref } from "../site.mjs";
+import { SITE, githubHref, chromeHref, cliCmd } from "../site.mjs";
 import { packs, ENGINE_VERSION } from "../../vendor/naturable-rules/src/index.js";
 
 const EDITOR_SCRIPTS = ["/assets/js/naturable.iife.js", "/assets/js/docs.js", "/assets/js/site.js", "/assets/js/editor.js"];
@@ -193,9 +193,13 @@ export function howItWorks() {
       <h2 id="skill">Use the rules elsewhere: Agent Skill and CLI</h2>
       <p>The same rules ship as an Agent Skill for Claude, Codex and other agents. The Skill lists hits with their location and reason first, and rewrites only the parts you approve. It never offers to get text past a detector.</p>
       <p>From a terminal:</p>
-      <pre class="cmd" style="white-space:pre">npx naturable-check draft.md          # readable report
-npx naturable-check draft.md --json   # for tools and agents
-npx naturable-check draft.md --fix    # safe fixes only</pre>
+      <pre class="cmd" style="white-space:pre"># readable report
+${esc(cliCmd("draft.md"))}
+# JSON, for tools and agents
+${esc(cliCmd("draft.md --json"))}
+# print the text with safe fixes applied
+${esc(cliCmd("draft.md --fix"))}</pre>
+      <p>${SITE.npmPublished ? "" : "This runs the checker straight from the public repository (Node 18+, no install). "}Pipe text in with <code>--purpose email</code> or <code>--lang zh</code> to change the weighting or language.</p>
       <p>For Claude Code, copy the <code>skill/</code> folder from the rules repository into <code>~/.claude/skills/naturable-writing-check/</code>. ${SITE.githubUrl ? `<a href="${esc(SITE.githubUrl)}">Get it on GitHub</a>.` : ""}</p>
 
       <h2 id="limits">What it isn't</h2>

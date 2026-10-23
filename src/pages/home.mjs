@@ -1,6 +1,6 @@
 import { esc, icons, faqHtml, faqSchema, abs } from "../layout.mjs";
 import { checker } from "../components.mjs";
-import { SITE, githubHref, chromeHref } from "../site.mjs";
+import { SITE, githubHref, chromeHref, cliCmd } from "../site.mjs";
 import { packs } from "../../vendor/naturable-rules/src/index.js";
 
 const RULE_COUNT = packs.en.rules.length + packs.zh.rules.length;
@@ -103,7 +103,7 @@ export default function home() {
         <div class="text">
           <h2 id="where-h">Check where you write</h2>
           <p>The Chrome extension underlines the same patterns in Gmail, LinkedIn, Notion, Reddit and most text boxes. It runs locally, like the site.</p>
-          <a class="btn btn-light" href="${esc(chromeHref())}">${SITE.chromeStoreUrl ? "Add to Chrome, free" : "Get the Chrome extension"}</a>
+          <a class="btn btn-light" href="${esc(chromeHref())}">${SITE.chromeStoreUrl ? "Add to Chrome, free" : "Chrome extension: coming soon"}</a>
         </div>
         <div class="mock-mail" aria-hidden="true">
           <span class="to">To: team · Re: Q3 plan</span>
@@ -114,7 +114,7 @@ export default function home() {
       <div class="where-light">
         <h2>Open rules you can check</h2>
         <p>Every rule is public JSON with examples and tests. Use it in your own tools, or as an Agent Skill for Claude and Codex.</p>
-        <code class="cmd">npx naturable-check draft.md</code>
+        <code class="cmd">${esc(cliCmd("draft.md"))}</code>
         <a class="link-arrow" style="margin-top:auto" href="${esc(githubHref())}">${SITE.githubUrl ? "View on GitHub →" : "Browse the rules →"}</a>
       </div>
     </div>

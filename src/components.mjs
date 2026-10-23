@@ -97,7 +97,7 @@ export function checker(opts = {}) {
         <textarea class="draft-input" id="${id}" data-el="input" placeholder="${esc(l.placeholder)}" spellcheck="true">${esc(sample)}</textarea>
       </div>
       <div data-el="review">
-        <p class="draft-view" data-el="view" title="${lang === "zh" ? "点击编辑" : "Click to edit"}">${highlight(sample, issues)}</p>
+        <p class="draft-view" data-el="view" tabindex="0" title="${lang === "zh" ? "点击编辑，或直接粘贴" : "Click to edit, or paste to check"}" aria-label="${lang === "zh" ? "示例文本，按 Enter 编辑，或直接粘贴" : "Sample text. Press Enter to edit, or paste to check your own."}">${highlight(sample, issues)}</p>
       </div>
       <div class="checker-actions">
         <button type="button" class="btn btn-primary" data-el="check" hidden>${l.check}</button>
@@ -249,6 +249,10 @@ export function burstinessTool() {
   <figure class="chart">
     <figcaption><span>Words per sentence, in order</span><span class="legend"><span><i></i>sentence</span><span><i class="run"></i>part of a same-length run</span></span></figcaption>
     <div class="bars" role="img" data-el="bars" aria-label="Sentence length chart"></div>
+  </figure>
+  <figure class="chart">
+    <figcaption><span>How many sentences fall in each length band</span><span class="legend">Varied writing spreads across several bands; flat writing piles into one or two.</span></figcaption>
+    <div class="bars hist" role="img" data-el="hist" aria-label="Histogram of sentence lengths"></div>
   </figure>
   <div hidden><p class="field-label" style="margin:0 0 6px">Same-length runs to look at</p><ul class="run-list" data-el="runs"></ul></div>
 </section>`;

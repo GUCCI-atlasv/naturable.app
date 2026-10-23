@@ -316,6 +316,7 @@ mark.hit { color: inherit; border-radius: 3px; padding: 0 1px; }
 .dash-item { border: 1px solid var(--line); border-radius: 10px; padding: 12px; display: flex; flex-direction: column; gap: 8px; background: var(--white); }
 .dash-item .ctx { font-size: 14px; line-height: 1.5; }
 .dash-item .ctx .n { color: var(--muted); }
+.dash-item .closes { font-size: 13px; color: var(--muted); }
 .dash-item mark { background: var(--accent-bg); color: var(--accent-ink); border-radius: 3px; padding: 0 2px; }
 .radios { display: flex; flex-wrap: wrap; gap: 6px; }
 .radios button { min-height: 34px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--line-2); background: var(--white); color: var(--ink); font: 500 13px var(--sans); cursor: pointer; }
@@ -331,6 +332,9 @@ mark.hit { color: inherit; border-radius: 3px; padding: 0 1px; }
 .bars .b .n { font-size: 11px; color: var(--muted); font-variant-numeric: tabular-nums; }
 .bars .b .r { width: 100%; background: var(--ink); border-radius: 4px 4px 0 0; }
 .bars .b.run .r { background: var(--run); }
+.bars.hist .b { max-width: 72px; }
+.bars.hist .b .r { background: var(--accent); }
+.bars .b .lbl { font-size: 11px; color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
 .bars .empty { align-self: center; margin: auto; font-size: 14px; color: var(--muted); }
 .run-list { margin: 0; padding-left: 20px; font-size: 14px; line-height: 1.6; color: var(--ink-2); }
 

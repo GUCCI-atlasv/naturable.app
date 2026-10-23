@@ -20,22 +20,32 @@
       return out;
     }
 
-    // Parentheses close at the next dash in the same sentence, or at the sentence end.
-    function build(text, found) {
-      var out = "", pos = 0, openParen = false;
+    // Opening a parenthesis at dash i closes it at the next dash when that dash is in the same sentence;
+    // that next dash then has no choice of its own. Returns { i+1: i } for those pairs.
+    function closers(text, found) {
+      var map = {};
+      found.forEach(function (f, i) {
+        if (map[i] != null || (choices[i] || "comma") !== "paren") return;
+        var next = found[i + 1];
+        var sentenceEnd = text.slice(f.end).search(/[.!?]/);
+        if (next && (sentenceEnd === -1 || next.start < f.end + sentenceEnd)) map[i + 1] = i;
+      });
+      return map;
+    }
+
+    function build(text, found, closedBy) {
+      var out = "", pos = 0;
       found.forEach(function (f, i) {
         var c = choices[i] || "comma";
         out += text.slice(pos, f.start);
         pos = f.end;
-        if (openParen) { out += ") "; openParen = false; return; }
+        if (closedBy[i] != null) { out += ") "; return; }
         if (c === "keep") out += text.slice(f.start, f.end);
         else if (c === "comma") out += ", ";
         else if (c === "colon") out += ": ";
         else if (c === "paren") {
-          var next = found[i + 1];
           var sentenceEnd = text.slice(f.end).search(/[.!?]/);
-          var closesAtDash = next && (sentenceEnd === -1 || next.start < f.end + sentenceEnd);
-          if (closesAtDash) { out += " ("; openParen = true; }
+          if (closedBy[i + 1] === i) out += " (";
           else if (sentenceEnd >= 0) {
             out += " (" + text.slice(f.end, f.end + sentenceEnd) + ")";
             pos = f.end + sentenceEnd;
@@ -62,25 +72,46 @@
       marker.style.left = Math.min(100, (per / 20) * 100).toFixed(1) + "%";
       verdict.textContent = flagged ? "Heavy." : found.length ? "Fine." : "No dashes.";
       verdict.className = "ink-" + cls;
-      output.textContent = build(text, found) || " ";
+      var closedBy = closers(text, found);
+      output.textContent = build(text, found, closedBy) || " ";
 
+      // Keep keyboard focus on the same control across re-renders.
+      var active = document.activeElement, keep = active && list.contains(active) ? active.getAttribute("data-key") : null;
       list.textContent = "";
       found.forEach(function (f, i) {
         var pre = text.slice(Math.max(0, f.start - 32), f.start).trimStart();
         var post = text.slice(f.end, f.end + 32).trimEnd();
+        var ctx = U.el("span", { class: "ctx" }, [U.el("span", { class: "n", text: "#" + (i + 1) + " · " }), "…" + pre, U.el("mark", { text: "—" }), post + "…"]);
+        if (closedBy[i] != null) {
+          list.appendChild(U.el("li", { class: "dash-item" }, [ctx, U.el("span", { class: "closes", text: "Closes the parentheses from #" + (closedBy[i] + 1) + "." })]));
+          return;
+        }
+        var current = choices[i] || "comma";
         var group = U.el("div", { class: "radios", role: "radiogroup", "aria-label": "Replacement for dash " + (i + 1) });
-        OPTS.forEach(function (o) {
-          var on = (choices[i] || "comma") === o[0];
+        OPTS.forEach(function (o, k) {
+          var on = current === o[0];
           group.appendChild(U.el("button", {
             type: "button", role: "radio", "aria-checked": on ? "true" : "false", text: o[1],
+            tabindex: on ? "0" : "-1", "data-key": i + ":" + o[0],
             onclick: function () { choices[i] = o[0]; render(); },
+            onkeydown: function (e) {
+              var d = e.key === "ArrowRight" || e.key === "ArrowDown" ? 1 : e.key === "ArrowLeft" || e.key === "ArrowUp" ? -1 : 0;
+              if (!d) return;
+              e.preventDefault();
+              var n = OPTS[(k + d + OPTS.length) % OPTS.length][0];
+              choices[i] = n;
+              render();
+              var b = list.querySelector('[data-key="' + i + ":" + n + '"]');
+              if (b) b.focus();
+            },
           }));
         });
-        list.appendChild(U.el("li", { class: "dash-item" }, [
-          U.el("span", { class: "ctx" }, [U.el("span", { class: "n", text: "#" + (i + 1) + " · " }), "…" + pre, U.el("mark", { text: "—" }), post + "…"]),
-          group,
-        ]));
+        list.appendChild(U.el("li", { class: "dash-item" }, [ctx, group]));
       });
+      if (keep) {
+        var again = list.querySelector('[data-key="' + keep + '"]');
+        if (again) again.focus();
+      }
     }
 
     var all = function (k) { return function () { find(input.value).forEach(function (_, i) { choices[i] = k; }); render(); }; };

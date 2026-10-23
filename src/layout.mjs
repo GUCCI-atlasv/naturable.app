@@ -1,4 +1,4 @@
-import { SITE, githubHref, chromeHref } from "./site.mjs";
+import { SITE, githubHref, chromeHref, chromeLabel } from "./site.mjs";
 
 export const esc = (s) =>
   String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -86,7 +86,7 @@ function header(lang, path) {
     .join("");
   const cta =
     lang === "en"
-      ? `<a class="btn btn-outline" href="${esc(chromeHref())}">${icons.plus}${esc(t.addChrome)}</a>`
+      ? `<a class="btn btn-outline" href="${esc(chromeHref())}">${SITE.chromeStoreUrl ? icons.plus : ""}${esc(SITE.chromeStoreUrl ? t.addChrome : "Chrome extension")}</a>`
       : `<a class="btn btn-outline" href="/zh-cn/app/">${esc(t.addChrome)}</a>`;
   return `<header class="site-header">
   <div class="bar">
@@ -98,7 +98,7 @@ function header(lang, path) {
     </div>
     <button type="button" class="menu-btn" aria-label="${esc(t.menu)}" aria-expanded="false" aria-controls="mobile-nav" data-menu>${icons.menu}</button>
   </div>
-  <nav class="mobile-nav" id="mobile-nav" aria-label="Main">${links}${lang === "en" ? `<a href="${esc(chromeHref())}">${esc(t.addChrome)}</a>` : ""}</nav>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Main">${links}${lang === "en" ? `<a href="${esc(chromeHref())}">${esc(chromeLabel())}</a>` : ""}</nav>
 </header>`;
 }
 

@@ -2,7 +2,7 @@ import { esc, breadcrumbs, faqHtml, faqSchema, articleSchema } from "../layout.m
 import { checker } from "../components.mjs";
 import { WORD_GROUPS, PHRASE_GROUPS } from "../content/ai-words.mjs";
 import { slug } from "../docs.mjs";
-import { chromeHref, githubHref, SITE } from "../site.mjs";
+import { chromeHref, chromeLabel, githubHref, SITE } from "../site.mjs";
 import { packs } from "../../vendor/naturable-rules/src/index.js";
 
 const PATH = "/en/ai-words-to-avoid/";
@@ -195,7 +195,7 @@ export default function wordsPage({ annotated }) {
           <a class="btn btn-light" href="/downloads/ai-words-to-avoid.csv" download>Download CSV</a>
           <a class="btn btn-on-dark" href="/downloads/ai-words-to-avoid.json" download>JSON</a>
           <a class="btn btn-on-dark" href="${esc(githubHref())}">${SITE.githubUrl ? "Rules on GitHub" : "Browse the rules"}</a>
-          <a class="btn btn-on-dark" href="${esc(chromeHref())}">Add to Chrome</a>
+          <a class="btn btn-on-dark" href="${esc(chromeHref())}">${esc(chromeLabel())}</a>
         </div>
       </section>
 

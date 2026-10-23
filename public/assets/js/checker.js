@@ -86,7 +86,15 @@
     btnSample.addEventListener("click", function () { input.value = sample; setMode("review"); });
     btnClear.addEventListener("click", function () { input.value = ""; run(); setMode("edit"); });
     view.addEventListener("click", function () { if (!window.getSelection().toString()) setMode("edit"); });
-    input.addEventListener("paste", function () { setTimeout(function () { setMode("review"); }, 0); });
+    view.addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); setMode("edit"); } });
+    // Paste to check: pasting over the untouched sample replaces it instead of landing inside it.
+    function pasted(e) {
+      var clip = e.clipboardData && e.clipboardData.getData("text/plain");
+      if (clip && (mode === "review" || input.value === sample)) { e.preventDefault(); input.value = clip; }
+      setTimeout(function () { setMode("review"); }, 0);
+    }
+    input.addEventListener("paste", pasted);
+    view.addEventListener("paste", pasted);
     input.addEventListener("keydown", function (e) {
       if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) { e.preventDefault(); setMode("review"); }
     });

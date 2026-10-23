@@ -6,7 +6,7 @@
     var U = window.NatUI, N = window.Naturable;
     if (!U || !N) return;
     var q = function (name) { return root.querySelector('[data-el="' + name + '"]'); };
-    var input = q("input"), bars = q("bars"), verdict = q("verdict"), note = q("note"), runs = q("runs");
+    var input = q("input"), bars = q("bars"), hist = q("hist"), verdict = q("verdict"), note = q("note"), runs = q("runs");
     var out = { n: q("n"), mean: q("mean"), sd: q("sd"), cv: q("cv"), rhythm: q("rhythm") };
 
     function render() {
@@ -42,6 +42,24 @@
         bars.appendChild(U.el("div", { class: "b" + (inRun[idx] ? " run" : ""), title: "Sentence " + (idx + 1) + ": " + len + " words" }, [
           U.el("span", { class: "n", text: String(len) }),
           U.el("span", { class: "r", style: "height:" + Math.max(2, Math.round((len / max) * 160)) + "px" }),
+        ]));
+      });
+
+      // Histogram: sentence counts per 5-word band (31+ in one bin).
+      var BINS = [[1, 5], [6, 10], [11, 15], [16, 20], [21, 25], [26, 30], [31, Infinity]];
+      var counts = BINS.map(function (r) { return lens.filter(function (l) { return l >= r[0] && l <= r[1]; }).length; });
+      var top = Math.max.apply(null, [1].concat(counts));
+      hist.textContent = "";
+      hist.setAttribute("aria-label", "Histogram of sentence lengths: " + BINS.map(function (r, i) {
+        return (r[1] === Infinity ? r[0] + "+" : r[0] + "–" + r[1]) + " words: " + counts[i];
+      }).join("; "));
+      if (!lens.length) hist.appendChild(U.el("span", { class: "empty", text: "Paste a few sentences to see the histogram." }));
+      else BINS.forEach(function (r, i) {
+        var label = r[1] === Infinity ? r[0] + "+" : r[0] + "–" + r[1];
+        hist.appendChild(U.el("div", { class: "b", title: counts[i] + " sentences of " + label + " words" }, [
+          U.el("span", { class: "n", text: String(counts[i]) }),
+          U.el("span", { class: "r", style: "height:" + (counts[i] ? Math.max(2, Math.round((counts[i] / top) * 140)) : 0) + "px" }),
+          U.el("span", { class: "lbl", text: label }),
         ]));
       });
 
