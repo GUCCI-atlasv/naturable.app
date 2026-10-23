@@ -43,11 +43,13 @@ src/                      the extension as loaded by Chrome (zip this)
   shared/docs-words.js    generated: word -> naturable.app anchor
   vendor/                 generated: naturable-rules engine + licenses
 scripts/
-  sync.mjs                refresh vendor/, docs-words.js and icons from ../../naturable-rules and the site (..)
+  sync.mjs                refresh vendor/ and docs-words.js from ../../naturable-rules and the site (..); icons from store/source/
   check.mjs               policy/static checks
-  screens.mjs             screenshots into test/screenshots/
+  screens.mjs             quick screenshots into test/screenshots/
+  store-assets.mjs        Chrome Web Store screenshots + promo tiles into store/ (from the real extension)
   pack.mjs                dist/naturable-extension-<version>.zip
 test/                     unit tests + end-to-end tests in Chrome for Testing
+store/                    store screenshots, promo tiles, their mock pages, and the source store icon
 STORE.md                  Chrome Web Store listing draft
 ```
 

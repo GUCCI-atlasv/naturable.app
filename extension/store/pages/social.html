@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Create a post</title>
+<!-- Generic social-network "create a post" mock for store screenshot 2. Not any real product's UI or branding. -->
+<style>
+  @font-face { font-family: "Inter"; src: url("inter-latin.woff2") format("woff2"); font-weight: 100 900; }
+  * { box-sizing: border-box; }
+  body { margin: 0; height: 100vh; font: 15px/1.5 Inter, Arial, sans-serif; color: #1d2226; background: #f4f2ee; overflow: hidden; }
+  .top { height: 50px; background: #fff; border-bottom: 1px solid #e3e1dc; display: flex; align-items: center; gap: 26px; padding: 0 32px; font-size: 12px; color: #666; }
+  .top .brand { width: 30px; height: 30px; border-radius: 6px; background: #3b5b7a; }
+  .feed { position: absolute; top: 70px; left: 32px; right: 32px; display: grid; grid-template-columns: 200px 1fr; gap: 24px; filter: blur(.4px); opacity: .55; }
+  .card { background: #fff; border-radius: 10px; height: 160px; border: 1px solid #e3e1dc; }
+  .dim { position: fixed; inset: 0; background: rgba(0,0,0,.45); }
+  .modal { position: absolute; left: 50%; top: 34px; transform: translateX(-50%); width: 600px; height: 452px; background: #fff; border-radius: 12px;
+    box-shadow: 0 12px 40px rgba(0,0,0,.3); display: flex; flex-direction: column; }
+  .head { display: flex; align-items: center; gap: 12px; padding: 18px 22px 8px; }
+  .av { width: 48px; height: 48px; border-radius: 50%; background: #c8603d; color: #fff; display: grid; place-items: center; font-weight: 700; }
+  .who b { display: block; font-size: 16px; }
+  .who span { font-size: 13px; color: #666; }
+  .x { margin-left: auto; color: #666; font-size: 18px; align-self: flex-start; }
+  #post { flex: 1; padding: 10px 22px; font-size: 17px; line-height: 1.6; outline: none; }
+  #post p { margin: 0 0 10px; }
+  .bottom { border-top: 1px solid #ebe9e5; padding: 12px 22px; display: flex; align-items: center; gap: 18px; color: #666; font-size: 13px; }
+  .postbtn { margin-left: auto; background: #3b5b7a; color: #fff; border-radius: 18px; padding: 7px 20px; font-weight: 600; }
+</style>
+</head>
+<body>
+  <div class="top"><span class="brand"></span><span>Home</span><span>Network</span><span>Jobs</span><span>Messages</span></div>
+  <div class="feed"><div class="card"></div><div class="card"></div><div></div><div class="card"></div></div>
+  <div class="dim"></div>
+  <div class="modal">
+    <div class="head"><div class="av">AR</div><div class="who"><b>Alex Rivera</b><span>Post to anyone</span></div><span class="x">✕</span></div>
+    <div id="post" contenteditable="true" spellcheck="false"><p>In today's fast-paced world, teams need clarity more than slogans.</p><p>This release is a real game-changer for how we ship.</p><p>We'll leverage the quiet weeks to clean up our docs.</p><p>I hope this helps!</p></div>
+    <div class="bottom"><span>▣ Media</span><span>▤ Event</span><span>✎ Article</span><span class="postbtn">Post</span></div>
+  </div>
+</body>
+</html>

@@ -36,8 +36,21 @@ The rules are open source (CC BY 4.0) and the same ones naturable.app uses: gith
 
 Naturable is not an AI detector. A hit is a style signal, not evidence of who wrote the text. It doesn't rewrite your text.
 
-**Screenshots (1280×800, 5):** Gmail compose with hover card · LinkedIn post · side panel · hover card close-up · rules page on naturable.app.
-`node scripts/screens.mjs` renders the first and the side panel from a local mock; the LinkedIn shot needs a real (test) account.
+**Screenshots (1280×800 RGB PNG, upload in this order):**
+1. `store/screenshots/01-mail-hover-card.png`: webmail compose, underlines + hover card on "Experts believe"
+2. `store/screenshots/02-social-post-underlines.png`: social post composer, underlines only (solid = strong, dotted = suggestion)
+3. `store/screenshots/03-side-panel-selection.png`: selection + right-click "Check with Naturable" + the side panel result
+4. `store/screenshots/04-hover-card-closeup.png`: hover card close-up in a notes app
+5. The Signs of AI Writing page on naturable.app (from the asset review pack, 05-signs-of-ai-writing.png)
+
+1–4 are rendered by `node scripts/store-assets.mjs` from the real extension running in Chrome for Testing on generic mock pages
+(`store/pages/`, fictional names, no real product branding). The only drawn element is the right-click menu in 3 (native menus
+can't be captured headless); its Naturable item is the real one. Re-run the script after any UI change so the listing stays accurate.
+
+**Promo tiles:** `store/promo/promo-small-440x280.png` (upload; listings without one rank lower) and
+`store/promo/promo-marquee-1400x560.png` (optional, only for featuring).
+
+**Store icon:** `src/icons/128.png` (96px artwork + 16px transparent padding), read from the uploaded zip.
 
 **Privacy practices tab:**
 - Single purpose: check text the user writes for AI writing patterns and explain them.

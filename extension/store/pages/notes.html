@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Notes</title>
+<!-- Generic notes/docs mock for store screenshots 3 and 4. ?mode=select shows a selection and the right-click menu
+     (the menu is drawn: native Chrome menus can't be captured headless; its Naturable item matches the real one). -->
+<style>
+  @font-face { font-family: "Inter"; src: url("inter-latin.woff2") format("woff2"); font-weight: 100 900; }
+  @font-face { font-family: "Source Serif 4"; src: url("source-serif-4-latin.woff2") format("woff2"); font-weight: 200 900; }
+  * { box-sizing: border-box; }
+  body { margin: 0; height: 100vh; font: 16px/1.65 Inter, Arial, sans-serif; color: #2b2a28; background: #fff; overflow: hidden; display: flex; }
+  .side { width: 190px; flex: none; background: #f7f6f3; padding: 18px 14px; font-size: 13px; color: #6b6964; }
+  .side .ws { font-weight: 600; color: #37352f; margin-bottom: 14px; }
+  .side div { padding: 4px 8px; border-radius: 5px; }
+  .side .on { background: #ebeae6; color: #37352f; }
+  main { flex: 1; padding: 44px 56px; }
+  .crumbs { font-size: 12px; color: #9b9a97; margin-bottom: 18px; }
+  h1 { font: 700 32px/1.2 "Source Serif 4", Georgia, serif; margin: 0 0 18px; color: #2b2a28; }
+  #doc { outline: none; max-width: 620px; }
+  #doc p { margin: 0 0 14px; }
+  /* Narrow layout for the selection shot (the side panel takes the right side of the screen). */
+  body.narrow .side { display: none; }
+  body.narrow main { padding: 30px 34px; }
+  body.narrow h1 { font-size: 26px; margin-bottom: 14px; }
+  body.narrow { font-size: 15px; }
+  .menu { position: absolute; width: 230px; background: #fff; border-radius: 8px; padding: 5px 0; box-shadow: 0 6px 24px rgba(0,0,0,.18), 0 0 0 1px rgba(0,0,0,.08);
+    font: 13px/1.2 -apple-system, "Segoe UI", Arial, sans-serif; color: #222; }
+  .menu div { padding: 6px 14px; display: flex; align-items: center; gap: 8px; }
+  .menu hr { border: 0; border-top: 1px solid #e5e5e5; margin: 5px 0; }
+  .menu .nat { background: #e8eefb; }
+  .menu img { width: 16px; height: 16px; }
+</style>
+</head>
+<body>
+  <nav class="side"><div class="ws">Team workspace</div><div>Home</div><div>Docs</div><div class="on">Pilot notes</div><div>Q4 plan</div></nav>
+  <main>
+    <div class="crumbs">Docs / Pilot notes</div>
+    <h1>Shipping notes for the pilot</h1>
+    <div id="doc" contenteditable="true" spellcheck="false"></div>
+  </main>
+  <div class="menu" id="menu" hidden>
+    <div>Copy</div><div>Look up selection</div><div>Print…</div><hr>
+    <div class="nat"><img src="icon-16.png" alt="">Check with Naturable</div>
+  </div>
+<script>
+  const mode = new URLSearchParams(location.search).get("mode");
+  const doc = document.getElementById("doc");
+  if (mode === "select") {
+    document.body.classList.add("narrow");
+    doc.innerHTML = "<p>We wrapped the pilot with four teams on Tuesday.</p><p id='sel'>Great question! In today's digital landscape, experts believe this robust technology is not just a tool, it's a pivotal shift. In order to leverage it, teams could potentially rethink their work. The future looks bright. I hope this helps!</p><p>Next step: a one-page brief with the numbers from each team.</p>";
+  } else {
+    doc.innerHTML = "<p>Experts believe the rollout went well, so we should plan the next wave now.</p><p>We reviewed the pilot feedback this morning. Three of four teams finished setup in under a day.</p><p>Next step: a one-page brief with the numbers from each team.</p>";
+  }
+</script>
+</body>
+</html>
